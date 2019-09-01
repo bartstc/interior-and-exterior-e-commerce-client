@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { HeaderLinks } from './header/HeaderLinks.component';
+
 import {
   HeaderWrapper,
   HeaderLimiter,
@@ -9,7 +11,6 @@ import {
   Hamburger,
   SearchBtn
 } from './Header.styles';
-import { HeaderLinks } from './header/HeaderLinks.component';
 
 interface IProps {
   handleOpen: () => void;

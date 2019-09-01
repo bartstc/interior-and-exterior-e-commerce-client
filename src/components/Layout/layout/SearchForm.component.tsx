@@ -1,4 +1,5 @@
 import React, { SyntheticEvent, useState, ChangeEvent } from 'react';
+
 import { Form, SearchInput, SubmitBtn } from './SearchForm.styles';
 
 interface IProps {

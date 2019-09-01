@@ -1,5 +1,7 @@
 import React from 'react';
+
 import { SideDrawer } from '../../../Sidedrawer/SideDrawer.component';
+
 import { ListItem, FilterShopBtn } from '../Sidebar.styles';
 
 const interiorLinks = ['Chairs', 'Lamps', 'Clocks', 'Vases'];

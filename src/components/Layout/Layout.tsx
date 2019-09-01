@@ -1,12 +1,13 @@
 import React from 'react';
 
-import { LayoutWrapper, Main } from './Layout.styles';
 import { Header } from './layout/Header.component';
 import { Footer } from './layout/Footer.component';
 import { SidebarContainer } from './layout/Sidebar.component';
 import { useSideDrawer } from '../../hooks/useSideDrawer';
 import { useToggle } from '../../hooks/useToggle';
 import { SearchForm } from './layout/SearchForm.component';
+
+import { LayoutWrapper, Main } from './Layout.styles';
 
 interface IProps {
   children: JSX.Element | JSX.Element[];
