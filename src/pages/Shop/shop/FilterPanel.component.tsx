@@ -6,6 +6,7 @@ import {
   GridOptionBtn,
   QueryResult
 } from './FilterPanel.styles';
+
 import { SelectListGroup } from '../../../components/SelectListGroup/SelectListGroup.component';
 import { RangeInput } from '../../../components/RangeInput/RangeInput.component';
 

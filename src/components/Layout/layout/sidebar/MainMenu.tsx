@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { SideDrawer } from '../../../Sidedrawer/SideDrawer.component';
-
 import { ListItem, DropBtn, NavLink } from '../Sidebar.styles';
+
+import { SideDrawer } from '../../../Sidedrawer/SideDrawer.component';
 
 interface IProps {
   showSidebar: boolean;

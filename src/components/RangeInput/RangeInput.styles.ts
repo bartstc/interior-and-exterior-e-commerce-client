@@ -70,7 +70,7 @@ export const InputWrapper = styled.div`
   }
 
   input[type='range']:focus {
-    outline: none;
+    outline-color: ${color.gray};
     &::-webkit-slider-thumb:after {
       position: absolute;
       top: -35px;
@@ -114,7 +114,7 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   display: block;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: ${fontWeight.semiBold};
   text-align: start;
 `;

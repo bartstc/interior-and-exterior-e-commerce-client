@@ -16,11 +16,11 @@ export const FooterWrapper = styled.footer`
 
 export const Paragraph = styled.p`
   color: ${color.gray};
-  font-weight: ${fontWeight.bold};
-  font-size: 1.2rem;
+  font-weight: ${fontWeight.semiBold};
+  font-size: 1.05rem;
   text-transform: uppercase;
 
   @media ${device.tablet} {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 `;

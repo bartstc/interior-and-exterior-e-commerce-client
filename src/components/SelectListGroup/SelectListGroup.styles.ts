@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { fontWeight, color, fontFamily, device } from '../../utils/styles';
 
 interface ISelectProps {
@@ -16,18 +17,18 @@ export const SelectWrapper = styled.div`
 
 export const Label = styled.label`
   display: block;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: ${fontWeight.semiBold};
   text-align: start;
 `;
 
 export const Select = styled.select`
   width: 100%;
-  margin-top: 0.5em;
-  height: 30px;
+  margin-top: 0.3em;
+  height: 36px;
   border: none;
   border-bottom: ${(props: ISelectProps) =>
-    props.error ? '1px solid red' : `1px solid ${color.gray}`};
+    props.error ? '1px solid red' : `1px solid #ccc`};
   color: ${color.gray};
   outline-color: ${color.gray};
   font-family: ${fontFamily.primary};

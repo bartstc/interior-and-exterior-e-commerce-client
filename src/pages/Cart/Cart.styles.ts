@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { device, fontWeight } from '../../utils/styles';
 
 export const CartWrapper = styled.section`

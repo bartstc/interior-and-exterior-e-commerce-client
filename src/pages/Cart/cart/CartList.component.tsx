@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { CartProduct } from './cartList/CartProduct.component';
-
 import { CartListWrapper } from './CartList.styles';
+
+import { CartProduct } from './cartList/CartProduct.component';
 
 export const CartList: React.FC = () => {
   return (

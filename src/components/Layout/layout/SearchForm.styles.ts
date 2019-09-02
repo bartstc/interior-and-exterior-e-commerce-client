@@ -40,6 +40,7 @@ export const SubmitBtn = styled.button`
   font-size: 1.4rem;
   margin-left: 0.6em;
   color: ${color.gray};
+  cursor: pointer;
 
   @media ${device.tablet} {
     font-size: 1.7rem;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import { device, color, fontWeight } from '../../../utils/styles';
 
 export const Wrapper = styled.div`
@@ -45,6 +46,7 @@ export const GridOptionBtn = styled.button`
   align-items: center;
   justify-content: center;
   font-size: 1.7rem;
+  cursor: pointer;
   color: ${(props: { active: boolean }) =>
     props.active ? color.black : '#bbb'};
 `;
@@ -58,7 +60,7 @@ export const QueryResult = styled.p`
   text-align: center;
 
   @media ${device.tablet} {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin: 1em 0;
   }
 

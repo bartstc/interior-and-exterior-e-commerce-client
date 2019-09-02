@@ -20,7 +20,7 @@ export const NavDropdown = styled.div`
   width: 200px;
   padding: 10px;
   left: -40px;
-  top: 36px;
+  top: 28px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   visibility: hidden;
   opacity: 0;
@@ -28,7 +28,7 @@ export const NavDropdown = styled.div`
 `;
 
 export const PageLink = styled(Link)`
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 0.4em;
   font-weight: ${fontWeight.regular};
   color: ${color.gray};
@@ -70,7 +70,7 @@ export const DropListItem = styled.li`
 `;
 
 export const FilterShopBtn = styled.button`
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 0.15em 0;
   font-weight: ${fontWeight.regular};
   color: ${color.gray};

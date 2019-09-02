@@ -8,6 +8,7 @@ export const Wrapper = styled.section`
   flex-direction: column;
   max-width: 500px;
   margin: 0 auto;
+  margin-bottom: 1.4em;
 
   @media ${device.tablet} {
     max-width: 100%;
@@ -15,5 +16,10 @@ export const Wrapper = styled.section`
 
   @media ${device.laptop} {
     padding-top: 1.2em;
+  }
+
+  button {
+    max-width: 320px;
+    align-self: center;
   }
 `;

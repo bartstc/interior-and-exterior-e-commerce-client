@@ -37,13 +37,13 @@ export const Logo = styled(Link)`
 `;
 
 export const LogoTitle = styled.h1`
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: ${color.black};
-  font-weight: ${fontWeight.bold};
+  font-weight: ${fontWeight.semiBold};
   text-transform: uppercase;
 
   @media ${device.tablet} {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -65,7 +65,7 @@ export const Hamburger = styled.button`
   background: none;
   border: none;
   color: ${color.black};
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 
   @media ${device.laptop} {
     display: none;
@@ -77,7 +77,7 @@ export const SearchBtn = styled.button`
   border: none;
   width: 45px;
   height: 45px;
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: ${fontWeight.regular};
   color: ${color.black};
   cursor: pointer;

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { SideDrawer } from '../../../Sidedrawer/SideDrawer.component';
-
 import { ListItem, FilterShopBtn } from '../Sidebar.styles';
+
+import { SideDrawer } from '../../../Sidedrawer/SideDrawer.component';
 
 const interiorLinks = ['Chairs', 'Lamps', 'Clocks', 'Vases'];
 const exteriorLinks = ['Benches', 'Flowerpots', 'Plants'];

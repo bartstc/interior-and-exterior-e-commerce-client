@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { device, fontWeight } from '../../../../utils/styles';
+
+import { device, fontWeight, color } from '../../../../utils/styles';
 
 export const ProductImg = styled.img`
   width: 100%;
@@ -34,23 +35,24 @@ export const ProductDesc = styled.div`
 
 export const ProductName = styled.p`
   flex: 0.7;
-  font-size: 1.1rem;
-  line-height: 1.45rem;
-  font-weight: ${fontWeight.light};
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: ${fontWeight.regular};
+  color: ${color.gray};
 
   @media ${device.laptop} {
-    font-size: 1.3rem;
-    line-height: 1.8rem;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
   }
 `;
 
 export const ProductPrice = styled.p`
   flex: 0.3;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: ${fontWeight.bold};
   text-align: end;
 
   @media ${device.laptop} {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 `;

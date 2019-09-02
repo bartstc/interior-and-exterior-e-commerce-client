@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const color = {
   white: `#FFF`,
   gray: `#666`,
-  black: `#000`
+  black: `#151615`
 };
 
 export const fontFamily = {
@@ -45,5 +45,9 @@ export const GlobalStyle = createGlobalStyle`
     color: ${color.black};
     font-family: ${fontFamily.primary};
     font-weight: ${fontWeight.light};
+  }
+
+  * {
+    outline-color: ${color.white};
   }
 `;
