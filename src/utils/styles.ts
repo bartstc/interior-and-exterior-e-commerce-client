@@ -40,7 +40,7 @@ export const device = {
   desktopL: `(min-width: ${size.desktop})`
 };
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   body {
     color: ${color.black};
     font-family: ${fontFamily.primary};

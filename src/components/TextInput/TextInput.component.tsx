@@ -42,8 +42,6 @@ export const TextInput: React.FC<IProps> = ({
   let isInvalid = null;
   if (invalid && shouldValidate && touched) isInvalid = true;
 
-  console.log(errorMsg);
-
   const checkIfError = () => {
     if (errorMsg) setShowError(true);
   };
@@ -73,6 +71,3 @@ export const TextInput: React.FC<IProps> = ({
     </Wrapper>
   );
 };
-
-// fix performance! shallow render
-// export default React.memo(TextInput);

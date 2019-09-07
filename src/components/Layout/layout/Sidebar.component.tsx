@@ -2,15 +2,15 @@ import React from 'react';
 
 import { useSideDrawer } from '../../../hooks/useSideDrawer';
 import { Backdrop } from '../../Backdrop/Backdrop.component';
-import { CollectionsMenu } from './sidebar/CollectionsMenu';
-import { MainMenu } from './sidebar/MainMenu';
+import { CollectionsMenu } from './sidebar/CollectionsMenu.compnent';
+import { MainMenu } from './sidebar/MainMenu.component';
 
 interface IProps {
   showSidebar: boolean;
   handleCloseSidebar: () => void;
 }
 
-export const SidebarContainer: React.FC<IProps> = ({
+export const Sidebar: React.FC<IProps> = ({
   showSidebar,
   handleCloseSidebar
 }) => {

@@ -6,38 +6,7 @@ import { Button } from '../../../components/Button/Button.component';
 import { TextInput } from '../../../components/TextInput/TextInput.component';
 import { IControls, IControl } from '../../../interfaces/Control.interface';
 import { validate } from '../../../utils/validity';
-
-const signInControls: IControls = {
-  email: {
-    label: 'Enter email',
-    placeholder: '',
-    type: 'email',
-    id: 'signup-email',
-    name: 'email',
-    value: '',
-    validationRules: {
-      required: true,
-      isEmail: true
-    },
-    valid: false,
-    touched: false,
-    errorMsg: ''
-  },
-  password: {
-    label: 'Enter password',
-    placeholder: '',
-    type: 'password',
-    id: 'signup-password',
-    name: 'password',
-    value: '',
-    validationRules: {
-      required: true
-    },
-    valid: false,
-    touched: false,
-    errorMsg: ''
-  }
-};
+import { signInControls } from '../utils/controls';
 
 export const SignIn: React.FC = () => {
   const [controls, setControls] = useState<IControls>(signInControls);
@@ -79,35 +48,14 @@ export const SignIn: React.FC = () => {
   return (
     <AuthForm onSubmit={onSubmit}>
       <Title>Sign In</Title>
-      {inputsArray.map(
-        ({
-          label,
-          placeholder,
-          type,
-          id,
-          name,
-          value,
-          valid,
-          touched,
-          validationRules,
-          errorMsg
-        }) => (
-          <TextInput
-            key={id}
-            label={label}
-            placeholder={placeholder}
-            type={type}
-            id={id}
-            name={name}
-            value={value}
-            onChange={onChange}
-            invalid={!valid}
-            touched={touched}
-            shouldValidate={validationRules}
-            errorMsg={errorMsg}
-          />
-        )
-      )}
+      {inputsArray.map(({ valid, validationRules, ...otherProps }) => (
+        <TextInput
+          invalid={!valid}
+          shouldValidate={validationRules}
+          onChange={onChange}
+          {...otherProps}
+        />
+      ))}
       <Button type="submit">Sign In</Button>
       <InfoText>Don't have an account?</InfoText>
       <AuthLink to="/account/register">Register</AuthLink>

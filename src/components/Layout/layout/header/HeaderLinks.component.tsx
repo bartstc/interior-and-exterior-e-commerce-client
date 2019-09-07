@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import {
   NavList,
@@ -10,6 +12,9 @@ import {
   FilterShopBtn
 } from './HeaderLinks.styles';
 
+import { IStore } from '../../../../modules/rootReducer';
+import { selectIsAuth } from '../../../../modules/user/user.selectors';
+
 const shopLinks = [
   'Chairs',
   'Lamps',
@@ -20,7 +25,11 @@ const shopLinks = [
   'Plants'
 ];
 
-export const HeaderLinks: React.FC = () => (
+interface IProps {
+  isAuth: boolean;
+}
+
+const _HeaderLinks: React.FC<IProps> = ({ isAuth }) => (
   <NavList>
     <NavItem>
       <PageLink to="/shop">
@@ -40,11 +49,23 @@ export const HeaderLinks: React.FC = () => (
     <NavItem>
       <PageLink to="/shop">Shop</PageLink>
     </NavItem>
-    <NavItem>
-      <PageLink to="/account">Account</PageLink>
-    </NavItem>
+    {!isAuth && (
+      <NavItem>
+        <PageLink to="/account">Account</PageLink>
+      </NavItem>
+    )}
     <NavItem>
       <PageLink to="/cart">Cart (1)</PageLink>
     </NavItem>
   </NavList>
 );
+
+interface HeaderLinksSelection {
+  isAuth: boolean;
+}
+
+const mapStateToProps = createStructuredSelector<IStore, HeaderLinksSelection>({
+  isAuth: selectIsAuth
+});
+
+export const HeaderLinks = connect(mapStateToProps)(_HeaderLinks);

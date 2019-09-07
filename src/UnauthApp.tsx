@@ -10,7 +10,7 @@ import { Cart } from './pages/Cart/Cart.component';
 import { Details } from './pages/Details/Details.component';
 import { Auth } from './pages/Auth/Auth.component';
 
-export const App: React.FC = () => (
+const UnauthApp: React.FC = () => (
   <Router>
     <Layout>
       <Switch>
@@ -23,3 +23,5 @@ export const App: React.FC = () => (
     </Layout>
   </Router>
 );
+
+export default UnauthApp;

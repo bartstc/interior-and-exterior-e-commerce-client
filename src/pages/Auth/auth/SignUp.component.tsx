@@ -6,57 +6,7 @@ import { Button } from '../../../components/Button/Button.component';
 import { TextInput } from '../../../components/TextInput/TextInput.component';
 import { IControls, IControl } from '../../../interfaces/Control.interface';
 import { validate } from '../../../utils/validity';
-
-const signUpControls: IControls = {
-  username: {
-    label: 'Enter username',
-    placeholder: '',
-    type: 'text',
-    id: 'signup-username',
-    name: 'username',
-    value: '',
-    validationRules: {
-      required: true,
-      minLength: 4,
-      maxLength: 20
-    },
-    valid: false,
-    touched: false,
-    errorMsg: ''
-  },
-  email: {
-    label: 'Enter email',
-    placeholder: '',
-    type: 'email',
-    id: 'signup-email',
-    name: 'email',
-    value: '',
-    validationRules: {
-      required: true,
-      isEmail: true
-    },
-    valid: false,
-    touched: false,
-    errorMsg: ''
-  },
-  password: {
-    label: 'Enter password',
-    placeholder: '',
-    type: 'password',
-    id: 'signup-password',
-    name: 'password',
-    value: '',
-    validationRules: {
-      required: true,
-      isSecure: true,
-      minLength: 8,
-      maxLength: 20
-    },
-    valid: false,
-    touched: false,
-    errorMsg: ''
-  }
-};
+import { signUpControls } from '../utils/controls';
 
 export const SignUp: React.FC = () => {
   const [controls, setControls] = useState<IControls>(signUpControls);
@@ -98,35 +48,14 @@ export const SignUp: React.FC = () => {
   return (
     <AuthForm onSubmit={onSubmit}>
       <Title>Sign Up for free</Title>
-      {inputsArray.map(
-        ({
-          label,
-          placeholder,
-          type,
-          id,
-          name,
-          value,
-          valid,
-          touched,
-          validationRules,
-          errorMsg
-        }) => (
-          <TextInput
-            key={id}
-            label={label}
-            placeholder={placeholder}
-            type={type}
-            id={id}
-            name={name}
-            value={value}
-            onChange={onChange}
-            invalid={!valid}
-            touched={touched}
-            shouldValidate={validationRules}
-            errorMsg={errorMsg}
-          />
-        )
-      )}
+      {inputsArray.map(({ valid, validationRules, ...otherProps }) => (
+        <TextInput
+          invalid={!valid}
+          shouldValidate={validationRules}
+          onChange={onChange}
+          {...otherProps}
+        />
+      ))}
       <Button type="submit">Sign Up</Button>
       <InfoText>Do you already have an account?</InfoText>
       <AuthLink to="/account">Sign In</AuthLink>

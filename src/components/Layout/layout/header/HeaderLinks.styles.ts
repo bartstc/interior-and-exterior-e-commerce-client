@@ -80,4 +80,9 @@ export const FilterShopBtn = styled.button`
   border: none;
   text-align: start;
   cursor: pointer;
+  transition: padding-left 0.25s ease-in-out;
+
+  &:hover {
+    padding-left: 0.7em;
+  }
 `;

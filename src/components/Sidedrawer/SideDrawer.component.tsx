@@ -7,7 +7,7 @@ interface IProps {
   zIndex: number;
   title: string;
   handleClose: () => void;
-  children: JSX.Element | JSX.Element[];
+  children: JSX.Element | JSX.Element[] | any;
 }
 
 export const SideDrawer: React.FC<IProps> = ({

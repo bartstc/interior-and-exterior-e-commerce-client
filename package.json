@@ -7,11 +7,18 @@
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
+    "@types/react-redux": "^7.1.2",
     "@types/react-router-dom": "^4.3.5",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-redux": "^7.1.1",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.0.5",
+    "reselect": "^4.0.0",
     "styled-components": "^4.3.2",
     "typescript": "3.5.3"
   },
@@ -21,6 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -37,6 +45,11 @@
     ]
   },
   "devDependencies": {
+    "@types/redux": "^3.6.0",
+    "@types/redux-logger": "^3.0.7",
+    "@types/redux-persist": "^4.3.1",
+    "@types/redux-saga": "^0.10.5",
+    "@types/reselect": "^2.2.0",
     "@types/styled-components": "^4.1.18"
   }
 }

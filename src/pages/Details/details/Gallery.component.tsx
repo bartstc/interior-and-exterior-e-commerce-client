@@ -1,3 +1,5 @@
+// TODO: remove all any!
+
 import React, { useState, useRef } from 'react';
 
 import {
@@ -10,12 +12,12 @@ import {
 import testImage from '../../../assets/chair.png';
 
 export const Gallery: React.FC = () => {
-  const [previewUrl, setPreviewurl] = useState(testImage);
+  const [previewUrl, setPreviewUrl] = useState(testImage);
   const [fadeIn, setFadeIn] = useState(false);
   const currentImage = useRef(null);
 
   const showImage = (e: any) => {
-    setPreviewurl(e.target.src);
+    setPreviewUrl(e.target.src);
     setFadeIn(true);
 
     setTimeout(() => setFadeIn(false), 500);
