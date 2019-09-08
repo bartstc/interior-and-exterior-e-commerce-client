@@ -15,28 +15,38 @@ import {
   selectAuthError,
   selectIsFetching
 } from '../../../modules/user/user.selectors';
-import { signInStart } from '../../../modules/user/user.actions';
+import { signInStart, clearErrors } from '../../../modules/user/user.actions';
 import { IStore } from '../../../modules/rootReducer';
 
 interface IProps {
   signInStart: typeof signInStart;
+  clearErrors: typeof clearErrors;
   authError: string | null;
   isFetching: boolean;
 }
 
-const _SignIn: React.FC<IProps> = ({ signInStart, authError, isFetching }) => {
+const _SignIn: React.FC<IProps> = ({
+  signInStart,
+  clearErrors,
+  authError,
+  isFetching
+}) => {
   const [controls, setControls] = useState<IControls>(signInControls);
   const [errorMsg, setErrorMsg] = useState<string>('');
+
+  const { email, password } = controls;
+  const formValid = email.valid && password.valid;
 
   useEffect(() => {
     if (authError) {
       setErrorMsg(authError);
       setControls(signInControls);
     }
-  }, [authError]);
 
-  const { email, password } = controls;
-  const validCredentials = email.valid && password.valid;
+    return () => {
+      clearErrors();
+    };
+  }, [authError, clearErrors]);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const updatedControls: IControls = {
@@ -69,7 +79,7 @@ const _SignIn: React.FC<IProps> = ({ signInStart, authError, isFetching }) => {
       password: password.value
     };
 
-    validCredentials
+    formValid
       ? signInStart(payload)
       : setErrorMsg('Invalid credentials provided');
   };
@@ -96,7 +106,7 @@ const _SignIn: React.FC<IProps> = ({ signInStart, authError, isFetching }) => {
       {isFetching ? (
         <Spinner />
       ) : (
-        <Button disabled={!validCredentials} type="submit">
+        <Button disabled={!formValid} type="submit">
           Sign In
         </Button>
       )}
@@ -118,5 +128,5 @@ const mapStateToProps = createStructuredSelector<IStore, SignInSelection>({
 
 export const SignIn = connect(
   mapStateToProps,
-  { signInStart }
+  { signInStart, clearErrors }
 )(_SignIn);

@@ -9,7 +9,8 @@ import {
   SignUpStartAction,
   SignUpSuccessAction,
   SignUpFailureAction,
-  SignOutAction
+  SignOutAction,
+  ClearErrorsAction
 } from './user.interfaces';
 import { UserActionTypes } from './user.types';
 
@@ -49,4 +50,8 @@ export const signUpFailure = (error: string): SignUpFailureAction => ({
 
 export const signOut = (): SignOutAction => ({
   type: UserActionTypes.SIGN_OUT
+});
+
+export const clearErrors = (): ClearErrorsAction => ({
+  type: UserActionTypes.CLEAR_ERRORS
 });

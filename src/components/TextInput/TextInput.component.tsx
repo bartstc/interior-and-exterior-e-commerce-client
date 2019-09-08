@@ -67,7 +67,9 @@ export const TextInput: React.FC<IProps> = ({
       <Label shrink={value.length ? true : false} htmlFor={id}>
         {label}
       </Label>
-      <Error showError={showError && invalid}>{errorMsg}</Error>
+      <Error showError={showError && invalid && errorMsg !== ''}>
+        {errorMsg}
+      </Error>
     </Wrapper>
   );
 };

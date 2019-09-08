@@ -11,7 +11,7 @@ import { Spinner } from '../../../components/Spinner/Spinner.component';
 import { IControls, IControl } from '../../../interfaces/Control.interface';
 import { validate } from '../../../utils/validity';
 import { signUpControls } from '../utils/controls';
-import { signUpStart } from '../../../modules/user/user.actions';
+import { signUpStart, clearErrors } from '../../../modules/user/user.actions';
 import { IStore } from '../../../modules/rootReducer';
 import {
   selectAuthError,
@@ -20,23 +20,33 @@ import {
 
 interface IProps {
   signUpStart: typeof signUpStart;
+  clearErrors: typeof clearErrors;
   authError: string | null;
   isFetching: boolean;
 }
 
-const _SignUp: React.FC<IProps> = ({ signUpStart, authError, isFetching }) => {
+const _SignUp: React.FC<IProps> = ({
+  signUpStart,
+  clearErrors,
+  authError,
+  isFetching
+}) => {
   const [controls, setControls] = useState<IControls>(signUpControls);
   const [errorMsg, setErrorMsg] = useState<string>('');
+
+  const { username, email, password } = controls;
+  const formValid = username.valid && email.valid && password.valid;
 
   useEffect(() => {
     if (authError) {
       setErrorMsg(authError);
       setControls(signUpControls);
     }
-  }, [authError]);
 
-  const { username, email, password } = controls;
-  const validCredentials = username.valid && email.valid && password.valid;
+    return () => {
+      clearErrors();
+    };
+  }, [authError, clearErrors]);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const updatedControls: IControls = {
@@ -70,7 +80,7 @@ const _SignUp: React.FC<IProps> = ({ signUpStart, authError, isFetching }) => {
       password: password.value
     };
 
-    validCredentials
+    formValid
       ? signUpStart(payload)
       : setErrorMsg('Invalid credentials provided');
   };
@@ -98,7 +108,7 @@ const _SignUp: React.FC<IProps> = ({ signUpStart, authError, isFetching }) => {
         {isFetching ? (
           <Spinner />
         ) : (
-          <Button disabled={!validCredentials} type="submit">
+          <Button disabled={!formValid} type="submit">
             Sign Up
           </Button>
         )}
@@ -121,5 +131,5 @@ const mapStateToProps = createStructuredSelector<IStore, SignUpSelection>({
 
 export const SignUp = connect(
   mapStateToProps,
-  { signUpStart }
+  { signUpStart, clearErrors }
 )(_SignUp);

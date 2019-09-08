@@ -57,6 +57,12 @@ export const userReducer: Reducer<UserReducerState, UserActions> = (
         isFetching: false
       };
 
+    case UserActionTypes.CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
+      };
+
     default:
       return state;
   }

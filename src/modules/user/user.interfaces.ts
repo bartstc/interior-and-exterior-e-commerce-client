@@ -65,6 +65,10 @@ export interface SignOutAction {
   type: UserActionTypes.SIGN_OUT;
 }
 
+export interface ClearErrorsAction {
+  type: UserActionTypes.CLEAR_ERRORS;
+}
+
 export type UserActions =
   | CheckSessionAction
   | SignInStartAction
@@ -73,4 +77,5 @@ export type UserActions =
   | SignUpStartAction
   | SignUpSuccessAction
   | SignUpFailureAction
-  | SignOutAction;
+  | SignOutAction
+  | ClearErrorsAction;
