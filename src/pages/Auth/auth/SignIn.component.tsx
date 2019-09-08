@@ -1,15 +1,42 @@
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
-import { AuthForm, Title, AuthLink, InfoText } from '../Auth.styles';
+import { AuthForm, Title, AuthLink, InfoText, Error } from '../Auth.styles';
 
 import { Button } from '../../../components/Button/Button.component';
 import { TextInput } from '../../../components/TextInput/TextInput.component';
+import { Spinner } from '../../../components/Spinner/Spinner.component';
+
 import { IControls, IControl } from '../../../interfaces/Control.interface';
 import { validate } from '../../../utils/validity';
 import { signInControls } from '../utils/controls';
+import {
+  selectAuthError,
+  selectIsFetching
+} from '../../../modules/user/user.selectors';
+import { signInStart } from '../../../modules/user/user.actions';
+import { IStore } from '../../../modules/rootReducer';
 
-export const SignIn: React.FC = () => {
+interface IProps {
+  signInStart: typeof signInStart;
+  authError: string | null;
+  isFetching: boolean;
+}
+
+const _SignIn: React.FC<IProps> = ({ signInStart, authError, isFetching }) => {
   const [controls, setControls] = useState<IControls>(signInControls);
+  const [errorMsg, setErrorMsg] = useState<string>('');
+
+  useEffect(() => {
+    if (authError) {
+      setErrorMsg(authError);
+      setControls(signInControls);
+    }
+  }, [authError]);
+
+  const { email, password } = controls;
+  const validCredentials = email.valid && password.valid;
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const updatedControls: IControls = {
@@ -37,7 +64,14 @@ export const SignIn: React.FC = () => {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
 
-    console.log(controls);
+    const payload = {
+      email: email.value,
+      password: password.value
+    };
+
+    validCredentials
+      ? signInStart(payload)
+      : setErrorMsg('Invalid credentials provided');
   };
 
   const inputsArray: IControl[] = [];
@@ -48,17 +82,41 @@ export const SignIn: React.FC = () => {
   return (
     <AuthForm onSubmit={onSubmit}>
       <Title>Sign In</Title>
-      {inputsArray.map(({ valid, validationRules, ...otherProps }) => (
+      <Error showError={errorMsg !== ''}>{errorMsg}</Error>
+      {inputsArray.map(({ id, valid, validationRules, ...otherProps }) => (
         <TextInput
+          key={id}
+          id={id}
           invalid={!valid}
           shouldValidate={validationRules}
           onChange={onChange}
           {...otherProps}
         />
       ))}
-      <Button type="submit">Sign In</Button>
+      {isFetching ? (
+        <Spinner />
+      ) : (
+        <Button disabled={!validCredentials} type="submit">
+          Sign In
+        </Button>
+      )}
       <InfoText>Don't have an account?</InfoText>
       <AuthLink to="/account/register">Register</AuthLink>
     </AuthForm>
   );
 };
+
+interface SignInSelection {
+  authError: string | null;
+  isFetching: boolean;
+}
+
+const mapStateToProps = createStructuredSelector<IStore, SignInSelection>({
+  authError: selectAuthError,
+  isFetching: selectIsFetching
+});
+
+export const SignIn = connect(
+  mapStateToProps,
+  { signInStart }
+)(_SignIn);

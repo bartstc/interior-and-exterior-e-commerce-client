@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 
 import { device, color, fontWeight } from '../../utils/styles';
 
+interface IErrorProps {
+  showError: boolean;
+}
+
 export const AuthWrapper = styled.section`
   width: 100%;
   display: flex;
@@ -74,4 +78,19 @@ export const AuthLink = styled(Link)`
     background: ${color.black};
     color: ${color.white};
   }
+`;
+
+export const Error = styled.span`
+  display: block;
+  font-size: 0.8rem;
+  font-weight: ${fontWeight.semiBold};
+  color: ${color.white};
+  line-height: 40px;
+  width: 100%;
+  background: #ff4a4a;
+  padding: 0 0.9em;
+  border-radius: 11px;
+  height: ${(props: IErrorProps) => (props.showError ? '40px' : '0')};
+  opacity: ${(props: IErrorProps) => (props.showError ? '1' : '0')};
+  transition: all 0.15s ease-in-out;
 `;

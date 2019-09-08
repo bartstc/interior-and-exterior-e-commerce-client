@@ -1,5 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { Redirect } from 'react-router-dom';
 
 import './index.css';
 
@@ -10,7 +13,14 @@ import { Cart } from './pages/Cart/Cart.component';
 import { Details } from './pages/Details/Details.component';
 import { Auth } from './pages/Auth/Auth.component';
 
-const UnauthApp: React.FC = () => (
+import { IStore } from './modules/rootReducer';
+import { selectIsAuth } from './modules/user/user.selectors';
+
+interface IProps {
+  isAuth: boolean;
+}
+
+const _UnauthApp: React.FC<IProps> = ({ isAuth }) => (
   <Router>
     <Layout>
       <Switch>
@@ -18,10 +28,21 @@ const UnauthApp: React.FC = () => (
         <Route exact path="/shop" component={Shop} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/product/:id" component={Details} />
-        <Route path="/account" component={Auth} />
+        <Route
+          path="/account"
+          render={() => (isAuth ? <Redirect to="/shop" /> : <Auth />)}
+        />
       </Switch>
     </Layout>
   </Router>
 );
 
-export default UnauthApp;
+interface UnauthAppSelection {
+  isAuth: boolean;
+}
+
+const mapStateToProps = createStructuredSelector<IStore, UnauthAppSelection>({
+  isAuth: selectIsAuth
+});
+
+export default connect(mapStateToProps)(_UnauthApp);

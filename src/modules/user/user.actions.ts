@@ -4,7 +4,6 @@ import {
   SignInCredentials,
   SignInStartAction,
   SignInSuccessAction,
-  AuthError,
   SignInFailureAction,
   SignUpCredentials,
   SignUpStartAction,
@@ -15,39 +14,39 @@ import {
 import { UserActionTypes } from './user.types';
 
 export const checkSession = (): CheckSessionAction => ({
-  type: UserActionTypes.checkSession
+  type: UserActionTypes.CHECK_SESSION
 });
 
 export const signInStart = (creds: SignInCredentials): SignInStartAction => ({
-  type: UserActionTypes.signInStart,
+  type: UserActionTypes.SIGN_IN_START,
   payload: creds
 });
 
 export const signInSuccess = (userData: UserData): SignInSuccessAction => ({
-  type: UserActionTypes.signInSuccess,
+  type: UserActionTypes.SIGN_IN_SUCCESS,
   payload: userData
 });
 
-export const signInFailure = (error: AuthError): SignInFailureAction => ({
-  type: UserActionTypes.signInFailure,
+export const signInFailure = (error: string): SignInFailureAction => ({
+  type: UserActionTypes.SIGN_IN_FAILURE,
   payload: error
 });
 
 export const signUpStart = (creds: SignUpCredentials): SignUpStartAction => ({
-  type: UserActionTypes.signUpStart,
+  type: UserActionTypes.SIGN_UP_START,
   payload: creds
 });
 
 export const signUpSuccess = (userData: UserData): SignUpSuccessAction => ({
-  type: UserActionTypes.signUpSuccess,
+  type: UserActionTypes.SIGN_UP_SUCCESS,
   payload: userData
 });
 
-export const signUpFailure = (error: AuthError): SignUpFailureAction => ({
-  type: UserActionTypes.signUpFailure,
+export const signUpFailure = (error: string): SignUpFailureAction => ({
+  type: UserActionTypes.SIGN_UP_FAILURE,
   payload: error
 });
 
 export const signOut = (): SignOutAction => ({
-  type: UserActionTypes.signOut
+  type: UserActionTypes.SIGN_OUT
 });

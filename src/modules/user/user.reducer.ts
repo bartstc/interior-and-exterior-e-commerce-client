@@ -1,30 +1,47 @@
-import { UserData, AuthError, Action } from './user.interfaces';
+import { Reducer } from 'redux';
+
+import { UserData, UserActions } from './user.interfaces';
 import { UserActionTypes } from './user.types';
 import { isEmpty } from '../../utils/isEmpty';
 
 export interface UserReducerState {
   currentUser: UserData | null;
   isAuth: boolean;
-  error: AuthError | null;
+  error: string | null;
+  isFetching: boolean;
 }
 
 const initState: UserReducerState = {
   currentUser: null,
   isAuth: false,
-  error: null
+  error: null,
+  isFetching: false
 };
 
-export const userReducer = (state = initState, action: Action) => {
+export const userReducer: Reducer<UserReducerState, UserActions> = (
+  state = initState,
+  action
+) => {
   switch (action.type) {
-    case UserActionTypes.signInSuccess:
+    case UserActionTypes.SIGN_IN_SUCCESS:
+    case UserActionTypes.SIGN_UP_SUCCESS:
       return {
         ...state,
         currentUser: action.payload,
         isAuth: !isEmpty(action.payload),
-        error: null
+        error: null,
+        isFetching: false
       };
 
-    case UserActionTypes.signOut:
+    case UserActionTypes.SIGN_IN_START:
+    case UserActionTypes.SIGN_UP_START:
+      return {
+        ...state,
+        error: null,
+        isFetching: true
+      };
+
+    case UserActionTypes.SIGN_OUT:
       return {
         ...state,
         currentUser: null,
@@ -32,11 +49,12 @@ export const userReducer = (state = initState, action: Action) => {
         error: null
       };
 
-    case UserActionTypes.signInFailure:
-    case UserActionTypes.signUpFailure:
+    case UserActionTypes.SIGN_IN_FAILURE:
+    case UserActionTypes.SIGN_UP_FAILURE:
       return {
         ...state,
-        error: action.payload
+        error: action.payload,
+        isFetching: false
       };
 
     default:

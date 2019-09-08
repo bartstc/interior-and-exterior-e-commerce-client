@@ -1,5 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 
 import './index.css';
 
@@ -17,6 +22,7 @@ const AuthApp: React.FC = () => (
         <Route exact path="/shop" component={Shop} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/product/:id" component={Details} />
+        <Route path="/account" render={() => <Redirect to="/shop" />} />
       </Switch>
     </Layout>
   </Router>

@@ -5,6 +5,7 @@ import { createStructuredSelector } from 'reselect';
 import { ListItem, DropBtn, NavLink } from '../Sidebar.styles';
 
 import { SideDrawer } from '../../../SideDrawer/SideDrawer.component';
+
 import { IStore } from '../../../../modules/rootReducer';
 import { selectIsAuth } from '../../../../modules/user/user.selectors';
 

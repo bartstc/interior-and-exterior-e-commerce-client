@@ -4,6 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
+import { rootSaga } from './rootSaga';
 import { rootReducer } from './rootReducer';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -15,7 +16,13 @@ if (process.env.NODE_ENV === 'development') {
   middlewares.push(logger);
 }
 
-const store = createStore(rootReducer, applyMiddleware(...middlewares));
+const store = createStore(
+  rootReducer,
+  undefined,
+  applyMiddleware(...middlewares)
+);
+
+sagaMiddleware.run(rootSaga);
 
 interface IProps {
   children: JSX.Element | JSX.Element[];

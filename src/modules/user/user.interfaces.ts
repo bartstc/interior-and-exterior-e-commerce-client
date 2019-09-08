@@ -7,11 +7,6 @@ export interface UserData {
   username: string;
 }
 
-export interface AuthError {
-  message: string;
-  status: number;
-}
-
 export interface SignInCredentials {
   email: string;
   password: string;
@@ -26,44 +21,44 @@ export interface SignUpCredentials {
 /* ===== Action Interfaces ===== */
 
 export interface CheckSessionAction {
-  type: UserActionTypes.checkSession;
+  type: UserActionTypes.CHECK_SESSION;
 }
 
 export interface SignInStartAction {
-  type: UserActionTypes.signInStart;
+  type: UserActionTypes.SIGN_IN_START;
   payload: SignInCredentials;
 }
 
 export interface SignInSuccessAction {
-  type: UserActionTypes.signInSuccess;
+  type: UserActionTypes.SIGN_IN_SUCCESS;
   payload: UserData;
 }
 
 export interface SignInFailureAction {
-  type: UserActionTypes.signInFailure;
-  payload: AuthError;
+  type: UserActionTypes.SIGN_IN_FAILURE;
+  payload: string;
 }
 
 export interface SignUpStartAction {
-  type: UserActionTypes.signUpStart;
+  type: UserActionTypes.SIGN_UP_START;
   payload: SignUpCredentials;
 }
 
 export interface SignUpSuccessAction {
-  type: UserActionTypes.signUpSuccess;
+  type: UserActionTypes.SIGN_UP_SUCCESS;
   payload: UserData;
 }
 
 export interface SignUpFailureAction {
-  type: UserActionTypes.signUpFailure;
-  payload: AuthError;
+  type: UserActionTypes.SIGN_UP_FAILURE;
+  payload: string;
 }
 
 export interface SignOutAction {
-  type: UserActionTypes.signOut;
+  type: UserActionTypes.SIGN_OUT;
 }
 
-export type Action =
+export type UserActions =
   | CheckSessionAction
   | SignInStartAction
   | SignInSuccessAction

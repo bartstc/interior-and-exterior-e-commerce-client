@@ -18,4 +18,16 @@ export const ButtonWrapper = styled.button`
     background: ${color.white};
     color: ${color.black};
   }
+
+  &:disabled {
+    border: 1.5px solid ${color.gray};
+    background: ${color.gray};
+    opacity: 0.55;
+    cursor: not-allowed;
+
+    &:hover {
+      background: ${color.gray};
+      color: ${color.white};
+    }
+  }
 `;
