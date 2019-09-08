@@ -39,6 +39,20 @@ export const NavLink = styled(Link)`
   padding: 0.5em 0;
 `;
 
+export const SignOutBtn = styled.button`
+  display: block;
+  font-size: 1rem;
+  line-height: 100%;
+  font-weight: ${fontWeight.semiBold};
+  color: ${color.black};
+  text-transform: uppercase;
+  padding: 0.5em 0;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: start;
+`;
+
 export const FilterShopBtn = styled.button`
   width: 100%;
   font-size: 1rem;

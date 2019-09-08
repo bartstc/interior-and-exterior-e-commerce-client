@@ -1,6 +1,6 @@
 import { UserActionTypes } from './user.types';
 
-/* ===== Common Interfaces ===== */
+/* ===== Common User Module Interfaces ===== */
 
 export interface UserData {
   id: string;
@@ -16,6 +16,13 @@ export interface SignUpCredentials {
   username: string;
   email: string;
   password: string;
+}
+
+export interface DecodedData {
+  id: string;
+  username: string;
+  iat: number;
+  exp: number;
 }
 
 /* ===== Action Interfaces ===== */

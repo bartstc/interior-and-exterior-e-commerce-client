@@ -86,3 +86,24 @@ export const FilterShopBtn = styled.button`
     padding-left: 0.7em;
   }
 `;
+
+export const SignOutBtn = styled.button`
+  font-size: 1rem;
+  padding: 0.4em;
+  font-weight: ${fontWeight.regular};
+  color: ${color.gray};
+  border: none;
+  border-bottom: 2px solid ${color.white};
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  background: none;
+
+  &:hover {
+    border-bottom: 2px solid ${color.gray};
+    box-shadow: inset 0 -2px 0 #444;
+  }
+
+  i {
+    margin-left: 0.55em;
+  }
+`;
