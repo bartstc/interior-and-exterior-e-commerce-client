@@ -1,9 +1,9 @@
-import { IValidationRules } from '../interfaces/Control.interface';
+import { ValidationRules } from '../pages/Auth/types';
 
 export const validate = (
   value: string,
   controlName: string,
-  rules: IValidationRules
+  rules: ValidationRules
 ) => {
   let isValid = true;
   let errorMsg = '';

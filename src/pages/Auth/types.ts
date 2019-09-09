@@ -1,4 +1,4 @@
-export interface IValidationRules {
+export interface ValidationRules {
   required?: boolean;
   minLength?: number;
   maxLength?: number;
@@ -6,19 +6,19 @@ export interface IValidationRules {
   isSecure?: boolean;
 }
 
-export interface IControl {
+export interface Control {
   label: string;
   placeholder: string;
   type: string;
   id: string;
   name: string;
   value: string;
-  validationRules: IValidationRules;
+  validationRules: ValidationRules;
   valid: boolean;
   touched: boolean;
   errorMsg: string;
 }
 
-export interface IControls {
-  [key: string]: IControl;
+export interface Controls {
+  [key: string]: Control;
 }

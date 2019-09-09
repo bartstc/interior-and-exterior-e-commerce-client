@@ -7,7 +7,7 @@ import './index.css';
 
 import { GlobalStyles } from './utils/styles';
 import { StoreProvider } from './modules/store';
-import { IStore } from './modules/rootReducer';
+import { Store } from './modules/rootReducer';
 import { selectIsAuth } from './modules/user/user.selectors';
 import { GlobalSpinner } from './components/GlobalSpinner/GlobalSpinner.component';
 import { checkSession } from './modules/user/user.actions';
@@ -42,7 +42,7 @@ interface IndexSelection {
   isAuth: boolean;
 }
 
-const mapStateToProps = createStructuredSelector<IStore, IndexSelection>({
+const mapStateToProps = createStructuredSelector<Store, IndexSelection>({
   isAuth: selectIsAuth
 });
 const Index = connect(

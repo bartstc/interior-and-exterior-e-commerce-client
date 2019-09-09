@@ -8,11 +8,11 @@ import { Button } from '../../../components/Button/Button.component';
 import { TextInput } from '../../../components/TextInput/TextInput.component';
 import { Spinner } from '../../../components/Spinner/Spinner.component';
 
-import { IControls, IControl } from '../../../interfaces/Control.interface';
+import { Controls, Control } from '../types';
 import { validate } from '../../../utils/validity';
-import { signUpControls } from '../utils/controls';
+import { signUpControls } from '../../../utils/controls';
 import { signUpStart, clearErrors } from '../../../modules/user/user.actions';
-import { IStore } from '../../../modules/rootReducer';
+import { Store } from '../../../modules/rootReducer';
 import {
   selectAuthError,
   selectIsFetching
@@ -31,7 +31,7 @@ const _SignUp: React.FC<IProps> = ({
   authError,
   isFetching
 }) => {
-  const [controls, setControls] = useState<IControls>(signUpControls);
+  const [controls, setControls] = useState<Controls>(signUpControls);
   const [errorMsg, setErrorMsg] = useState<string>('');
 
   const { username, email, password } = controls;
@@ -49,7 +49,7 @@ const _SignUp: React.FC<IProps> = ({
   }, [authError, clearErrors]);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const updatedControls: IControls = {
+    const updatedControls: Controls = {
       ...controls,
       [e.target.name]: {
         ...controls[e.target.name],
@@ -85,7 +85,7 @@ const _SignUp: React.FC<IProps> = ({
       : setErrorMsg('Invalid credentials provided');
   };
 
-  const inputsArray: IControl[] = [];
+  const inputsArray: Control[] = [];
   for (let key in controls) {
     inputsArray.push(controls[key]);
   }
@@ -124,7 +124,7 @@ interface SignUpSelection {
   isFetching: boolean;
 }
 
-const mapStateToProps = createStructuredSelector<IStore, SignUpSelection>({
+const mapStateToProps = createStructuredSelector<Store, SignUpSelection>({
   authError: selectAuthError,
   isFetching: selectIsFetching
 });

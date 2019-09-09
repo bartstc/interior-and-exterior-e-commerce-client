@@ -1,6 +1,6 @@
-import { IControls } from '../../../interfaces/Control.interface';
+import { Controls } from '../pages/Auth/types';
 
-export const signInControls: IControls = {
+export const signInControls: Controls = {
   email: {
     label: 'Enter email',
     placeholder: '',
@@ -32,7 +32,7 @@ export const signInControls: IControls = {
   }
 };
 
-export const signUpControls: IControls = {
+export const signUpControls: Controls = {
   username: {
     label: 'Enter username',
     placeholder: '',

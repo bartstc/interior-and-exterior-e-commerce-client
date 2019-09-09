@@ -6,7 +6,7 @@ import { ListItem, DropBtn, NavLink, SignOutBtn } from '../Sidebar.styles';
 
 import { SideDrawer } from '../../../SideDrawer/SideDrawer.component';
 
-import { IStore } from '../../../../modules/rootReducer';
+import { Store } from '../../../../modules/rootReducer';
 import { selectIsAuth } from '../../../../modules/user/user.selectors';
 import { checkSession } from '../../../../modules/user/user.actions';
 
@@ -75,7 +75,7 @@ interface MainMenuSelection {
   isAuth: boolean;
 }
 
-const mapStateToProps = createStructuredSelector<IStore, MainMenuSelection>({
+const mapStateToProps = createStructuredSelector<Store, MainMenuSelection>({
   isAuth: selectIsAuth
 });
 

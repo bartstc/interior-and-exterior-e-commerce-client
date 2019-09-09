@@ -13,7 +13,7 @@ import {
   SignOutBtn
 } from './HeaderLinks.styles';
 
-import { IStore } from '../../../../modules/rootReducer';
+import { Store } from '../../../../modules/rootReducer';
 import { selectIsAuth } from '../../../../modules/user/user.selectors';
 import { checkSession } from '../../../../modules/user/user.actions';
 
@@ -79,7 +79,7 @@ interface HeaderLinksSelection {
   isAuth: boolean;
 }
 
-const mapStateToProps = createStructuredSelector<IStore, HeaderLinksSelection>({
+const mapStateToProps = createStructuredSelector<Store, HeaderLinksSelection>({
   isAuth: selectIsAuth
 });
 

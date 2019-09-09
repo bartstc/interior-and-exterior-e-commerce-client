@@ -8,15 +8,15 @@ import { Button } from '../../../components/Button/Button.component';
 import { TextInput } from '../../../components/TextInput/TextInput.component';
 import { Spinner } from '../../../components/Spinner/Spinner.component';
 
-import { IControls, IControl } from '../../../interfaces/Control.interface';
+import { Controls, Control } from '../types';
 import { validate } from '../../../utils/validity';
-import { signInControls } from '../utils/controls';
+import { signInControls } from '../../../utils/controls';
 import {
   selectAuthError,
   selectIsFetching
 } from '../../../modules/user/user.selectors';
 import { signInStart, clearErrors } from '../../../modules/user/user.actions';
-import { IStore } from '../../../modules/rootReducer';
+import { Store } from '../../../modules/rootReducer';
 
 interface IProps {
   signInStart: typeof signInStart;
@@ -31,7 +31,7 @@ const _SignIn: React.FC<IProps> = ({
   authError,
   isFetching
 }) => {
-  const [controls, setControls] = useState<IControls>(signInControls);
+  const [controls, setControls] = useState<Controls>(signInControls);
   const [errorMsg, setErrorMsg] = useState<string>('');
 
   const { email, password } = controls;
@@ -49,7 +49,7 @@ const _SignIn: React.FC<IProps> = ({
   }, [authError, clearErrors]);
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const updatedControls: IControls = {
+    const updatedControls: Controls = {
       ...controls,
       [e.target.name]: {
         ...controls[e.target.name],
@@ -84,7 +84,7 @@ const _SignIn: React.FC<IProps> = ({
       : setErrorMsg('Invalid credentials provided');
   };
 
-  const inputsArray: IControl[] = [];
+  const inputsArray: Control[] = [];
   for (let key in controls) {
     inputsArray.push(controls[key]);
   }
@@ -121,7 +121,7 @@ interface SignInSelection {
   isFetching: boolean;
 }
 
-const mapStateToProps = createStructuredSelector<IStore, SignInSelection>({
+const mapStateToProps = createStructuredSelector<Store, SignInSelection>({
   authError: selectAuthError,
   isFetching: selectIsFetching
 });

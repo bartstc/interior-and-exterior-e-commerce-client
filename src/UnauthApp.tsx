@@ -13,7 +13,7 @@ import { Cart } from './pages/Cart/Cart.component';
 import { Details } from './pages/Details/Details.component';
 import { Auth } from './pages/Auth/Auth.component';
 
-import { IStore } from './modules/rootReducer';
+import { Store } from './modules/rootReducer';
 import { selectIsAuth } from './modules/user/user.selectors';
 
 interface IProps {
@@ -41,7 +41,7 @@ interface UnauthAppSelection {
   isAuth: boolean;
 }
 
-const mapStateToProps = createStructuredSelector<IStore, UnauthAppSelection>({
+const mapStateToProps = createStructuredSelector<Store, UnauthAppSelection>({
   isAuth: selectIsAuth
 });
 

@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-import { IStore } from '../rootReducer';
+import { Store } from '../rootReducer';
 
-const selectUser = (state: IStore) => state.user;
+const selectUser = (state: Store) => state.user;
 
 export const selectIsAuth = createSelector(
   [selectUser],
