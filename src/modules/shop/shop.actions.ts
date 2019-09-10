@@ -1,7 +1,6 @@
 import { ShopActionTypes } from './shop.types';
 import {
   Type,
-  Query,
   Product,
   FetchProductsByTypeAction,
   FetchProductsByQueryAction,
@@ -15,7 +14,7 @@ export const fetchProductsByType = (type: Type): FetchProductsByTypeAction => ({
 });
 
 export const fetchProductsByQuery = (
-  query: Query
+  query: string
 ): FetchProductsByQueryAction => ({
   type: ShopActionTypes.FETCH_PRODUCTS_BY_QUERY,
   payload: query

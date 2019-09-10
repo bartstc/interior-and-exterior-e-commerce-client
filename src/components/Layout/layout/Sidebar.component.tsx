@@ -37,6 +37,7 @@ export const Sidebar: React.FC<IProps> = ({
         showExterior={showExterior}
         closeInterior={closeInterior}
         closeExterior={closeExterior}
+        handleCloseMenu={closeAll}
       />
     </>
   );

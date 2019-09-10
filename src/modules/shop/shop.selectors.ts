@@ -16,5 +16,5 @@ export const selectShopError = createSelector(
 
 export const selectProducts = createSelector(
   [selectShop],
-  shop => shop.products
+  shop => shop.filteredProducts
 );

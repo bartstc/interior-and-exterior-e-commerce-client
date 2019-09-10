@@ -69,21 +69,19 @@ export const DropListItem = styled.li`
   width: 100%;
 `;
 
-export const FilterShopBtn = styled.button`
+export const FilterShopLink = styled(Link)`
   font-size: 1rem;
   padding: 0.15em 0;
   font-weight: ${fontWeight.regular};
   color: ${color.gray};
   display: block;
   width: 100%;
-  background: none;
-  border: none;
   text-align: start;
   cursor: pointer;
   transition: padding-left 0.25s ease-in-out;
 
   &:hover {
-    padding-left: 0.7em;
+    padding-left: 0.4em;
   }
 `;
 

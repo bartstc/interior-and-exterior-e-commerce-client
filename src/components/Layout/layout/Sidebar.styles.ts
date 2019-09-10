@@ -53,7 +53,8 @@ export const SignOutBtn = styled.button`
   text-align: start;
 `;
 
-export const FilterShopBtn = styled.button`
+export const FilterShopLink = styled(Link)`
+  display: block;
   width: 100%;
   font-size: 1rem;
   line-height: 100%;
@@ -61,8 +62,6 @@ export const FilterShopBtn = styled.button`
   color: ${color.black};
   text-transform: uppercase;
   padding: 0.5em 0;
-  border: none;
-  background: none;
   cursor: pointer;
   text-align: start;
 `;

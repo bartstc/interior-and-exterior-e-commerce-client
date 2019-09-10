@@ -2,15 +2,28 @@ import styled from 'styled-components';
 
 import { device, fontWeight, color } from '../../../../utils/styles';
 
+export const ImageWrapper = styled.figure`
+  height: 310px;
+
+  @media ${device.mobileL} {
+    height: 410px;
+  }
+
+  @media ${device.tablet} {
+    height: 350px;
+  }
+
+  @media ${device.laptop} {
+    height: 440px;
+  }
+`;
+
 export const ProductImg = styled.img`
   width: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 1;
   transition: opacity 0.2s ease-in-out;
-
-  @media ${device.tablet} {
-    max-height: 380px;
-  }
 `;
 
 export const Wrapper = styled.li`

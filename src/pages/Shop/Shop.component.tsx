@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import { Wrapper } from './Shop.styles';
 
 import { FilterPanel } from './shop/FilterPanel.component';
 import { ShopList } from './shop/ShopList.component';
+import { GlobalSpinner } from '../../components/GlobalSpinner/GlobalSpinner.component';
 
-export const Shop: React.FC = () => {
+import { Store } from '../../modules/rootReducer';
+import { selectIsFetching } from '../../modules/shop/shop.selectors';
+
+interface IProps {
+  isFetching: boolean;
+}
+
+const _Shop: React.FC<IProps> = ({ isFetching }) => {
   const [gridColumns, setGridColumns] = useState(2);
+
+  if (isFetching) return <GlobalSpinner />;
 
   return (
     <Wrapper>
@@ -15,3 +27,13 @@ export const Shop: React.FC = () => {
     </Wrapper>
   );
 };
+
+interface ShopSelection {
+  isFetching: boolean;
+}
+
+const mapStateToProps = createStructuredSelector<Store, ShopSelection>({
+  isFetching: selectIsFetching
+});
+
+export const Shop = connect(mapStateToProps)(_Shop);

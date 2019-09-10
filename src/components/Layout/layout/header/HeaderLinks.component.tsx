@@ -9,13 +9,15 @@ import {
   NavDropdown,
   DropList,
   DropListItem,
-  FilterShopBtn,
+  FilterShopLink,
   SignOutBtn
 } from './HeaderLinks.styles';
 
 import { Store } from '../../../../modules/rootReducer';
 import { selectIsAuth } from '../../../../modules/user/user.selectors';
 import { checkSession } from '../../../../modules/user/user.actions';
+import { fetchProductsByType } from '../../../../modules/shop/shop.actions';
+import { Type } from '../../../../modules/shop/shop.interfaces';
 
 const shopLinks = [
   'Chairs',
@@ -30,9 +32,14 @@ const shopLinks = [
 interface IProps {
   isAuth: boolean;
   checkSession: typeof checkSession;
+  fetchProductsByType: typeof fetchProductsByType;
 }
 
-const _HeaderLinks: React.FC<IProps> = ({ isAuth, checkSession }) => {
+const _HeaderLinks: React.FC<IProps> = ({
+  isAuth,
+  checkSession,
+  fetchProductsByType
+}) => {
   const handleLogout = () => {
     localStorage.removeItem('jwtToken');
     checkSession();
@@ -41,7 +48,7 @@ const _HeaderLinks: React.FC<IProps> = ({ isAuth, checkSession }) => {
   return (
     <NavList>
       <NavItem>
-        <PageLink to="/shop">
+        <PageLink onClick={() => fetchProductsByType('all')} to="/shop">
           Products
           <i className="fas fa-caret-down"></i>
         </PageLink>
@@ -49,14 +56,18 @@ const _HeaderLinks: React.FC<IProps> = ({ isAuth, checkSession }) => {
           <DropList>
             {shopLinks.map(linkName => (
               <DropListItem key={linkName}>
-                <FilterShopBtn>{linkName}</FilterShopBtn>
+                <FilterShopLink
+                  onClick={() =>
+                    fetchProductsByType(linkName.toLocaleLowerCase() as Type)
+                  }
+                  to="/shop"
+                >
+                  {linkName}
+                </FilterShopLink>
               </DropListItem>
             ))}
           </DropList>
         </NavDropdown>
-      </NavItem>
-      <NavItem>
-        <PageLink to="/shop">Shop</PageLink>
       </NavItem>
       {!isAuth && (
         <NavItem>
@@ -85,5 +96,5 @@ const mapStateToProps = createStructuredSelector<Store, HeaderLinksSelection>({
 
 export const HeaderLinks = connect(
   mapStateToProps,
-  { checkSession }
+  { checkSession, fetchProductsByType }
 )(_HeaderLinks);

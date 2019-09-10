@@ -1,15 +1,25 @@
-import { Product, ShopActions } from './shop.interfaces';
 import { Reducer } from 'redux';
+
+import { Product, ShopActions, FilterItem } from './shop.interfaces';
 import { ShopActionTypes } from './shop.types';
+import { createFiltersList } from './shop.utils';
 
 export interface ShopReducerState {
-  products: Product[];
+  fetchedProducts: Product[];
+  filteredProducts: Product[];
+  limit: number;
+  colorFilters: FilterItem[];
+  characterFilters: FilterItem[];
   isFetching: boolean;
   error: string | null;
 }
 
 const initState: ShopReducerState = {
-  products: [],
+  fetchedProducts: [],
+  filteredProducts: [],
+  limit: 12,
+  colorFilters: [],
+  characterFilters: [],
   isFetching: false,
   error: null
 };
@@ -29,8 +39,12 @@ export const shopReducer: Reducer<ShopReducerState, ShopActions> = (
     case ShopActionTypes.FETCH_PRODUCTS_SUCCESS:
       return {
         ...state,
-        isFetching: false,
-        products: action.payload
+        fetchedProducts: action.payload,
+        filteredProducts: action.payload.filter((_, i) => i < state.limit),
+        limit: 12,
+        colorFilters: createFiltersList(action.payload, 'color'),
+        characterFilters: createFiltersList(action.payload, 'character'),
+        isFetching: false
       };
 
     case ShopActionTypes.FETCH_PRODUCTS_FAILURE:

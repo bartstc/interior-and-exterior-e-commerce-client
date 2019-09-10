@@ -40,7 +40,9 @@ const _MainMenu: React.FC<IProps> = ({
       title="Interior & Exterior"
     >
       <ListItem>
-        <NavLink to="/">Home</NavLink>
+        <NavLink onClick={handleCloseSidebar} to="/">
+          Home
+        </NavLink>
       </ListItem>
       <ListItem>
         <DropBtn onClick={openInterior}>
@@ -56,7 +58,9 @@ const _MainMenu: React.FC<IProps> = ({
       </ListItem>
       {!isAuth && (
         <ListItem>
-          <NavLink to="/account">Account</NavLink>
+          <NavLink onClick={handleCloseSidebar} to="/account">
+            Account
+          </NavLink>
         </ListItem>
       )}
       {isAuth && (
@@ -65,7 +69,9 @@ const _MainMenu: React.FC<IProps> = ({
         </ListItem>
       )}
       <ListItem>
-        <NavLink to="/cart">Cart (2)</NavLink>
+        <NavLink onClick={handleCloseSidebar} to="/cart">
+          Cart (2)
+        </NavLink>
       </ListItem>
     </SideDrawer>
   );

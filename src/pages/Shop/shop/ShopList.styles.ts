@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { device } from '../../../utils/styles';
+import { device, color } from '../../../utils/styles';
 
 export const ProductList = styled.ul`
   width: 100%;
@@ -14,4 +14,9 @@ export const ProductList = styled.ul`
       `repeat(${props.columns}, 1fr)`};
     grid-column-gap: 2em;
   }
+`;
+
+export const Warning = styled.p`
+  font-size: 1.1rem;
+  color: ${color.gray};
 `;

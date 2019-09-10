@@ -3,22 +3,31 @@ import { Link } from 'react-router-dom';
 
 import {
   Wrapper,
+  ImageWrapper,
   ProductImg,
   ProductDesc,
   ProductName,
   ProductPrice
 } from './Product.styles';
 
-import testImg from '../../../../assets/chair.png';
+import { Product as IProduct } from '../../../../modules/shop/shop.interfaces';
 
-export const Product: React.FC = () => {
+interface IProps {
+  productData: IProduct;
+}
+
+export const Product: React.FC<IProps> = ({
+  productData: { id, images, name, price }
+}) => {
   return (
-    <Link to="/product/1">
+    <Link to={`/product/${id}`}>
       <Wrapper>
-        <ProductImg src={testImg} alt="" />
+        <ImageWrapper>
+          <ProductImg src={images[0]} alt={name} />
+        </ImageWrapper>
         <ProductDesc>
-          <ProductName>Black modern chair</ProductName>
-          <ProductPrice>$ 129.99</ProductPrice>
+          <ProductName>{name}</ProductName>
+          <ProductPrice>$ {price}</ProductPrice>
         </ProductDesc>
       </Wrapper>
     </Link>

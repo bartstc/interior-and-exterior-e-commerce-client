@@ -1,40 +1,48 @@
 import { ShopActionTypes } from './shop.types';
 
-/* ===== Common Shop Module Types ===== */
+/* ===== Common Shop Action Types ===== */
 
-export enum Type {
-  CHAIRS = 'Chairs',
-  LAMPS = 'Lamps',
-  CLOCKS = 'Clocks',
-  VASES = 'Vases',
-  BENCHES = 'Benches',
-  FLOWERPOTS = 'Flowerpots',
-  PLANTS = 'Plants'
-}
-
-export type Query = string;
+export type Type =
+  | 'all'
+  | 'chairs'
+  | 'lamps'
+  | 'clocks'
+  | 'vases'
+  | 'benches'
+  | 'flowerpots'
+  | 'plants';
 
 export interface Product {
+  id: string;
   name: string;
   collection: string;
   type: Type;
-  price: number;
+  price: string;
   color: string;
   character: string;
   description: string;
   images: string[];
 }
 
+export interface FilterItem {
+  description: string;
+  amountOfProducts: number;
+}
+
+export interface FiltersMap {
+  [key: string]: FilterItem;
+}
+
 /* ===== Action Interfaces ===== */
 
 export interface FetchProductsByTypeAction {
   type: ShopActionTypes.FETCH_PRODUCTS_BY_TYPE;
-  payload: Type;
+  payload: string;
 }
 
 export interface FetchProductsByQueryAction {
   type: ShopActionTypes.FETCH_PRODUCTS_BY_QUERY;
-  payload: Query;
+  payload: string;
 }
 
 export interface FetchProductsSuccessAction {
