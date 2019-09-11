@@ -13,6 +13,7 @@ import { Home } from './pages/Home/Home.component';
 import { Shop } from './pages/Shop/Shop.component';
 import { Cart } from './pages/Cart/Cart.component';
 import { Details } from './pages/Details/Details.component';
+import { NotFound } from './pages/NotFound/NotFound.component';
 
 const AuthApp: React.FC = () => (
   <Router>
@@ -23,6 +24,7 @@ const AuthApp: React.FC = () => (
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/product/:id" component={Details} />
         <Route path="/account" render={() => <Redirect to="/shop" />} />
+        <Route component={NotFound} />
       </Switch>
     </Layout>
   </Router>

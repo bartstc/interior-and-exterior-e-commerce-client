@@ -1,6 +1,6 @@
 // TODO: remove all any!
 
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import {
   GalleryWrapper,
@@ -12,9 +12,8 @@ import {
 import testImage from '../../../assets/chair.png';
 
 export const Gallery: React.FC = () => {
-  const [previewUrl, setPreviewUrl] = useState(testImage);
-  const [fadeIn, setFadeIn] = useState(false);
-  const currentImage = useRef(null);
+  const [previewUrl, setPreviewUrl] = useState<string>(testImage);
+  const [fadeIn, setFadeIn] = useState<boolean>(false);
 
   const showImage = (e: any) => {
     setPreviewUrl(e.target.src);
@@ -59,7 +58,6 @@ export const Gallery: React.FC = () => {
         onMouseEnter={zoomIn}
         onMouseLeave={zoomOut}
         onMouseMove={zoomMove}
-        ref={currentImage}
         className={`${fadeIn ? 'fade-in' : ''}`}
         bgUrl={previewUrl}
       ></Preview>

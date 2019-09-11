@@ -1,8 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from 'react-router-dom';
 import { createStructuredSelector } from 'reselect';
-import { Redirect } from 'react-router-dom';
 
 import './index.css';
 
@@ -12,6 +16,7 @@ import { Shop } from './pages/Shop/Shop.component';
 import { Cart } from './pages/Cart/Cart.component';
 import { Details } from './pages/Details/Details.component';
 import { Auth } from './pages/Auth/Auth.component';
+import { NotFound } from './pages/NotFound/NotFound.component';
 
 import { Store } from './modules/rootReducer';
 import { selectIsAuth } from './modules/user/user.selectors';
@@ -32,6 +37,7 @@ const _UnauthApp: React.FC<IProps> = ({ isAuth }) => (
           path="/account"
           render={() => (isAuth ? <Redirect to="/shop" /> : <Auth />)}
         />
+        <Route component={NotFound} />
       </Switch>
     </Layout>
   </Router>
