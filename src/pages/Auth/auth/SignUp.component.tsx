@@ -18,11 +18,14 @@ import {
   selectIsFetching
 } from '../../../modules/user/user.selectors';
 
-interface IProps {
-  signUpStart: typeof signUpStart;
-  clearErrors: typeof clearErrors;
+interface SignUpSelection {
   authError: string | null;
   isFetching: boolean;
+}
+
+interface IProps extends SignUpSelection {
+  signUpStart: typeof signUpStart;
+  clearErrors: typeof clearErrors;
 }
 
 const _SignUp: React.FC<IProps> = ({
@@ -118,11 +121,6 @@ const _SignUp: React.FC<IProps> = ({
     </>
   );
 };
-
-interface SignUpSelection {
-  authError: string | null;
-  isFetching: boolean;
-}
 
 const mapStateToProps = createStructuredSelector<Store, SignUpSelection>({
   authError: selectAuthError,

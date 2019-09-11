@@ -18,11 +18,14 @@ import {
 import { signInStart, clearErrors } from '../../../modules/user/user.actions';
 import { Store } from '../../../modules/rootReducer';
 
-interface IProps {
-  signInStart: typeof signInStart;
-  clearErrors: typeof clearErrors;
+interface SignInSelection {
   authError: string | null;
   isFetching: boolean;
+}
+
+interface IProps extends SignInSelection {
+  signInStart: typeof signInStart;
+  clearErrors: typeof clearErrors;
 }
 
 const _SignIn: React.FC<IProps> = ({
@@ -115,11 +118,6 @@ const _SignIn: React.FC<IProps> = ({
     </AuthForm>
   );
 };
-
-interface SignInSelection {
-  authError: string | null;
-  isFetching: boolean;
-}
 
 const mapStateToProps = createStructuredSelector<Store, SignInSelection>({
   authError: selectAuthError,
