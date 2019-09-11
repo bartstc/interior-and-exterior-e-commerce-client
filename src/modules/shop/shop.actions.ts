@@ -7,7 +7,8 @@ import {
   FetchProductsSuccessAction,
   FetchProductsFailureAction,
   FilterCriteria,
-  FilterProductsAction
+  FilterProductsAction,
+  IncreaseLimitAction
 } from './shop.interfaces';
 
 export const fetchProductsByType = (type: Type): FetchProductsByTypeAction => ({
@@ -41,4 +42,8 @@ export const filterProducts = (
 ): FilterProductsAction => ({
   type: ShopActionTypes.FILTER_PRODUCTS,
   payload: filterCriteria
+});
+
+export const increaseLimit = (): IncreaseLimitAction => ({
+  type: ShopActionTypes.INCREASE_LIMIT
 });

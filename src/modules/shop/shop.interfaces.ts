@@ -66,9 +66,14 @@ export interface FilterProductsAction {
   payload: FilterCriteria;
 }
 
+export interface IncreaseLimitAction {
+  type: ShopActionTypes.INCREASE_LIMIT;
+}
+
 export type ShopActions =
   | FetchProductsByTypeAction
   | FetchProductsByQueryAction
   | FetchProductsSuccessAction
   | FetchProductsFailureAction
-  | FilterProductsAction;
+  | FilterProductsAction
+  | IncreaseLimitAction;

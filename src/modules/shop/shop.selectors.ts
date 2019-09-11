@@ -19,9 +19,19 @@ export const selectFilteredProducts = createSelector(
   shop => shop.filteredProducts
 );
 
+export const selectFilteredProductsAmount = createSelector(
+  [selectFilteredProducts],
+  products => products.length
+);
+
 export const selectFetchedProductsAmount = createSelector(
   [selectShop],
   shop => shop.fetchedProducts.length
+);
+
+export const selectProductsFetched = createSelector(
+  [selectShop],
+  shop => shop.fetchedProducts.length > 0
 );
 
 export const selectColorFilters = createSelector(
@@ -44,7 +54,7 @@ export const selectMaxPrice = createSelector(
   shop => shop.maxPrice
 );
 
-export const selectProductsFetched = createSelector(
+export const selectLimit = createSelector(
   [selectShop],
-  shop => shop.fetchedProducts.length > 0
+  shop => shop.limit
 );

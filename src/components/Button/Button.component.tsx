@@ -7,7 +7,7 @@ interface IProps {
   onClick?: () => void;
   btnType?: string;
   type?: 'button' | 'submit' | 'reset' | undefined;
-  children: JSX.Element | string;
+  children: any;
 }
 
 export const Button: React.FC<IProps> = ({
