@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   Wrapper,
@@ -8,6 +9,9 @@ import {
   ImageWrapper
 } from './Home.styles';
 
+import { fetchProductsByType } from '../../modules/shop/shop.actions';
+import { Type } from '../../modules/shop/shop.interfaces';
+
 import chairsImg from '../../assets/chair.png';
 import lampsImg from '../../assets/lamp.png';
 import clockImg from '../../assets/clock.png';
@@ -15,9 +19,6 @@ import vaseImg from '../../assets/vase.png';
 import benchImg from '../../assets/bench.png';
 import flowerpotImg from '../../assets/flowerpot.png';
 import plantImg from '../../assets/plant.png';
-import { connect } from 'react-redux';
-import { fetchProductsByType } from '../../modules/shop/shop.actions';
-import { Type } from '../../modules/shop/shop.interfaces';
 
 const categories = [
   {

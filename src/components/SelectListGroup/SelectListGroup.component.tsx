@@ -13,7 +13,7 @@ interface IProps {
   name: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
-  options: { value: string; label: string }[];
+  options: { description: string; amountOfProducts: number }[];
   id: string;
   label: string;
   error?: string;
@@ -31,8 +31,8 @@ export const SelectListGroup: React.FC<IProps> = ({
   info
 }) => {
   const selectOptions = options.map((option, i) => (
-    <Option key={i} value={option.value}>
-      {option.label}
+    <Option key={i} value={option.description}>
+      {`${option.description}  (${option.amountOfProducts})`}
     </Option>
   ));
 

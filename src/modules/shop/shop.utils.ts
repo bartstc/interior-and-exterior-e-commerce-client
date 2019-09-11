@@ -1,6 +1,14 @@
-import { Product, FiltersMap, FilterItem } from './shop.interfaces';
+import {
+  Product,
+  FiltersMap,
+  FilterItem,
+  FilterCriteria
+} from './shop.interfaces';
 
 export type FilterType = 'color' | 'character';
+
+export const limitResults = (products: Product[], limit: number): Product[] =>
+  products.filter((_, i) => i < limit);
 
 export const createFiltersList = (
   products: Product[],
@@ -28,4 +36,30 @@ export const createFiltersList = (
   }, filters);
 
   return Object.values(filtersMap);
+};
+
+export const calcMinPrice = (products: Product[]): number =>
+  Math.min(...products.map(prod => parseFloat(prod.price)));
+
+export const calcMaxPrice = (products: Product[]): number =>
+  Math.max(...products.map(prod => parseFloat(prod.price)));
+
+export const filterFetchedProducts = (
+  products: Product[],
+  filters: FilterCriteria
+): Product[] => {
+  let tempProducts = [...products];
+  const { color, character, price } = filters;
+
+  if (color !== 'all') {
+    tempProducts = tempProducts.filter(prod => prod.color === color);
+  }
+
+  if (character !== 'all') {
+    tempProducts = tempProducts.filter(prod => prod.character === character);
+  }
+
+  tempProducts = tempProducts.filter(prod => parseFloat(prod.price) <= price);
+
+  return tempProducts;
 };

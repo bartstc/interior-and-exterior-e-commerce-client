@@ -5,7 +5,9 @@ import {
   FetchProductsByTypeAction,
   FetchProductsByQueryAction,
   FetchProductsSuccessAction,
-  FetchProductsFailureAction
+  FetchProductsFailureAction,
+  FilterCriteria,
+  FilterProductsAction
 } from './shop.interfaces';
 
 export const fetchProductsByType = (type: Type): FetchProductsByTypeAction => ({
@@ -32,4 +34,11 @@ export const fetchProductsFailure = (
 ): FetchProductsFailureAction => ({
   type: ShopActionTypes.FETCH_PRODUCTS_FAILURE,
   payload: error
+});
+
+export const filterProducts = (
+  filterCriteria: FilterCriteria
+): FilterProductsAction => ({
+  type: ShopActionTypes.FILTER_PRODUCTS,
+  payload: filterCriteria
 });

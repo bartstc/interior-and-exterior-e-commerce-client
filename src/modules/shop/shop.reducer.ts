@@ -2,7 +2,13 @@ import { Reducer } from 'redux';
 
 import { Product, ShopActions, FilterItem } from './shop.interfaces';
 import { ShopActionTypes } from './shop.types';
-import { createFiltersList } from './shop.utils';
+import {
+  createFiltersList,
+  calcMinPrice,
+  calcMaxPrice,
+  filterFetchedProducts,
+  limitResults
+} from './shop.utils';
 
 export interface ShopReducerState {
   fetchedProducts: Product[];
@@ -10,6 +16,8 @@ export interface ShopReducerState {
   limit: number;
   colorFilters: FilterItem[];
   characterFilters: FilterItem[];
+  minPrice: number;
+  maxPrice: number;
   isFetching: boolean;
   error: string | null;
 }
@@ -20,6 +28,8 @@ const initState: ShopReducerState = {
   limit: 12,
   colorFilters: [],
   characterFilters: [],
+  minPrice: 0,
+  maxPrice: 500,
   isFetching: false,
   error: null
 };
@@ -40,10 +50,12 @@ export const shopReducer: Reducer<ShopReducerState, ShopActions> = (
       return {
         ...state,
         fetchedProducts: action.payload,
-        filteredProducts: action.payload.filter((_, i) => i < state.limit),
+        filteredProducts: limitResults(action.payload, state.limit),
         limit: 12,
         colorFilters: createFiltersList(action.payload, 'color'),
         characterFilters: createFiltersList(action.payload, 'character'),
+        minPrice: calcMinPrice(action.payload),
+        maxPrice: calcMaxPrice(action.payload),
         isFetching: false
       };
 
@@ -52,6 +64,16 @@ export const shopReducer: Reducer<ShopReducerState, ShopActions> = (
         ...state,
         error: action.payload,
         isFetching: false
+      };
+
+    case ShopActionTypes.FILTER_PRODUCTS:
+      return {
+        ...state,
+        filteredProducts: limitResults(
+          filterFetchedProducts(state.fetchedProducts, action.payload),
+          state.limit
+        ),
+        limit: 12
       };
 
     default:

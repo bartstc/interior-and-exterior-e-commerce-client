@@ -14,7 +14,37 @@ export const selectShopError = createSelector(
   shop => shop.error
 );
 
-export const selectProducts = createSelector(
+export const selectFilteredProducts = createSelector(
   [selectShop],
   shop => shop.filteredProducts
+);
+
+export const selectFetchedProductsAmount = createSelector(
+  [selectShop],
+  shop => shop.fetchedProducts.length
+);
+
+export const selectColorFilters = createSelector(
+  [selectShop],
+  shop => shop.colorFilters
+);
+
+export const selectCharacterFilters = createSelector(
+  [selectShop],
+  shop => shop.characterFilters
+);
+
+export const selectMinPrice = createSelector(
+  [selectShop],
+  shop => shop.minPrice
+);
+
+export const selectMaxPrice = createSelector(
+  [selectShop],
+  shop => shop.maxPrice
+);
+
+export const selectProductsFetched = createSelector(
+  [selectShop],
+  shop => shop.fetchedProducts.length > 0
 );

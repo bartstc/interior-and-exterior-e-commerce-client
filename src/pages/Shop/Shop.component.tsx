@@ -11,9 +11,11 @@ import { GlobalSpinner } from '../../components/GlobalSpinner/GlobalSpinner.comp
 import { Store } from '../../modules/rootReducer';
 import { selectIsFetching } from '../../modules/shop/shop.selectors';
 
-interface IProps {
+interface ShopSelection {
   isFetching: boolean;
 }
+
+interface IProps extends ShopSelection {}
 
 const _Shop: React.FC<IProps> = ({ isFetching }) => {
   const [gridColumns, setGridColumns] = useState(2);
@@ -27,10 +29,6 @@ const _Shop: React.FC<IProps> = ({ isFetching }) => {
     </Wrapper>
   );
 };
-
-interface ShopSelection {
-  isFetching: boolean;
-}
 
 const mapStateToProps = createStructuredSelector<Store, ShopSelection>({
   isFetching: selectIsFetching

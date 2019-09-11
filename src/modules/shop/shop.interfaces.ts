@@ -33,6 +33,12 @@ export interface FiltersMap {
   [key: string]: FilterItem;
 }
 
+export interface FilterCriteria {
+  color: string;
+  character: string;
+  price: number;
+}
+
 /* ===== Action Interfaces ===== */
 
 export interface FetchProductsByTypeAction {
@@ -55,8 +61,14 @@ export interface FetchProductsFailureAction {
   payload: string;
 }
 
+export interface FilterProductsAction {
+  type: ShopActionTypes.FILTER_PRODUCTS;
+  payload: FilterCriteria;
+}
+
 export type ShopActions =
   | FetchProductsByTypeAction
   | FetchProductsByQueryAction
   | FetchProductsSuccessAction
-  | FetchProductsFailureAction;
+  | FetchProductsFailureAction
+  | FilterProductsAction;

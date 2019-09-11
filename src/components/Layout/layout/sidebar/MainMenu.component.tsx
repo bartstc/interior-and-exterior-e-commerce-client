@@ -10,12 +10,15 @@ import { Store } from '../../../../modules/rootReducer';
 import { selectIsAuth } from '../../../../modules/user/user.selectors';
 import { checkSession } from '../../../../modules/user/user.actions';
 
-interface IProps {
+interface MainMenuSelection {
+  isAuth: boolean;
+}
+
+interface IProps extends MainMenuSelection {
   showSidebar: boolean;
   handleCloseSidebar: () => void;
   openInterior: () => void;
   openExterior: () => void;
-  isAuth: boolean;
   checkSession: typeof checkSession;
 }
 
@@ -76,10 +79,6 @@ const _MainMenu: React.FC<IProps> = ({
     </SideDrawer>
   );
 };
-
-interface MainMenuSelection {
-  isAuth: boolean;
-}
 
 const mapStateToProps = createStructuredSelector<Store, MainMenuSelection>({
   isAuth: selectIsAuth

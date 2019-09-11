@@ -29,8 +29,11 @@ const shopLinks = [
   'Plants'
 ];
 
-interface IProps {
+interface HeaderLinksSelection {
   isAuth: boolean;
+}
+
+interface IProps extends HeaderLinksSelection {
   checkSession: typeof checkSession;
   fetchProductsByType: typeof fetchProductsByType;
 }
@@ -85,10 +88,6 @@ const _HeaderLinks: React.FC<IProps> = ({
     </NavList>
   );
 };
-
-interface HeaderLinksSelection {
-  isAuth: boolean;
-}
 
 const mapStateToProps = createStructuredSelector<Store, HeaderLinksSelection>({
   isAuth: selectIsAuth

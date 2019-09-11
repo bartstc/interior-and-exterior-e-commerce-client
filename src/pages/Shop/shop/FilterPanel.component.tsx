@@ -1,4 +1,6 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, useState, useEffect } from 'react';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import {
   Wrapper,
@@ -10,34 +12,55 @@ import {
 import { SelectListGroup } from '../../../components/SelectListGroup/SelectListGroup.component';
 import { RangeInput } from '../../../components/RangeInput/RangeInput.component';
 
-const colors = [
-  { label: 'Black, white ...', value: '' },
-  { label: 'black', value: 'black' },
-  { label: 'white', value: 'white' }
-];
+import {
+  FilterItem,
+  FilterCriteria
+} from '../../../modules/shop/shop.interfaces';
+import { Store } from '../../../modules/rootReducer';
+import {
+  selectColorFilters,
+  selectCharacterFilters,
+  selectFetchedProductsAmount,
+  selectMinPrice,
+  selectMaxPrice
+} from '../../../modules/shop/shop.selectors';
+import { filterProducts } from '../../../modules/shop/shop.actions';
 
-const characters = [
-  { label: 'Modern, classic ...', value: '' },
-  { label: 'modern', value: 'modern' },
-  { label: 'classic', value: 'classic' }
-];
-
-const initState = {
-  color: '',
-  character: '',
-  price: 0
+const initFilters: FilterCriteria = {
+  color: 'all',
+  character: 'all',
+  price: 500
 };
 
-interface IProps {
-  gridColumns: number;
-  setGridColumns: React.Dispatch<React.SetStateAction<number>>;
+interface FilterPanelSelection {
+  colorFilters: FilterItem[];
+  characterFilters: FilterItem[];
+  fetchedProductsAmount: number;
+  minPrice: number;
+  maxPrice: number;
 }
 
-export const FilterPanel: React.FC<IProps> = ({
+interface IProps extends FilterPanelSelection {
+  gridColumns: number;
+  setGridColumns: React.Dispatch<React.SetStateAction<number>>;
+  filterProducts: typeof filterProducts;
+}
+
+const _FilterPanel: React.FC<IProps> = ({
   gridColumns,
-  setGridColumns
+  setGridColumns,
+  colorFilters,
+  characterFilters,
+  fetchedProductsAmount,
+  minPrice,
+  maxPrice,
+  filterProducts
 }) => {
-  const [filters, setFilters] = useState(initState);
+  const [filters, setFilters] = useState<FilterCriteria>(initFilters);
+
+  useEffect(() => {
+    filterProducts(filters);
+  }, [filters, filterProducts]);
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFilters({ ...filters, [e.target.name]: e.target.value });
@@ -50,7 +73,10 @@ export const FilterPanel: React.FC<IProps> = ({
           name="color"
           value={filters.color}
           onChange={onChange}
-          options={colors}
+          options={[
+            { description: 'all', amountOfProducts: fetchedProductsAmount },
+            ...colorFilters
+          ]}
           id="color"
           label="Color"
         />
@@ -58,7 +84,10 @@ export const FilterPanel: React.FC<IProps> = ({
           name="character"
           value={filters.character}
           onChange={onChange}
-          options={characters}
+          options={[
+            { description: 'all', amountOfProducts: fetchedProductsAmount },
+            ...characterFilters
+          ]}
           id="character"
           label="Character"
         />
@@ -66,8 +95,8 @@ export const FilterPanel: React.FC<IProps> = ({
           name="price"
           value={filters.price}
           onChange={onChange}
-          min={0}
-          max={500}
+          min={minPrice}
+          max={maxPrice}
           id="price"
           label="Price"
         />
@@ -90,3 +119,16 @@ export const FilterPanel: React.FC<IProps> = ({
     </>
   );
 };
+
+const mapStateToProps = createStructuredSelector<Store, FilterPanelSelection>({
+  colorFilters: selectColorFilters,
+  characterFilters: selectCharacterFilters,
+  fetchedProductsAmount: selectFetchedProductsAmount,
+  minPrice: selectMinPrice,
+  maxPrice: selectMaxPrice
+});
+
+export const FilterPanel = connect(
+  mapStateToProps,
+  { filterProducts }
+)(_FilterPanel);

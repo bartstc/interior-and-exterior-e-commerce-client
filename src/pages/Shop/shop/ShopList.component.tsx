@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -9,14 +9,32 @@ import { Button } from '../../../components/Button/Button.component';
 
 import { Product as IProduct } from '../../../modules/shop/shop.interfaces';
 import { Store } from '../../../modules/rootReducer';
-import { selectProducts } from '../../../modules/shop/shop.selectors';
+import {
+  selectFilteredProducts,
+  selectProductsFetched
+} from '../../../modules/shop/shop.selectors';
+import { fetchProductsByType } from '../../../modules/shop/shop.actions';
 
-interface IProps {
-  gridColumns: number;
+interface ShopListSelection {
   products: IProduct[];
+  productsFetched: boolean;
 }
 
-const _ShopList: React.FC<IProps> = ({ gridColumns, products }) => {
+interface IProps extends ShopListSelection {
+  gridColumns: number;
+  fetchProductsByType: typeof fetchProductsByType;
+}
+
+const _ShopList: React.FC<IProps> = ({
+  gridColumns,
+  products,
+  productsFetched,
+  fetchProductsByType
+}) => {
+  useEffect(() => {
+    if (!productsFetched) fetchProductsByType('all');
+  }, [productsFetched, fetchProductsByType]);
+
   return !products.length ? (
     <Warning>No resutls.</Warning>
   ) : (
@@ -31,12 +49,12 @@ const _ShopList: React.FC<IProps> = ({ gridColumns, products }) => {
   );
 };
 
-interface ShopListSelection {
-  products: IProduct[];
-}
-
 const mapStateToProps = createStructuredSelector<Store, ShopListSelection>({
-  products: selectProducts
+  products: selectFilteredProducts,
+  productsFetched: selectProductsFetched
 });
 
-export const ShopList = connect(mapStateToProps)(_ShopList);
+export const ShopList = connect(
+  mapStateToProps,
+  { fetchProductsByType }
+)(_ShopList);

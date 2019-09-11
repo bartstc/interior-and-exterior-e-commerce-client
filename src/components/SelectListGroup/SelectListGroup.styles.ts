@@ -32,6 +32,7 @@ export const Select = styled.select`
   color: ${color.gray};
   outline-color: ${color.gray};
   font-family: ${fontFamily.primary};
+  text-transform: capitalize;
 `;
 
 export const Option = styled.option`
@@ -39,6 +40,7 @@ export const Option = styled.option`
   font-family: ${fontFamily.primary};
   font-size: 1.1rem;
   color: ${color.black};
+  text-transform: capitalize;
 
   &::placeholder {
     color: ${color.gray};
