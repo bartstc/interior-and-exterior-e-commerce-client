@@ -1,5 +1,3 @@
-// TODO: remove all any!
-
 import React, { useState } from 'react';
 
 import {
@@ -9,10 +7,12 @@ import {
   Preview
 } from './Gallery.styles';
 
-import testImage from '../../../assets/chair.png';
+interface IProps {
+  imageUrls: string[];
+}
 
-export const Gallery: React.FC = () => {
-  const [previewUrl, setPreviewUrl] = useState<string>(testImage);
+export const Gallery: React.FC<IProps> = ({ imageUrls }) => {
+  const [previewUrl, setPreviewUrl] = useState<string>(imageUrls[0]);
   const [fadeIn, setFadeIn] = useState<boolean>(false);
 
   const showImage = (e: any) => {
@@ -50,9 +50,9 @@ export const Gallery: React.FC = () => {
   return (
     <GalleryWrapper>
       <ImageList>
-        <ImageItem onClick={showImage} src={testImage} alt="" />
-        <ImageItem onClick={showImage} src={testImage} alt="" />
-        <ImageItem onClick={showImage} src={testImage} alt="" />
+        <ImageItem onClick={showImage} src={imageUrls[0]} alt="" />
+        <ImageItem onClick={showImage} src={imageUrls[1]} alt="" />
+        <ImageItem onClick={showImage} src={imageUrls[2]} alt="" />
       </ImageList>
       <Preview
         onMouseEnter={zoomIn}
