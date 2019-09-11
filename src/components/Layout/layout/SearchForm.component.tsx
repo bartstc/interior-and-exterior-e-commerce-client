@@ -1,28 +1,35 @@
 import React, { SyntheticEvent, useState, ChangeEvent } from 'react';
+import { connect } from 'react-redux';
 
 import { Form, SearchInput, SubmitBtn } from './SearchForm.styles';
+import { fetchProductsByQuery } from '../../../modules/shop/shop.actions';
 
 interface IProps {
   toggled: boolean;
   toggleSearchForm: () => void;
+  fetchProductsByQuery: typeof fetchProductsByQuery;
 }
 
-export const SearchForm: React.FC<IProps> = ({ toggled, toggleSearchForm }) => {
-  const [query, setQuery] = useState('');
+const _SearchForm: React.FC<IProps> = ({
+  toggled,
+  toggleSearchForm,
+  fetchProductsByQuery
+}) => {
+  const [query, updateQuery] = useState('');
 
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
 
     if (!query) return;
 
-    setQuery('');
+    updateQuery('');
     toggleSearchForm();
 
-    console.log(query);
+    fetchProductsByQuery(query);
   };
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) =>
-    setQuery(e.target.value);
+    updateQuery(e.target.value);
 
   return (
     <Form toggled={toggled} onSubmit={onSubmit}>
@@ -38,3 +45,8 @@ export const SearchForm: React.FC<IProps> = ({ toggled, toggleSearchForm }) => {
     </Form>
   );
 };
+
+export const SearchForm = connect(
+  null,
+  { fetchProductsByQuery }
+)(_SearchForm);

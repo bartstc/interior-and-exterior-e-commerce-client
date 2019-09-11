@@ -70,10 +70,21 @@ export interface IncreaseLimitAction {
   type: ShopActionTypes.INCREASE_LIMIT;
 }
 
+export interface SetQueryAction {
+  type: ShopActionTypes.SET_QUERY;
+  payload: string;
+}
+
+export interface ClearQueryAction {
+  type: ShopActionTypes.CLEAR_QUERY;
+}
+
 export type ShopActions =
   | FetchProductsByTypeAction
   | FetchProductsByQueryAction
   | FetchProductsSuccessAction
   | FetchProductsFailureAction
   | FilterProductsAction
-  | IncreaseLimitAction;
+  | IncreaseLimitAction
+  | SetQueryAction
+  | ClearQueryAction;

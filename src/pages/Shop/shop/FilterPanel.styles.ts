@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
   max-width: 700px;
   margin: 0 auto;
   position: relative;
+  margin-bottom: 1.4em;
 
   @media ${device.tablet} {
     display: grid;
@@ -21,6 +22,7 @@ export const Wrapper = styled.div`
     padding-right: 130px;
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 2.4em;
+    margin-bottom: 2.8em;
   }
 `;
 
@@ -54,17 +56,16 @@ export const GridOptionBtn = styled.button`
 export const QueryResult = styled.p`
   font-size: 1.1rem;
   font-weight: ${fontWeight.bold};
-  margin: 1em 0;
   color: ${color.black};
   width: 100%;
   text-align: center;
+  margin-bottom: 1.4em;
 
   @media ${device.tablet} {
     font-size: 1.4rem;
-    margin: 1em 0;
   }
 
   @media ${device.laptop} {
-    margin: 1.8em 0;
+    margin-bottom: 2.8em;
   }
 `;

@@ -58,3 +58,8 @@ export const selectLimit = createSelector(
   [selectShop],
   shop => shop.limit
 );
+
+export const selectQuery = createSelector(
+  [selectShop],
+  shop => shop.query
+);

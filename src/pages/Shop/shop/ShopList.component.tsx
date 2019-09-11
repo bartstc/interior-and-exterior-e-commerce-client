@@ -13,7 +13,8 @@ import {
   selectFilteredProducts,
   selectProductsFetched,
   selectFilteredProductsAmount,
-  selectLimit
+  selectLimit,
+  selectQuery
 } from '../../../modules/shop/shop.selectors';
 import {
   fetchProductsByType,
@@ -25,6 +26,7 @@ interface ShopListSelection {
   filteredProductsAmount: number;
   productsFetched: boolean;
   limit: number;
+  query: string;
 }
 
 interface IProps extends ShopListSelection {
@@ -38,13 +40,14 @@ const _ShopList: React.FC<IProps> = ({
   productsFetched,
   filteredProductsAmount,
   limit,
+  query,
   gridColumns,
   fetchProductsByType,
   increaseLimit
 }) => {
   useEffect(() => {
-    if (!productsFetched) fetchProductsByType('all');
-  }, [productsFetched, fetchProductsByType]);
+    if (!productsFetched && !query) fetchProductsByType('all');
+  }, [productsFetched, query, fetchProductsByType]);
 
   return !filteredProducts.length ? (
     <Warning>No resutls.</Warning>
@@ -70,7 +73,8 @@ const mapStateToProps = createStructuredSelector<Store, ShopListSelection>({
   filteredProducts: selectFilteredProducts,
   filteredProductsAmount: selectFilteredProductsAmount,
   productsFetched: selectProductsFetched,
-  limit: selectLimit
+  limit: selectLimit,
+  query: selectQuery
 });
 
 export const ShopList = connect(

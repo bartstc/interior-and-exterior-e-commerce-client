@@ -17,6 +17,7 @@ export interface ShopReducerState {
   characterFilters: FilterItem[];
   minPrice: number;
   maxPrice: number;
+  query: string;
   isFetching: boolean;
   error: string | null;
 }
@@ -29,6 +30,7 @@ const initState: ShopReducerState = {
   characterFilters: [],
   minPrice: 0,
   maxPrice: 500,
+  query: '',
   isFetching: false,
   error: null
 };
@@ -72,6 +74,19 @@ export const shopReducer: Reducer<ShopReducerState, ShopActions> = (
       return {
         ...state,
         limit: state.limit + 12
+      };
+
+    case ShopActionTypes.SET_QUERY:
+      console.log(action.payload);
+      return {
+        ...state,
+        query: action.payload
+      };
+
+    case ShopActionTypes.CLEAR_QUERY:
+      return {
+        ...state,
+        query: ''
       };
 
     case ShopActionTypes.FETCH_PRODUCTS_FAILURE:

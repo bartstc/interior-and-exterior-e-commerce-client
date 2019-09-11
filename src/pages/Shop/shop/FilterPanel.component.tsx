@@ -22,7 +22,8 @@ import {
   selectCharacterFilters,
   selectFetchedProductsAmount,
   selectMinPrice,
-  selectMaxPrice
+  selectMaxPrice,
+  selectQuery
 } from '../../../modules/shop/shop.selectors';
 import { filterProducts } from '../../../modules/shop/shop.actions';
 
@@ -38,6 +39,7 @@ interface FilterPanelSelection {
   fetchedProductsAmount: number;
   minPrice: number;
   maxPrice: number;
+  query: string;
 }
 
 interface IProps extends FilterPanelSelection {
@@ -54,6 +56,7 @@ const _FilterPanel: React.FC<IProps> = ({
   fetchedProductsAmount,
   minPrice,
   maxPrice,
+  query,
   filterProducts
 }) => {
   const [filters, setFilters] = useState<FilterCriteria>(initFilters);
@@ -115,7 +118,7 @@ const _FilterPanel: React.FC<IProps> = ({
           </GridOptionBtn>
         </GridOptions>
       </Wrapper>
-      <QueryResult>Search result: "query"</QueryResult>
+      {query && <QueryResult>Search result: "{query}"</QueryResult>}
     </>
   );
 };
@@ -125,7 +128,8 @@ const mapStateToProps = createStructuredSelector<Store, FilterPanelSelection>({
   characterFilters: selectCharacterFilters,
   fetchedProductsAmount: selectFetchedProductsAmount,
   minPrice: selectMinPrice,
-  maxPrice: selectMaxPrice
+  maxPrice: selectMaxPrice,
+  query: selectQuery
 });
 
 export const FilterPanel = connect(
