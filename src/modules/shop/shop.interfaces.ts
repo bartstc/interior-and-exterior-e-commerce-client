@@ -22,6 +22,7 @@ export interface Product {
   character: string;
   description: string;
   images: string[];
+  quantity?: number;
 }
 
 export interface FilterItem {

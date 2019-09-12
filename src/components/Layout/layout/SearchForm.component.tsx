@@ -1,11 +1,12 @@
 import React, { SyntheticEvent, useState, ChangeEvent } from 'react';
 import { connect } from 'react-redux';
+import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import { Form, SearchInput, SubmitBtn } from './SearchForm.styles';
 
 import { fetchProductsByQuery } from '../../../modules/shop/shop.actions';
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   toggled: boolean;
   toggleSearchForm: () => void;
   fetchProductsByQuery: typeof fetchProductsByQuery;
@@ -14,7 +15,9 @@ interface IProps {
 const _SearchForm: React.FC<IProps> = ({
   toggled,
   toggleSearchForm,
-  fetchProductsByQuery
+  fetchProductsByQuery,
+  history,
+  location: { pathname }
 }) => {
   const [query, updateQuery] = useState<string>('');
 
@@ -26,6 +29,7 @@ const _SearchForm: React.FC<IProps> = ({
     updateQuery('');
     toggleSearchForm();
 
+    if (pathname !== '/shop') history.push('/shop');
     fetchProductsByQuery(query);
   };
 
@@ -40,14 +44,16 @@ const _SearchForm: React.FC<IProps> = ({
         onChange={onChange}
         value={query}
       />
-      <SubmitBtn>
+      <SubmitBtn type="submit">
         <i className="far fa-arrow-alt-circle-right"></i>
       </SubmitBtn>
     </Form>
   );
 };
 
-export const SearchForm = connect(
-  null,
-  { fetchProductsByQuery }
-)(_SearchForm);
+export const SearchForm = withRouter(
+  connect(
+    null,
+    { fetchProductsByQuery }
+  )(_SearchForm)
+);

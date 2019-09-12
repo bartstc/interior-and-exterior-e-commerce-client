@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router-dom';
 
 import { DetailsWrapper, Description, MainInfo, Info } from './Details.styles';
@@ -9,14 +10,19 @@ import { Button } from '../../components/Button/Button.component';
 import { Product } from '../../modules/shop/shop.interfaces';
 import { GlobalSpinner } from '../../components/GlobalSpinner/GlobalSpinner.component';
 
+import { addItem } from '../../modules/cart/cart.actions';
+
 type Params = { id: string };
 
-interface IProps extends RouteComponentProps<Params> {}
+interface IProps extends RouteComponentProps<Params> {
+  addItemToCart: typeof addItem;
+}
 
-export const Details: React.FC<IProps> = ({
+const _Details: React.FC<IProps> = ({
   match: {
     params: { id }
-  }
+  },
+  addItemToCart
 }) => {
   const [productData, setProductData] = useState<Product | null>(null);
 
@@ -44,8 +50,13 @@ export const Details: React.FC<IProps> = ({
           <strong>$ {productData.price}</strong>
         </MainInfo>
         <Info>{productData.description}</Info>
-        <Button>Add to cart</Button>
+        <Button onClick={() => addItemToCart(productData)}>Add to cart</Button>
       </Description>
     </DetailsWrapper>
   );
 };
+
+export const Details = connect(
+  null,
+  { addItemToCart: addItem }
+)(_Details);

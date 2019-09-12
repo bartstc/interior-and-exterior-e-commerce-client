@@ -18,7 +18,7 @@ export const createFiltersList = (
 
   if (!products.length) return [];
 
-  const filtersMap = products.reduce((acc, product, _, __) => {
+  const filtersMap = products.reduce((acc, product, _, __): FiltersMap => {
     // If filter item already exists
     if (acc[product[filter]]) {
       acc[product[filter]] = {

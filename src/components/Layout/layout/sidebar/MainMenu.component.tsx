@@ -9,9 +9,11 @@ import { SideDrawer } from '../../../SideDrawer/SideDrawer.component';
 import { Store } from '../../../../modules/rootReducer';
 import { selectIsAuth } from '../../../../modules/user/user.selectors';
 import { checkSession } from '../../../../modules/user/user.actions';
+import { selectCartItemsCount } from '../../../../modules/cart/cart.selectors';
 
 interface MainMenuSelection {
   isAuth: boolean;
+  cartItemsCount: number;
 }
 
 interface IProps extends MainMenuSelection {
@@ -28,6 +30,7 @@ const _MainMenu: React.FC<IProps> = ({
   showSidebar,
   handleCloseSidebar,
   isAuth,
+  cartItemsCount,
   checkSession
 }) => {
   const handleLogout = () => {
@@ -73,7 +76,7 @@ const _MainMenu: React.FC<IProps> = ({
       )}
       <ListItem>
         <NavLink onClick={handleCloseSidebar} to="/cart">
-          Cart (2)
+          Cart ({cartItemsCount})
         </NavLink>
       </ListItem>
     </SideDrawer>
@@ -81,7 +84,8 @@ const _MainMenu: React.FC<IProps> = ({
 };
 
 const mapStateToProps = createStructuredSelector<Store, MainMenuSelection>({
-  isAuth: selectIsAuth
+  isAuth: selectIsAuth,
+  cartItemsCount: selectCartItemsCount
 });
 
 export const MainMenu = connect(

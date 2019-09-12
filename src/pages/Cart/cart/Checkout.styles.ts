@@ -4,6 +4,9 @@ import { fontWeight, color, device } from '../../../utils/styles';
 
 export const CheckoutWrapper = styled.div`
   width: 100%;
+
+  button {
+    margin-bottom: 2em;
 `;
 
 export const Total = styled.p`
