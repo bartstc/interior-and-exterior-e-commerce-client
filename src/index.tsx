@@ -15,8 +15,11 @@ import { checkSession } from './modules/user/user.actions';
 const AuthApp = lazy(() => import('./AuthApp'));
 const UnauthApp = lazy(() => import('./UnauthApp'));
 
-interface IProps {
+interface IndexSelection {
   isAuth: boolean;
+}
+
+interface IProps extends IndexSelection {
   checkSession: typeof checkSession;
 }
 
@@ -37,10 +40,6 @@ const _Index: React.FC<IProps> = ({ isAuth, checkSession }) => {
     </>
   );
 };
-
-interface IndexSelection {
-  isAuth: boolean;
-}
 
 const mapStateToProps = createStructuredSelector<Store, IndexSelection>({
   isAuth: selectIsAuth

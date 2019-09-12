@@ -2,4 +2,4 @@ import React from 'react';
 
 import { Loader } from './Spinner.styles';
 
-export const Spinner = () => <Loader />;
+export const Spinner: React.FC = () => <Loader />;

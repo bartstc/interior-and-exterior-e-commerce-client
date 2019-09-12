@@ -2,6 +2,7 @@ import React, { SyntheticEvent, useState, ChangeEvent } from 'react';
 import { connect } from 'react-redux';
 
 import { Form, SearchInput, SubmitBtn } from './SearchForm.styles';
+
 import { fetchProductsByQuery } from '../../../modules/shop/shop.actions';
 
 interface IProps {
@@ -15,7 +16,7 @@ const _SearchForm: React.FC<IProps> = ({
   toggleSearchForm,
   fetchProductsByQuery
 }) => {
-  const [query, updateQuery] = useState('');
+  const [query, updateQuery] = useState<string>('');
 
   const onSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
