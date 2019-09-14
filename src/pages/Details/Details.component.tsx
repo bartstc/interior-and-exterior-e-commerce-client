@@ -14,11 +14,11 @@ import { addItem } from '../../modules/cart/cart.actions';
 
 type Params = { id: string };
 
-interface IProps extends RouteComponentProps<Params> {
+interface DetailsProps extends RouteComponentProps<Params> {
   addItemToCart: typeof addItem;
 }
 
-const _Details: React.FC<IProps> = ({
+export const _Details: React.FC<DetailsProps> = ({
   match: {
     params: { id }
   },

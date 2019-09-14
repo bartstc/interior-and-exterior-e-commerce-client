@@ -19,14 +19,14 @@ import {
   clearItemFromCart
 } from '../../../../modules/cart/cart.actions';
 
-interface IProps {
+interface CartProductProps {
   cartItemData: Product;
   removeItem: typeof removeItem;
   addItem: typeof addItem;
   clearItemFromCart: typeof clearItemFromCart;
 }
 
-const _CartProduct: React.FC<IProps> = ({
+export const _CartProduct: React.FC<CartProductProps> = ({
   cartItemData,
   removeItem,
   addItem,

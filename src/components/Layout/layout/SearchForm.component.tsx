@@ -6,13 +6,13 @@ import { Form, SearchInput, SubmitBtn } from './SearchForm.styles';
 
 import { fetchProductsByQuery } from '../../../modules/shop/shop.actions';
 
-interface IProps extends RouteComponentProps {
+interface SearchFormProps extends RouteComponentProps {
   toggled: boolean;
   toggleSearchForm: () => void;
   fetchProductsByQuery: typeof fetchProductsByQuery;
 }
 
-const _SearchForm: React.FC<IProps> = ({
+export const _SearchForm: React.FC<SearchFormProps> = ({
   toggled,
   toggleSearchForm,
   fetchProductsByQuery,

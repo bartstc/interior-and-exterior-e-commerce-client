@@ -12,12 +12,15 @@ import {
   SearchBtn
 } from './Header.styles';
 
-interface IProps {
+interface HeaderProps {
   handleOpen: () => void;
   toggleSearchForm: () => void;
 }
 
-export const Header: React.FC<IProps> = ({ handleOpen, toggleSearchForm }) => {
+export const Header: React.FC<HeaderProps> = ({
+  handleOpen,
+  toggleSearchForm
+}) => {
   return (
     <HeaderWrapper>
       <HeaderLimiter>

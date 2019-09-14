@@ -7,11 +7,11 @@ import {
   Preview
 } from './Gallery.styles';
 
-interface IProps {
+interface GalleryProps {
   imageUrls: string[];
 }
 
-export const Gallery: React.FC<IProps> = ({ imageUrls }) => {
+export const Gallery: React.FC<GalleryProps> = ({ imageUrls }) => {
   const [previewUrl, setPreviewUrl] = useState<string>(imageUrls[0]);
   const [fadeIn, setFadeIn] = useState<boolean>(false);
 

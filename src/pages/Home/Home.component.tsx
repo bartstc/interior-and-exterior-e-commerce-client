@@ -51,11 +51,11 @@ const categories = [
   }
 ];
 
-interface IProps {
+interface HomeProps {
   fetchProductsByType: typeof fetchProductsByType;
 }
 
-const _Home: React.FC<IProps> = ({ fetchProductsByType }) => {
+export const _Home: React.FC<HomeProps> = ({ fetchProductsByType }) => {
   return (
     <Wrapper>
       {categories.map(({ title, src }) => (

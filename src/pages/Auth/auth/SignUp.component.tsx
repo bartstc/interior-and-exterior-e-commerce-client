@@ -23,12 +23,12 @@ interface SignUpSelection {
   isFetching: boolean;
 }
 
-interface IProps extends SignUpSelection {
+interface SignUpProps extends SignUpSelection {
   signUpStart: typeof signUpStart;
   clearErrors: typeof clearErrors;
 }
 
-const _SignUp: React.FC<IProps> = ({
+export const _SignUp: React.FC<SignUpProps> = ({
   signUpStart,
   clearErrors,
   authError,

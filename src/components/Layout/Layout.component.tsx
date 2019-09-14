@@ -9,11 +9,11 @@ import { useSideDrawer } from '../../hooks/useSideDrawer';
 import { useToggle } from '../../hooks/useToggle';
 import { SearchForm } from './layout/SearchForm.component';
 
-interface IProps {
+interface LayoutProps {
   children: JSX.Element | JSX.Element[];
 }
 
-export const Layout: React.FC<IProps> = ({ children }) => {
+export const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [showSidebar, openSidebar, closeSidebar] = useSideDrawer();
   const [showSearchForm, toggleSearchForm] = useToggle();
 

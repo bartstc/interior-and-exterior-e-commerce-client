@@ -13,9 +13,9 @@ interface CartItemSelection {
   cartItems: Product[];
 }
 
-interface IProps extends CartItemSelection {}
+interface CartListProps extends CartItemSelection {}
 
-const _CartList: React.FC<IProps> = ({ cartItems }) => {
+export const _CartList: React.FC<CartListProps> = ({ cartItems }) => {
   return !cartItems.length ? (
     <Warning>Cart is empty.</Warning>
   ) : (

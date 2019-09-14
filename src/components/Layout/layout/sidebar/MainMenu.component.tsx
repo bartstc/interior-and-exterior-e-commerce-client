@@ -16,7 +16,7 @@ interface MainMenuSelection {
   cartItemsCount: number;
 }
 
-interface IProps extends MainMenuSelection {
+interface MainMenuProps extends MainMenuSelection {
   showSidebar: boolean;
   handleCloseSidebar: () => void;
   openInterior: () => void;
@@ -24,7 +24,7 @@ interface IProps extends MainMenuSelection {
   checkSession: typeof checkSession;
 }
 
-const _MainMenu: React.FC<IProps> = ({
+export const _MainMenu: React.FC<MainMenuProps> = ({
   openInterior,
   openExterior,
   showSidebar,

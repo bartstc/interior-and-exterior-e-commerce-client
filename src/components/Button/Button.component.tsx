@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ButtonWrapper } from './Button.styles';
 
-interface IProps {
+interface ButtonProps {
   disabled?: boolean;
   onClick?: () => void;
   btnType?: string;
@@ -10,7 +10,7 @@ interface IProps {
   children: any;
 }
 
-export const Button: React.FC<IProps> = ({
+export const Button: React.FC<ButtonProps> = ({
   disabled,
   onClick,
   btnType,

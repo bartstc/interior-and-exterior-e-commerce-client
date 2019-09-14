@@ -9,7 +9,7 @@ import {
   Error
 } from './SelectListGroup.styles';
 
-interface IProps {
+interface SelectListGroupProps {
   name: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
@@ -20,7 +20,7 @@ interface IProps {
   info?: string;
 }
 
-export const SelectListGroup: React.FC<IProps> = ({
+export const SelectListGroup: React.FC<SelectListGroupProps> = ({
   name,
   value,
   onChange,

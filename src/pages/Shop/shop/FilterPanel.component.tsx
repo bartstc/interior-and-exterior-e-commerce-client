@@ -42,13 +42,13 @@ interface FilterPanelSelection {
   query: string;
 }
 
-interface IProps extends FilterPanelSelection {
+interface FilterPanelProps extends FilterPanelSelection {
   gridColumns: number;
   setGridColumns: React.Dispatch<React.SetStateAction<number>>;
   filterProducts: typeof filterProducts;
 }
 
-const _FilterPanel: React.FC<IProps> = ({
+export const _FilterPanel: React.FC<FilterPanelProps> = ({
   gridColumns,
   setGridColumns,
   colorFilters,

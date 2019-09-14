@@ -10,7 +10,7 @@ import {
 
 import './index.css';
 
-import { Layout } from './components/Layout/Layout';
+import { Layout } from './components/Layout/Layout.component';
 import { Home } from './pages/Home/Home.component';
 import { Shop } from './pages/Shop/Shop.component';
 import { Cart } from './pages/Cart/Cart.component';
@@ -21,11 +21,11 @@ import { NotFound } from './pages/NotFound/NotFound.component';
 import { Store } from './modules/rootReducer';
 import { selectIsAuth } from './modules/user/user.selectors';
 
-interface IProps {
+interface UnauthAppProps {
   isAuth: boolean;
 }
 
-const _UnauthApp: React.FC<IProps> = ({ isAuth }) => (
+export const _UnauthApp: React.FC<UnauthAppProps> = ({ isAuth }) => (
   <Router>
     <Layout>
       <Switch>

@@ -8,7 +8,7 @@ import {
   ValidationIcon
 } from './TextInput.styles';
 
-interface IProps {
+interface TextInputProps {
   name: string;
   id: string;
   placeholder: string;
@@ -24,7 +24,7 @@ interface IProps {
   shouldValidate: {} | null;
 }
 
-export const TextInput: React.FC<IProps> = ({
+export const TextInput: React.FC<TextInputProps> = ({
   name,
   id,
   placeholder,

@@ -12,11 +12,11 @@ import {
 
 import { Product as IProduct } from '../../../../modules/shop/shop.interfaces';
 
-interface IProps {
+interface ProductProps {
   productData: IProduct;
 }
 
-export const Product: React.FC<IProps> = ({
+export const Product: React.FC<ProductProps> = ({
   productData: { id, images, name, price }
 }) => {
   return (

@@ -6,12 +6,12 @@ import { MainMenu } from './sidebar/MainMenu.component';
 
 import { useSideDrawer } from '../../../hooks/useSideDrawer';
 
-interface IProps {
+interface SidebarProps {
   showSidebar: boolean;
   handleCloseSidebar: () => void;
 }
 
-export const Sidebar: React.FC<IProps> = ({
+export const Sidebar: React.FC<SidebarProps> = ({
   showSidebar,
   handleCloseSidebar
 }) => {

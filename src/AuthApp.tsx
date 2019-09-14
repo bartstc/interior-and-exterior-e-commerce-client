@@ -8,7 +8,7 @@ import {
 
 import './index.css';
 
-import { Layout } from './components/Layout/Layout';
+import { Layout } from './components/Layout/Layout.component';
 import { Home } from './pages/Home/Home.component';
 import { Shop } from './pages/Shop/Shop.component';
 import { Cart } from './pages/Cart/Cart.component';

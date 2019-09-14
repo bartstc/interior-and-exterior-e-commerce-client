@@ -14,14 +14,16 @@ interface CheckoutSelection {
   total: number;
 }
 
-interface IProps extends CheckoutSelection {
+interface CheckoutProps extends CheckoutSelection {
   clearCart: typeof clearCart;
 }
 
-const _Checkout: React.FC<IProps> = ({ total, clearCart }) => (
+export const _Checkout: React.FC<CheckoutProps> = ({ total, clearCart }) => (
   <CheckoutWrapper>
     <Total>Total: $ {total}</Total>
-    <Button disabled={total === 0}>Checkout</Button>
+    <Button disabled={total === 0} onClick={clearCart}>
+      Checkout
+    </Button>
     <Button disabled={total === 0} onClick={clearCart}>
       Clear Cart
     </Button>

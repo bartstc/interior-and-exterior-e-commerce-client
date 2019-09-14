@@ -2,7 +2,7 @@ import React from 'react';
 
 import { List, Wrapper, Header, Logo, CloseBtn } from './SideDrawer.styles';
 
-interface IProps {
+interface SideDrawerProps {
   toggled: boolean;
   zIndex: number;
   title: string;
@@ -10,7 +10,7 @@ interface IProps {
   children: JSX.Element | JSX.Element[] | any;
 }
 
-export const SideDrawer: React.FC<IProps> = ({
+export const SideDrawer: React.FC<SideDrawerProps> = ({
   toggled,
   zIndex,
   title,

@@ -29,13 +29,13 @@ interface ShopListSelection {
   query: string;
 }
 
-interface IProps extends ShopListSelection {
+interface ShopListProps extends ShopListSelection {
   gridColumns: number;
   fetchProductsByType: typeof fetchProductsByType;
   increaseLimit: typeof increaseLimit;
 }
 
-const _ShopList: React.FC<IProps> = ({
+export const _ShopList: React.FC<ShopListProps> = ({
   filteredProducts,
   productsFetched,
   filteredProductsAmount,

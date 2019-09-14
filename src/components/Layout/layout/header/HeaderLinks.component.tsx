@@ -35,12 +35,12 @@ interface HeaderLinksSelection {
   cartItemsCount: number;
 }
 
-interface IProps extends HeaderLinksSelection {
+interface HeaderLinksProps extends HeaderLinksSelection {
   checkSession: typeof checkSession;
   fetchProductsByType: typeof fetchProductsByType;
 }
 
-const _HeaderLinks: React.FC<IProps> = ({
+export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
   isAuth,
   cartItemsCount,
   checkSession,

@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 
 import { InputWrapper, Label, Info, Input } from './RangeInput.styles';
 
-interface IProps {
+interface RangeInputProps {
   name: string;
   value: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -13,7 +13,7 @@ interface IProps {
   info?: string;
 }
 
-export const RangeInput: React.FC<IProps> = ({
+export const RangeInput: React.FC<RangeInputProps> = ({
   name,
   value,
   onChange,

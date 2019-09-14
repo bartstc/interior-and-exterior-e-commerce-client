@@ -19,13 +19,12 @@ interface IndexSelection {
   isAuth: boolean;
 }
 
-interface IProps extends IndexSelection {
+interface IndexProps extends IndexSelection {
   checkSession: typeof checkSession;
 }
 
-const _Index: React.FC<IProps> = ({ isAuth, checkSession }) => {
+export const _Index: React.FC<IndexProps> = ({ isAuth, checkSession }) => {
   useEffect(() => {
-    console.log('Check session');
     checkSession();
   }, [checkSession]);
 

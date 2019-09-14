@@ -11,7 +11,7 @@ import { Type } from '../../../../modules/shop/shop.interfaces';
 const interiorLinks = ['Chairs', 'Lamps', 'Clocks', 'Vases'];
 const exteriorLinks = ['Benches', 'Flowerpots', 'Plants'];
 
-interface IProps {
+interface CollectionsMenuProps {
   showInterior: boolean;
   showExterior: boolean;
   closeInterior: () => void;
@@ -20,7 +20,7 @@ interface IProps {
   fetchProductsByType: typeof fetchProductsByType;
 }
 
-const _CollectionsMenu: React.FC<IProps> = ({
+const _CollectionsMenu: React.FC<CollectionsMenuProps> = ({
   showInterior,
   showExterior,
   closeInterior,
