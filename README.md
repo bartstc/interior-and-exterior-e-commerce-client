@@ -13,7 +13,7 @@ Full stack project based on React, Node.js and TypeScript. It's a simple concept
 * [TypeScript](https://www.typescriptlang.org/)
 * [Styled-components](https://www.styled-components.com/)
 * [Express](https://expressjs.com/)
-* [TypeORM](https://typeorm.io/#/) ORM
+* [TypeORM](https://typeorm.io/#/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Docker](https://www.docker.com/)
 
