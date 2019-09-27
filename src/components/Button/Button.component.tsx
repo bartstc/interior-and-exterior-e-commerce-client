@@ -18,6 +18,7 @@ export const Button: React.FC<ButtonProps> = ({
   children
 }) => (
   <ButtonWrapper
+    data-testid="ButtonWrapper"
     disabled={disabled}
     onClick={onClick}
     className={[btnType].join(' ')}
