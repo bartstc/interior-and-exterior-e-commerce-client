@@ -8,5 +8,5 @@ interface BackdropProps {
 }
 
 export const Backdrop: React.FC<BackdropProps> = ({ show, handleClose }) => (
-  <Overlay show={show} onClick={handleClose} />
+  <Overlay data-testid="Overlay" show={show} onClick={handleClose} />
 );

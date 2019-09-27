@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HeaderLinks /> renders correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="sc-bdVaJa hDTYr"
+  >
+    <li
+      class="sc-bxivhb icElMN"
+    >
+      <a
+        class="sc-htpNat gyqNkk"
+        href="/shop"
+      >
+        Products
+        <i
+          class="fas fa-caret-down"
+        />
+      </a>
+      <div
+        class="sc-bwzfXH gjnxxD"
+      >
+        <ul
+          class="sc-ifAKCX kqqTha"
+        >
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Chairs
+            </a>
+          </li>
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Lamps
+            </a>
+          </li>
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Clocks
+            </a>
+          </li>
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Vases
+            </a>
+          </li>
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Benches
+            </a>
+          </li>
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Flowerpots
+            </a>
+          </li>
+          <li
+            class="sc-EHOje jTwYBT"
+          >
+            <a
+              class="sc-bZQynM imRHDl"
+              href="/shop"
+            >
+              Plants
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li
+      class="sc-bxivhb icElMN"
+    >
+      <a
+        class="sc-htpNat gyqNkk"
+        href="/account"
+      >
+        Account
+      </a>
+    </li>
+    <li
+      class="sc-bxivhb icElMN"
+    >
+      <a
+        class="sc-htpNat gyqNkk"
+        href="/cart"
+      >
+        Cart (2)
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

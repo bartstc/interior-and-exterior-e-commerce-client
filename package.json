@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/jest": "24.0.18",
+    "@types/jest": "^24.0.18",
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.9.0",
@@ -47,6 +47,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.2.0",
     "@types/axios": "^0.14.0",
     "@types/jwt-decode": "^2.2.1",
     "@types/redux": "^3.6.0",
@@ -54,6 +56,7 @@
     "@types/redux-persist": "^4.3.1",
     "@types/redux-saga": "^0.10.5",
     "@types/reselect": "^2.2.0",
-    "@types/styled-components": "^4.1.18"
+    "@types/styled-components": "^4.1.18",
+    "ts-jest": "^24.1.0"
   }
 }
