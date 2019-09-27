@@ -29,13 +29,13 @@ describe('<Button />', () => {
     expect(getByTestId('ButtonWrapper')).toHaveClass('dark');
   });
 
-  it('contains `submit` tyle', () => {
+  it('contains `submit` type', () => {
     const { getByTestId } = render(<Button type="submit">Submit</Button>);
     expect(getByTestId('ButtonWrapper')).toHaveAttribute('type', 'submit');
   });
 
-  it('contains `Submit` text', () => {
-    const { getByTestId } = render(<Button>Submit</Button>);
-    expect(getByTestId('ButtonWrapper')).toHaveTextContent('Submit');
-  });
+  // it('contains `Submit` text', () => {
+  //   const { getByTestId } = render(<Button>Submit</Button>);
+  //   expect(getByTestId('ButtonWrapper')).toHaveTextContent('Submit');
+  // });
 });

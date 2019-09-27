@@ -9,7 +9,7 @@ import {
   Error
 } from './SelectListGroup.styles';
 
-interface SelectListGroupProps {
+export interface SelectListGroupProps {
   name: string;
   value: string;
   onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
@@ -40,6 +40,7 @@ export const SelectListGroup: React.FC<SelectListGroupProps> = ({
     <SelectWrapper>
       <Label htmlFor={id}>{label}</Label>
       <Select
+        data-testid="Select"
         error={error}
         id={id}
         name={name}
@@ -48,8 +49,8 @@ export const SelectListGroup: React.FC<SelectListGroupProps> = ({
       >
         {selectOptions}
       </Select>
-      {info && <Info>{info}</Info>}
-      {error && <Error>{error}</Error>}
+      {info && <Info data-testid="Info">{info}</Info>}
+      {error && <Error data-testid="Error">{error}</Error>}
     </SelectWrapper>
   );
 };

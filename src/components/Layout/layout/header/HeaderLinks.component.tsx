@@ -35,7 +35,7 @@ interface HeaderLinksSelection {
   cartItemsCount: number;
 }
 
-interface HeaderLinksProps extends HeaderLinksSelection {
+export interface HeaderLinksProps extends HeaderLinksSelection {
   checkSession: typeof checkSession;
   fetchProductsByType: typeof fetchProductsByType;
 }
@@ -54,7 +54,11 @@ export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
   return (
     <NavList>
       <NavItem>
-        <PageLink onClick={() => fetchProductsByType('all')} to="/shop">
+        <PageLink
+          data-testid="PageLink"
+          onClick={() => fetchProductsByType('all')}
+          to="/shop"
+        >
           Products
           <i className="fas fa-caret-down"></i>
         </PageLink>
@@ -63,6 +67,7 @@ export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
             {shopLinks.map(linkName => (
               <DropListItem key={linkName}>
                 <FilterShopLink
+                  data-testid={linkName}
                   onClick={() =>
                     fetchProductsByType(linkName.toLocaleLowerCase() as Type)
                   }
@@ -82,7 +87,9 @@ export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
       )}
       {isAuth && (
         <NavItem>
-          <SignOutBtn onClick={handleLogout}>Logout</SignOutBtn>
+          <SignOutBtn data-testid="SignOutBtn" onClick={handleLogout}>
+            Logout
+          </SignOutBtn>
         </NavItem>
       )}
       <NavItem>

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectListGroup /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa cybiyU"
+  >
+    <label
+      class="sc-bwzfXH gXUSVK"
+      for="products"
+    >
+      Products
+    </label>
+    <select
+      class="sc-htpNat icSsqr"
+      data-testid="Select"
+      id="products"
+      name="products"
+    >
+      <option
+        class="sc-bxivhb kCxNbp"
+        value="Clocks"
+      >
+        Clocks  (2)
+      </option>
+      <option
+        class="sc-bxivhb kCxNbp"
+        value="Lamps"
+      >
+        Lamps  (3)
+      </option>
+    </select>
+  </div>
+</DocumentFragment>
+`;

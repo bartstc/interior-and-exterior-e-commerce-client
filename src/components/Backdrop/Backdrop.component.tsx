@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Overlay } from './Backdrop.styles';
 
-interface BackdropProps {
+export interface BackdropProps {
   show: boolean;
   handleClose: () => void;
 }

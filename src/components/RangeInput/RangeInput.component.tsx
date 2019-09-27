@@ -2,7 +2,7 @@ import React, { ChangeEvent } from 'react';
 
 import { InputWrapper, Label, Info, Input } from './RangeInput.styles';
 
-interface RangeInputProps {
+export interface RangeInputProps {
   name: string;
   value: number;
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
@@ -27,6 +27,7 @@ export const RangeInput: React.FC<RangeInputProps> = ({
     <InputWrapper>
       <Label htmlFor={id}>{label}</Label>
       <Input
+        data-testid="Input"
         type="range"
         name={name}
         value={value}
@@ -35,7 +36,7 @@ export const RangeInput: React.FC<RangeInputProps> = ({
         max={max}
         id={id}
       />
-      {info && <Info>{info}</Info>}
+      {info && <Info data-testid="Info">{info}</Info>}
     </InputWrapper>
   );
 };

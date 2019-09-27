@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RangeInput /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa iBRfwy"
+  >
+    <label
+      class="sc-htpNat huOBHo"
+      for="price"
+    >
+      price
+    </label>
+    <input
+      class="sc-bwzfXH gcNwFy"
+      data-testid="Input"
+      id="price"
+      max="100"
+      min="0"
+      name="price"
+      type="range"
+      value="0"
+    />
+  </div>
+</DocumentFragment>
+`;

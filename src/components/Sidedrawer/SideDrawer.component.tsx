@@ -2,7 +2,7 @@ import React from 'react';
 
 import { List, Wrapper, Header, Logo, CloseBtn } from './SideDrawer.styles';
 
-interface SideDrawerProps {
+export interface SideDrawerProps {
   toggled: boolean;
   zIndex: number;
   title: string;
@@ -17,10 +17,10 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
   handleClose,
   children
 }) => (
-  <Wrapper toggled={toggled} zIndex={zIndex}>
+  <Wrapper data-testid="Wrapper" toggled={toggled} zIndex={zIndex}>
     <Header>
       <Logo>{title}</Logo>
-      <CloseBtn onClick={handleClose}>
+      <CloseBtn data-testid="CloseBtn" onClick={handleClose}>
         <i className="far fa-times-circle"></i>
       </CloseBtn>
     </Header>

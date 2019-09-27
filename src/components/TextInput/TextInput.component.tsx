@@ -8,7 +8,7 @@ import {
   ValidationIcon
 } from './TextInput.styles';
 
-interface TextInputProps {
+export interface TextInputProps {
   name: string;
   id: string;
   placeholder: string;
@@ -49,6 +49,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   return (
     <Wrapper>
       <Input
+        data-testid="Input"
         type={type}
         id={id}
         placeholder={placeholder}
@@ -57,17 +58,28 @@ export const TextInput: React.FC<TextInputProps> = ({
         onChange={onChange}
         onBlur={checkIfError}
       />
-      <ValidationIcon isInvalid={isInvalid} touched={touched}>
+      <ValidationIcon
+        data-testid="ValidationIcon"
+        isInvalid={isInvalid}
+        touched={touched}
+      >
         {isInvalid ? (
           <i className="fas fa-exclamation-circle"></i>
         ) : (
           <i className="fas fa-check-circle"></i>
         )}
       </ValidationIcon>
-      <Label shrink={value.length ? true : false} htmlFor={id}>
+      <Label
+        data-testid="Label"
+        shrink={value.length ? true : false}
+        htmlFor={id}
+      >
         {label}
       </Label>
-      <Error showError={showError && invalid && errorMsg !== ''}>
+      <Error
+        data-testid="Error"
+        showError={showError && invalid && errorMsg !== ''}
+      >
         {errorMsg}
       </Error>
     </Wrapper>

@@ -1,14 +1,23 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import { _HeaderLinks } from './HeaderLinks.component';
+import { _HeaderLinks, HeaderLinksProps } from './HeaderLinks.component';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 afterEach(cleanup);
 
+const withRouter = (Component: any) => (props: any) => (
+  <Router>
+    <Component {...props} />
+  </Router>
+);
+
+const HeaderLinksWithRouter = withRouter(_HeaderLinks);
+
 describe('<HeaderLinks />', () => {
   const mockCheckSession = jest.fn();
   const mockFetchProductsByType = jest.fn();
-  let props = {
+
+  let props: HeaderLinksProps = {
     isAuth: false,
     cartItemsCount: 2,
     checkSession: mockCheckSession,
@@ -16,40 +25,34 @@ describe('<HeaderLinks />', () => {
   };
 
   it('renders correctly', () => {
-    const { asFragment } = render(
-      <Router>
-        <_HeaderLinks {...props} />
-      </Router>
-    );
+    const { asFragment } = render(HeaderLinksWithRouter(props));
     expect(asFragment()).toMatchSnapshot();
   });
 
-  // it('contains disabled attribute', () => {
-  //   const { getByTestId } = render(<Button disabled={true}>Submit</Button>);
-  //   expect(getByTestId('ButtonWrapper')).toHaveAttribute('disabled', '');
-  // });
+  it('calls `fetchProductsByType` action with `all` arg', () => {
+    const { getByTestId } = render(HeaderLinksWithRouter(props));
+    fireEvent.click(getByTestId('PageLink'));
+    expect(mockFetchProductsByType).toBeCalledWith('all');
+  });
 
-  // it('calls `onClick` function', () => {
-  //   const mockOnClick = jest.fn();
-  //   const { getByTestId } = render(
-  //     <Button onClick={mockOnClick}>Submit</Button>
-  //   );
-  //   fireEvent.click(getByTestId('ButtonWrapper'));
-  //   expect(mockOnClick).toBeCalledTimes(1);
-  // });
+  it('calls `fetchProductsByType` action with `clocks` arg', () => {
+    const { getByTestId } = render(HeaderLinksWithRouter(props));
+    fireEvent.click(getByTestId('Clocks'));
+    expect(mockFetchProductsByType).toBeCalledWith('clocks');
+  });
 
-  // it('contains `dark` class', () => {
-  //   const { getByTestId } = render(<Button btnType="dark">Submit</Button>);
-  //   expect(getByTestId('ButtonWrapper')).toHaveClass('dark');
-  // });
+  it('renders `SignOutBtn` when user is authenticated', () => {
+    const { getByTestId } = render(
+      HeaderLinksWithRouter({ ...props, isAuth: true })
+    );
+    expect(getByTestId('SignOutBtn')).toBeInTheDocument();
+  });
 
-  // it('contains `submit` tyle', () => {
-  //   const { getByTestId } = render(<Button type="submit">Submit</Button>);
-  //   expect(getByTestId('ButtonWrapper')).toHaveAttribute('type', 'submit');
-  // });
-
-  // it('contains `Submit` text', () => {
-  //   const { getByTestId } = render(<Button>Submit</Button>);
-  //   expect(getByTestId('ButtonWrapper')).toHaveTextContent('Submit');
-  // });
+  it('calls `chekcSession` action', () => {
+    const { getByTestId } = render(
+      HeaderLinksWithRouter({ ...props, isAuth: true })
+    );
+    fireEvent.click(getByTestId('SignOutBtn'));
+    expect(mockCheckSession).toHaveBeenCalled();
+  });
 });
