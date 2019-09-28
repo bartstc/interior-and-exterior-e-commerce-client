@@ -6,7 +6,7 @@ import { MainMenu } from './sidebar/MainMenu.component';
 
 import { useSideDrawer } from '../../../hooks/useSideDrawer';
 
-interface SidebarProps {
+export interface SidebarProps {
   showSidebar: boolean;
   handleCloseSidebar: () => void;
 }

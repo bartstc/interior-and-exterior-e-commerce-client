@@ -16,7 +16,7 @@ interface MainMenuSelection {
   cartItemsCount: number;
 }
 
-interface MainMenuProps extends MainMenuSelection {
+export interface MainMenuProps extends MainMenuSelection {
   showSidebar: boolean;
   handleCloseSidebar: () => void;
   openInterior: () => void;

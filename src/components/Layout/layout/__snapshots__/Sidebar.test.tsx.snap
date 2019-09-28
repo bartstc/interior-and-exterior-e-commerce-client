@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Sidebar /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa dYtZKB"
+    data-testid="Overlay"
+  />
+  <nav
+    class="sc-bZQynM iqItME"
+    data-testid="Wrapper"
+  >
+    <header
+      class="sc-gzVnrw bKCIng"
+    >
+      <p
+        class="sc-htoDjs jRzkJg"
+      >
+        Interior & Exterior
+      </p>
+      <button
+        class="sc-dnqmqq kQUpXo"
+        data-testid="CloseBtn"
+      >
+        <i
+          class="far fa-times-circle"
+        />
+      </button>
+    </header>
+    <ul
+      class="sc-iwsKbI eYDWRz"
+    >
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-bxivhb lihdYJ"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <button
+          class="sc-htpNat kkSxPI"
+        >
+          Interior
+          <i
+            class="fas fa-angle-right"
+          />
+        </button>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <button
+          class="sc-htpNat kkSxPI"
+        >
+          Exterior
+          <i
+            class="fas fa-angle-right"
+          />
+        </button>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-bxivhb lihdYJ"
+          href="/account"
+        >
+          Account
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-bxivhb lihdYJ"
+          href="/cart"
+        >
+          Cart (0)
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav
+    class="sc-bZQynM iUfhKQ"
+    data-testid="Wrapper"
+  >
+    <header
+      class="sc-gzVnrw bKCIng"
+    >
+      <p
+        class="sc-htoDjs jRzkJg"
+      >
+        Interior
+      </p>
+      <button
+        class="sc-dnqmqq kQUpXo"
+        data-testid="CloseBtn"
+      >
+        <i
+          class="far fa-times-circle"
+        />
+      </button>
+    </header>
+    <ul
+      class="sc-iwsKbI eYDWRz"
+    >
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          data-testid="Chairs"
+          href="/shop"
+        >
+          Chairs
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          data-testid="Lamps"
+          href="/shop"
+        >
+          Lamps
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          data-testid="Clocks"
+          href="/shop"
+        >
+          Clocks
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          data-testid="Vases"
+          href="/shop"
+        >
+          Vases
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <nav
+    class="sc-bZQynM iUfhKQ"
+    data-testid="Wrapper"
+  >
+    <header
+      class="sc-gzVnrw bKCIng"
+    >
+      <p
+        class="sc-htoDjs jRzkJg"
+      >
+        Exterior
+      </p>
+      <button
+        class="sc-dnqmqq kQUpXo"
+        data-testid="CloseBtn"
+      >
+        <i
+          class="far fa-times-circle"
+        />
+      </button>
+    </header>
+    <ul
+      class="sc-iwsKbI eYDWRz"
+    >
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          href="/shop"
+        >
+          Benches
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          href="/shop"
+        >
+          Flowerpots
+        </a>
+      </li>
+      <li
+        class="sc-bwzfXH jqkrmo"
+      >
+        <a
+          class="sc-EHOje kfMTkw"
+          href="/shop"
+        >
+          Plants
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

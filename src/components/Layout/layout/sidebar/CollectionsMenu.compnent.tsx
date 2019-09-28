@@ -11,7 +11,7 @@ import { Type } from '../../../../modules/shop/shop.interfaces';
 const interiorLinks = ['Chairs', 'Lamps', 'Clocks', 'Vases'];
 const exteriorLinks = ['Benches', 'Flowerpots', 'Plants'];
 
-interface CollectionsMenuProps {
+export interface CollectionsMenuProps {
   showInterior: boolean;
   showExterior: boolean;
   closeInterior: () => void;
@@ -20,7 +20,7 @@ interface CollectionsMenuProps {
   fetchProductsByType: typeof fetchProductsByType;
 }
 
-const _CollectionsMenu: React.FC<CollectionsMenuProps> = ({
+export const _CollectionsMenu: React.FC<CollectionsMenuProps> = ({
   showInterior,
   showExterior,
   closeInterior,
@@ -44,6 +44,7 @@ const _CollectionsMenu: React.FC<CollectionsMenuProps> = ({
         {interiorLinks.map(linkName => (
           <ListItem key={linkName}>
             <FilterShopLink
+              data-testid={linkName}
               onClick={() => onLinkClick(linkName.toLocaleLowerCase() as Type)}
               to="/shop"
             >

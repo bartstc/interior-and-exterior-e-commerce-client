@@ -6,7 +6,7 @@ import { Form, SearchInput, SubmitBtn } from './SearchForm.styles';
 
 import { fetchProductsByQuery } from '../../../modules/shop/shop.actions';
 
-interface SearchFormProps extends RouteComponentProps {
+export interface SearchFormProps extends RouteComponentProps {
   toggled: boolean;
   toggleSearchForm: () => void;
   fetchProductsByQuery: typeof fetchProductsByQuery;
@@ -37,14 +37,14 @@ export const _SearchForm: React.FC<SearchFormProps> = ({
     updateQuery(e.target.value);
 
   return (
-    <Form toggled={toggled} onSubmit={onSubmit}>
+    <Form data-testid="Form" toggled={toggled} onSubmit={onSubmit}>
       <SearchInput
-        type="subit"
+        type="test"
         placeholder="Search for products ..."
         onChange={onChange}
         value={query}
       />
-      <SubmitBtn type="submit">
+      <SubmitBtn type="submit" title="submit">
         <i className="far fa-arrow-alt-circle-right"></i>
       </SubmitBtn>
     </Form>

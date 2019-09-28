@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CollectionsMenu /> renders correctly 1`] = `
+<DocumentFragment>
+  <nav
+    class="sc-EHOje ixmxSF"
+    data-testid="Wrapper"
+  >
+    <header
+      class="sc-bZQynM lpjVvd"
+    >
+      <p
+        class="sc-gzVnrw dNIQQe"
+      >
+        Interior & Exterior
+      </p>
+      <button
+        class="sc-htoDjs qBCwI"
+        data-testid="CloseBtn"
+      >
+        <i
+          class="far fa-times-circle"
+        />
+      </button>
+    </header>
+    <ul
+      class="sc-dnqmqq eBryZD"
+    >
+      <li
+        class="sc-bdVaJa jqTRNv"
+      >
+        <a
+          class="sc-htpNat hqricr"
+          href="/"
+        >
+          Home
+        </a>
+      </li>
+      <li
+        class="sc-bdVaJa jqTRNv"
+      >
+        <button
+          class="sc-bwzfXH crPdYQ"
+        >
+          Interior
+          <i
+            class="fas fa-angle-right"
+          />
+        </button>
+      </li>
+      <li
+        class="sc-bdVaJa jqTRNv"
+      >
+        <button
+          class="sc-bwzfXH crPdYQ"
+        >
+          Exterior
+          <i
+            class="fas fa-angle-right"
+          />
+        </button>
+      </li>
+      <li
+        class="sc-bdVaJa jqTRNv"
+      >
+        <a
+          class="sc-htpNat hqricr"
+          href="/account"
+        >
+          Account
+        </a>
+      </li>
+      <li
+        class="sc-bdVaJa jqTRNv"
+      >
+        <a
+          class="sc-htpNat hqricr"
+          href="/cart"
+        >
+          Cart (2)
+        </a>
+      </li>
+    </ul>
+  </nav>
+</DocumentFragment>
+`;

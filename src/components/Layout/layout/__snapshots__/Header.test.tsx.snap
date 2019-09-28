@@ -1,0 +1,169 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header /> renders correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="sc-htoDjs dHOETM"
+  >
+    <div
+      class="sc-dnqmqq gTOaEr"
+    >
+      <a
+        class="sc-iwsKbI hQBmBE"
+        href="/"
+      >
+        <h1
+          class="sc-gZMcBi fPQmCU"
+        >
+          Interior & Exterior
+        </h1>
+      </a>
+      <nav
+        class="sc-gqjmRU eqrLjR"
+      >
+        <button
+          aria-label="open menu"
+          class="sc-VigVT fwtpGC"
+          data-testid="Hamburger"
+          title="Menu"
+        >
+          <i
+            class="fas fa-bars"
+          />
+        </button>
+        <ul
+          class="sc-bdVaJa hDTYr"
+        >
+          <li
+            class="sc-bxivhb icElMN"
+          >
+            <a
+              class="sc-htpNat gyqNkk"
+              data-testid="PageLink"
+              href="/shop"
+            >
+              Products
+              <i
+                class="fas fa-caret-down"
+              />
+            </a>
+            <div
+              class="sc-bwzfXH gjnxxD"
+            >
+              <ul
+                class="sc-ifAKCX kqqTha"
+              >
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Chairs"
+                    href="/shop"
+                  >
+                    Chairs
+                  </a>
+                </li>
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Lamps"
+                    href="/shop"
+                  >
+                    Lamps
+                  </a>
+                </li>
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Clocks"
+                    href="/shop"
+                  >
+                    Clocks
+                  </a>
+                </li>
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Vases"
+                    href="/shop"
+                  >
+                    Vases
+                  </a>
+                </li>
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Benches"
+                    href="/shop"
+                  >
+                    Benches
+                  </a>
+                </li>
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Flowerpots"
+                    href="/shop"
+                  >
+                    Flowerpots
+                  </a>
+                </li>
+                <li
+                  class="sc-EHOje jTwYBT"
+                >
+                  <a
+                    class="sc-bZQynM imRHDl"
+                    data-testid="Plants"
+                    href="/shop"
+                  >
+                    Plants
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li
+            class="sc-bxivhb icElMN"
+          >
+            <a
+              class="sc-htpNat gyqNkk"
+              href="/account"
+            >
+              Account
+            </a>
+          </li>
+          <li
+            class="sc-bxivhb icElMN"
+          >
+            <a
+              class="sc-htpNat gyqNkk"
+              href="/cart"
+            >
+              Cart (0)
+            </a>
+          </li>
+        </ul>
+        <button
+          class="sc-jTzLTM kYnXAK"
+          data-testid="SearchBtn"
+        >
+          <i
+            class="fas fa-search"
+          />
+        </button>
+      </nav>
+    </div>
+  </header>
+</DocumentFragment>
+`;

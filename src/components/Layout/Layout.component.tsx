@@ -9,7 +9,7 @@ import { useSideDrawer } from '../../hooks/useSideDrawer';
 import { useToggle } from '../../hooks/useToggle';
 import { SearchForm } from './layout/SearchForm.component';
 
-interface LayoutProps {
+export interface LayoutProps {
   children: JSX.Element | JSX.Element[];
 }
 
