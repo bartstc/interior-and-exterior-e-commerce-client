@@ -21,6 +21,7 @@ Full stack project based on React, Node.js and TypeScript. It's a simple concept
 
 * Learn redux-saga and reselect library
 * Practice React with TypeScript
+* Try react-testing-library
 * Try Docker
 
 ## Preview
