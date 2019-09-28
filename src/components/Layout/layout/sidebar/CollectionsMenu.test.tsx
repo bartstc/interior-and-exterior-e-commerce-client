@@ -1,11 +1,9 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import {
   _CollectionsMenu,
   CollectionsMenuProps
 } from './CollectionsMenu.compnent';
 import { withRouter } from '../../../../utils/testUtils';
-
-afterEach(cleanup);
 
 const CollectionMenuWithRouter = withRouter(_CollectionsMenu);
 
@@ -35,15 +33,15 @@ describe('<CollectionsMenu />', () => {
   });
 
   it('calls `handleCloseMenu` func', () => {
-    const { getByTestId } = setup(props);
-    fireEvent.click(getByTestId('Clocks'));
+    const { getByText } = setup(props);
+    fireEvent.click(getByText('Clocks'));
 
     expect(mockHandleCloseMenu).toHaveBeenCalledTimes(1);
   });
 
   it('calls `fetchProductsByType` action with `clocks` arg', () => {
-    const { getByTestId } = setup(props);
-    fireEvent.click(getByTestId('Clocks'));
+    const { getByText } = setup(props);
+    fireEvent.click(getByText('Clocks'));
 
     expect(mockFetchProductsByType).toBeCalledWith('clocks');
   });

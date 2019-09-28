@@ -1,9 +1,7 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Layout, LayoutProps } from './Layout.component';
 import { withProvider } from '../../utils/testUtils';
-
-beforeEach(cleanup);
 
 const LayoutWithProvider = withProvider(Layout);
 

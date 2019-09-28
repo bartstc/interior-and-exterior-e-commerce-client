@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Backdrop, BackdropProps } from './Backdrop.component';
-
-afterEach(cleanup);
 
 describe('<Backdrop />', () => {
   const mockHandleClose = jest.fn();

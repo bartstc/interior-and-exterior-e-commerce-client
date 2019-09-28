@@ -37,7 +37,7 @@ export const _SearchForm: React.FC<SearchFormProps> = ({
     updateQuery(e.target.value);
 
   return (
-    <Form data-testid="Form" toggled={toggled} onSubmit={onSubmit}>
+    <Form toggled={toggled} onSubmit={onSubmit}>
       <SearchInput
         type="test"
         placeholder="Search for products ..."

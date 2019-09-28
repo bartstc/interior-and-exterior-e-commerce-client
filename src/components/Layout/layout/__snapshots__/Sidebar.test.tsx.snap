@@ -115,7 +115,6 @@ exports[`<Sidebar /> renders correctly 1`] = `
       >
         <a
           class="sc-EHOje kfMTkw"
-          data-testid="Chairs"
           href="/shop"
         >
           Chairs
@@ -126,7 +125,6 @@ exports[`<Sidebar /> renders correctly 1`] = `
       >
         <a
           class="sc-EHOje kfMTkw"
-          data-testid="Lamps"
           href="/shop"
         >
           Lamps
@@ -137,7 +135,6 @@ exports[`<Sidebar /> renders correctly 1`] = `
       >
         <a
           class="sc-EHOje kfMTkw"
-          data-testid="Clocks"
           href="/shop"
         >
           Clocks
@@ -148,7 +145,6 @@ exports[`<Sidebar /> renders correctly 1`] = `
       >
         <a
           class="sc-EHOje kfMTkw"
-          data-testid="Vases"
           href="/shop"
         >
           Vases

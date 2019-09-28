@@ -1,8 +1,6 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { _HeaderLinks, HeaderLinksProps } from './HeaderLinks.component';
 import { withRouter } from '../../../../utils/testUtils';
-
-afterEach(cleanup);
 
 const HeaderLinksWithRouter = withRouter(_HeaderLinks);
 
@@ -28,26 +26,26 @@ describe('<HeaderLinks />', () => {
   });
 
   it('calls `fetchProductsByType` action with `all` arg', () => {
-    const { getByTestId } = setup(props);
-    fireEvent.click(getByTestId('PageLink'));
+    const { getByText } = setup(props);
+    fireEvent.click(getByText('Products'));
     expect(mockFetchProductsByType).toBeCalledWith('all');
   });
 
   it('calls `fetchProductsByType` action with `clocks` arg', () => {
-    const { getByTestId } = setup(props);
-    fireEvent.click(getByTestId('Clocks'));
+    const { getByText } = setup(props);
+    fireEvent.click(getByText('Clocks'));
     expect(mockFetchProductsByType).toBeCalledWith('clocks');
   });
 
   describe('when `isAuth` prop is true', () => {
     it('renders `SignOutBtn` element', () => {
-      const { getByTestId } = setup({ ...props, isAuth: true });
-      expect(getByTestId('SignOutBtn')).toBeInTheDocument();
+      const { getByText } = setup({ ...props, isAuth: true });
+      expect(getByText('Logout')).toBeInTheDocument();
     });
 
     it('calls `chekcSession` action', () => {
-      const { getByTestId } = setup({ ...props, isAuth: true });
-      fireEvent.click(getByTestId('SignOutBtn'));
+      const { getByText } = setup({ ...props, isAuth: true });
+      fireEvent.click(getByText('Logout'));
       expect(mockCheckSession).toHaveBeenCalled();
     });
   });

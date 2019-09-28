@@ -28,16 +28,15 @@ export const Header: React.FC<HeaderProps> = ({
           <LogoTitle>Interior & Exterior</LogoTitle>
         </Logo>
         <Nav>
-          <Hamburger
-            data-testid="Hamburger"
-            aria-label="open menu"
-            title="Menu"
-            onClick={handleOpen}
-          >
+          <Hamburger aria-label="open menu" title="Menu" onClick={handleOpen}>
             <i className="fas fa-bars"></i>
           </Hamburger>
           <HeaderLinks />
-          <SearchBtn data-testid="SearchBtn" onClick={toggleSearchForm}>
+          <SearchBtn
+            aria-label="submit searching"
+            title="Search"
+            onClick={toggleSearchForm}
+          >
             <i className="fas fa-search"></i>
           </SearchBtn>
         </Nav>

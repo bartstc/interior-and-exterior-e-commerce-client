@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { RangeInput, RangeInputProps } from './RangeInput.component';
-
-afterEach(cleanup);
 
 describe('<RangeInput />', () => {
   const mockOnChange = jest.fn();

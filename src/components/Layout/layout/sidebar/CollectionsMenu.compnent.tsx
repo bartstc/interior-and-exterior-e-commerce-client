@@ -44,7 +44,6 @@ export const _CollectionsMenu: React.FC<CollectionsMenuProps> = ({
         {interiorLinks.map(linkName => (
           <ListItem key={linkName}>
             <FilterShopLink
-              data-testid={linkName}
               onClick={() => onLinkClick(linkName.toLocaleLowerCase() as Type)}
               to="/shop"
             >

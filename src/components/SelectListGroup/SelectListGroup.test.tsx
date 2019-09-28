@@ -1,11 +1,9 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import {
   SelectListGroup,
   SelectListGroupProps
 } from './SelectListGroup.component';
-
-afterEach(cleanup);
 
 describe('<SelectListGroup />', () => {
   const mockOnChange = jest.fn();

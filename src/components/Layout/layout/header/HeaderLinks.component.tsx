@@ -54,11 +54,7 @@ export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
   return (
     <NavList>
       <NavItem>
-        <PageLink
-          data-testid="PageLink"
-          onClick={() => fetchProductsByType('all')}
-          to="/shop"
-        >
+        <PageLink onClick={() => fetchProductsByType('all')} to="/shop">
           Products
           <i className="fas fa-caret-down"></i>
         </PageLink>
@@ -67,7 +63,6 @@ export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
             {shopLinks.map(linkName => (
               <DropListItem key={linkName}>
                 <FilterShopLink
-                  data-testid={linkName}
                   onClick={() =>
                     fetchProductsByType(linkName.toLocaleLowerCase() as Type)
                   }
@@ -87,9 +82,7 @@ export const _HeaderLinks: React.FC<HeaderLinksProps> = ({
       )}
       {isAuth && (
         <NavItem>
-          <SignOutBtn data-testid="SignOutBtn" onClick={handleLogout}>
-            Logout
-          </SignOutBtn>
+          <SignOutBtn onClick={handleLogout}>Logout</SignOutBtn>
         </NavItem>
       )}
       <NavItem>

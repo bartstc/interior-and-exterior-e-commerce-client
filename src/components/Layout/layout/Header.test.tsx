@@ -1,8 +1,6 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Header, HeaderProps } from './Header.component';
 import { withProvider } from '../../../utils/testUtils';
-
-beforeEach(cleanup);
 
 const HeaderWithProvider = withProvider(Header);
 
@@ -26,15 +24,15 @@ describe('<Header />', () => {
   });
 
   it('calls `handleOpen` func', () => {
-    const { getByTestId } = setup(props);
-    fireEvent.click(getByTestId('Hamburger'));
+    const { getByTitle } = setup(props);
+    fireEvent.click(getByTitle('Menu'));
 
     expect(mockHandleOpen).toHaveBeenCalledTimes(1);
   });
 
   it('calls `toggleSearchForm` func', () => {
-    const { getByTestId } = setup(props);
-    fireEvent.click(getByTestId('SearchBtn'));
+    const { getByTitle } = setup(props);
+    fireEvent.click(getByTitle('Search'));
 
     expect(mockToggleSearchForm).toHaveBeenCalledTimes(1);
   });

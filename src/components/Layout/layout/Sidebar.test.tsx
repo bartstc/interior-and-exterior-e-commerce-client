@@ -1,8 +1,6 @@
-import { render, cleanup } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Sidebar, SidebarProps } from './Sidebar.component';
 import { withProvider } from '../../../utils/testUtils';
-
-beforeEach(cleanup);
 
 const SidebarWithProvider = withProvider(Sidebar);
 

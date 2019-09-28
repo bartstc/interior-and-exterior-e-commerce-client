@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { SideDrawer, SideDrawerProps } from './SideDrawer.component';
-
-afterEach(cleanup);
 
 describe('<SideDrawer />', () => {
   const mockHandleClose = jest.fn();

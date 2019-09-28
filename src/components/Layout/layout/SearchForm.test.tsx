@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, fireEvent, cleanup } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { _SearchForm } from './SearchForm.component';
-
-beforeEach(cleanup);
 
 describe('<SearchForm />', () => {
   const mockToggleSearchForm = jest.fn();
@@ -22,7 +20,7 @@ describe('<SearchForm />', () => {
     const input = utils.getByPlaceholderText(
       'Search for products ...'
     ) as HTMLInputElement;
-    const form = utils.getByTestId('Form');
+    const form = utils.container.querySelector('form') as HTMLFormElement;
 
     return { ...utils, input, form };
   };
@@ -38,4 +36,19 @@ describe('<SearchForm />', () => {
     fireEvent.change(input, { target: { value: 'clocks' } });
     expect(input.value).toBe('clocks');
   });
+
+  // describe('when submit', () => {
+  //   it('calls `toggleSearchForm` func', () => {
+  //     const { form } = setup(props);
+  //     fireEvent.submit(form);
+  //     expect(mockToggleSearchForm).toHaveBeenCalledTimes(1);
+  //   });
+
+  //   it('calls `fetchProductsByQuery` with `clocks` argument', () => {
+  //     const { form, input } = setup(props);
+  //     fireEvent.change(input, { target: { value: 'clocks' } });
+  //     fireEvent.submit(form);
+  //     expect(mockFetchProductsByQuery).toHaveBeenCalledTimes(2);
+  //   });
+  // });
 });

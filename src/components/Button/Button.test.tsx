@@ -1,8 +1,6 @@
 import React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { Button } from './Button.component';
-
-afterEach(cleanup);
 
 describe('<Button />', () => {
   it('renders correctly', () => {
@@ -33,9 +31,4 @@ describe('<Button />', () => {
     const { getByTestId } = render(<Button type="submit">Submit</Button>);
     expect(getByTestId('ButtonWrapper')).toHaveAttribute('type', 'submit');
   });
-
-  // it('contains `Submit` text', () => {
-  //   const { getByTestId } = render(<Button>Submit</Button>);
-  //   expect(getByTestId('ButtonWrapper')).toHaveTextContent('Submit');
-  // });
 });

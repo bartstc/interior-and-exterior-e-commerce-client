@@ -1,8 +1,6 @@
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { _MainMenu, MainMenuProps } from './MainMenu.component';
 import { withRouter } from '../../../../utils/testUtils';
-
-afterEach(cleanup);
 
 const MainMenuWithRouter = withRouter(_MainMenu);
 

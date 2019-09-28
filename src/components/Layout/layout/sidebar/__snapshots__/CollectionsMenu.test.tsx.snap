@@ -31,7 +31,6 @@ exports[`<CollectionsMenu /> renders correctly 1`] = `
       >
         <a
           class="sc-ifAKCX fYSqpX"
-          data-testid="Chairs"
           href="/shop"
         >
           Chairs
@@ -42,7 +41,6 @@ exports[`<CollectionsMenu /> renders correctly 1`] = `
       >
         <a
           class="sc-ifAKCX fYSqpX"
-          data-testid="Lamps"
           href="/shop"
         >
           Lamps
@@ -53,7 +51,6 @@ exports[`<CollectionsMenu /> renders correctly 1`] = `
       >
         <a
           class="sc-ifAKCX fYSqpX"
-          data-testid="Clocks"
           href="/shop"
         >
           Clocks
@@ -64,7 +61,6 @@ exports[`<CollectionsMenu /> renders correctly 1`] = `
       >
         <a
           class="sc-ifAKCX fYSqpX"
-          data-testid="Vases"
           href="/shop"
         >
           Vases

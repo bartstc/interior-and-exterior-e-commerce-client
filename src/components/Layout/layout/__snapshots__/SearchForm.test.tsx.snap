@@ -4,7 +4,6 @@ exports[`<SearchForm /> renders correctly 1`] = `
 <DocumentFragment>
   <form
     class="sc-bdVaJa jSQbJc"
-    data-testid="Form"
   >
     <input
       class="sc-bwzfXH kIpSMr"

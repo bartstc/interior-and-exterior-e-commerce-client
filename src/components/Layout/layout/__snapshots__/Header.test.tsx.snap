@@ -24,7 +24,6 @@ exports[`<Header /> renders correctly 1`] = `
         <button
           aria-label="open menu"
           class="sc-VigVT fwtpGC"
-          data-testid="Hamburger"
           title="Menu"
         >
           <i
@@ -39,7 +38,6 @@ exports[`<Header /> renders correctly 1`] = `
           >
             <a
               class="sc-htpNat gyqNkk"
-              data-testid="PageLink"
               href="/shop"
             >
               Products
@@ -58,7 +56,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Chairs"
                     href="/shop"
                   >
                     Chairs
@@ -69,7 +66,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Lamps"
                     href="/shop"
                   >
                     Lamps
@@ -80,7 +76,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Clocks"
                     href="/shop"
                   >
                     Clocks
@@ -91,7 +86,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Vases"
                     href="/shop"
                   >
                     Vases
@@ -102,7 +96,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Benches"
                     href="/shop"
                   >
                     Benches
@@ -113,7 +106,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Flowerpots"
                     href="/shop"
                   >
                     Flowerpots
@@ -124,7 +116,6 @@ exports[`<Header /> renders correctly 1`] = `
                 >
                   <a
                     class="sc-bZQynM imRHDl"
-                    data-testid="Plants"
                     href="/shop"
                   >
                     Plants
@@ -155,8 +146,9 @@ exports[`<Header /> renders correctly 1`] = `
           </li>
         </ul>
         <button
+          aria-label="submit searching"
           class="sc-jTzLTM kYnXAK"
-          data-testid="SearchBtn"
+          title="Search"
         >
           <i
             class="fas fa-search"
