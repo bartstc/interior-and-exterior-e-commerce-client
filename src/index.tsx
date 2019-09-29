@@ -1,33 +1,17 @@
-import React, { lazy, Suspense, useEffect } from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect';
 
 import './index.css';
 
 import { GlobalStyles } from './utils/styles';
 import { StoreProvider } from './modules/store';
-import { Store } from './modules/rootReducer';
-import { selectIsAuth } from './modules/user/user.selectors';
 import { GlobalSpinner } from './components/GlobalSpinner/GlobalSpinner.component';
-import { checkSession } from './modules/user/user.actions';
+import { withSession } from './hoc/withSession';
 
 const AuthApp = lazy(() => import('./AuthApp'));
 const UnauthApp = lazy(() => import('./UnauthApp'));
 
-interface IndexSelection {
-  isAuth: boolean;
-}
-
-interface IndexProps extends IndexSelection {
-  checkSession: typeof checkSession;
-}
-
-export const _Index: React.FC<IndexProps> = ({ isAuth, checkSession }) => {
-  useEffect(() => {
-    checkSession();
-  }, [checkSession]);
-
+const Index = withSession(({ isAuth }) => {
   return (
     <>
       <GlobalStyles />
@@ -38,15 +22,7 @@ export const _Index: React.FC<IndexProps> = ({ isAuth, checkSession }) => {
       </Suspense>
     </>
   );
-};
-
-const mapStateToProps = createStructuredSelector<Store, IndexSelection>({
-  isAuth: selectIsAuth
 });
-const Index = connect(
-  mapStateToProps,
-  { checkSession }
-)(_Index);
 
 ReactDOM.render(
   <StoreProvider>
