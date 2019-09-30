@@ -26,13 +26,17 @@ describe('<Backdrop />', () => {
   });
 
   describe('when `show` prop is true', () => {
+    beforeEach(() => {
+      props.show = true;
+    });
+
     it('contains display:block style rule in `Overlay` element', () => {
-      const { getByTestId } = setup({ ...props, show: true });
+      const { getByTestId } = setup(props);
       expect(getByTestId('Overlay')).toHaveStyle('display: block');
     });
 
     it('calls `handleClose` func', () => {
-      const { getByTestId } = setup({ ...props, show: true });
+      const { getByTestId } = setup(props);
       fireEvent.click(getByTestId('Overlay'));
       expect(mockHandleClose).toBeCalledTimes(1);
     });

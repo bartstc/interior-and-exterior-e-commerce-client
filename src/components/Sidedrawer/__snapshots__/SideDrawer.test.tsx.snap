@@ -15,8 +15,9 @@ exports[`<SideDrawer /> renders correctly 1`] = `
         Title
       </p>
       <button
+        aria-label="close"
         class="sc-bxivhb gkQASD"
-        data-testid="CloseBtn"
+        title="close menu"
       >
         <i
           class="far fa-times-circle"

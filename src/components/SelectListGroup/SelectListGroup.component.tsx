@@ -40,7 +40,6 @@ export const SelectListGroup: React.FC<SelectListGroupProps> = ({
     <SelectWrapper>
       <Label htmlFor={id}>{label}</Label>
       <Select
-        data-testid="Select"
         error={error}
         id={id}
         name={name}
@@ -49,8 +48,8 @@ export const SelectListGroup: React.FC<SelectListGroupProps> = ({
       >
         {selectOptions}
       </Select>
-      {info && <Info data-testid="Info">{info}</Info>}
-      {error && <Error data-testid="Error">{error}</Error>}
+      {info && <Info>{info}</Info>}
+      {error && <Error>{error}</Error>}
     </SelectWrapper>
   );
 };

@@ -54,13 +54,17 @@ describe('<CollectionsMenu />', () => {
   });
 
   describe('when `isAuth` prop is true', () => {
+    beforeEach(() => {
+      props.isAuth = true;
+    });
+
     it('contains `Logout` btn', () => {
-      const { getByText } = setup({ ...props, isAuth: true });
+      const { getByText } = setup(props);
       expect(getByText('Logout')).toBeInTheDocument();
     });
 
     it('calls `checkSession` action', () => {
-      const { getByText } = setup({ ...props, isAuth: true });
+      const { getByText } = setup(props);
       fireEvent.click(getByText('Logout'));
 
       expect(mockCheckSession).toHaveBeenCalled();

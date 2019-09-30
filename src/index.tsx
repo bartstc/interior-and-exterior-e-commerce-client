@@ -1,32 +1,14 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
 
-import { GlobalStyles } from './utils/styles';
 import { StoreProvider } from './modules/store';
-import { GlobalSpinner } from './components/GlobalSpinner/GlobalSpinner.component';
-import { withSession } from './hoc/withSession';
-
-const AuthApp = lazy(() => import('./AuthApp'));
-const UnauthApp = lazy(() => import('./UnauthApp'));
-
-const Index = withSession(({ isAuth }) => {
-  return (
-    <>
-      <GlobalStyles />
-      <Suspense fallback={<GlobalSpinner />}>
-        {isAuth === null && <GlobalSpinner />}
-        {isAuth === false && <UnauthApp />}
-        {isAuth === true && <AuthApp />}
-      </Suspense>
-    </>
-  );
-});
+import { App } from './App';
 
 ReactDOM.render(
   <StoreProvider>
-    <Index />
+    <App />
   </StoreProvider>,
   document.getElementById('root')
 );

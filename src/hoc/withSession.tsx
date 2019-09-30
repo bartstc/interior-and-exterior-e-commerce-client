@@ -7,14 +7,18 @@ import { checkSession } from '../modules/user/user.actions';
 import { selectIsAuth } from '../modules/user/user.selectors';
 
 interface WithSessionSelection {
-  isAuth: boolean;
+  isAuth: boolean | null;
 }
 
 interface WithSessionProps extends WithSessionSelection {
   checkSession: typeof checkSession;
 }
 
-export const withSession = (Component: React.FC<WithSessionSelection>) => {
+interface ComponentProps extends WithSessionSelection {
+  [key: string]: any;
+}
+
+export const withSession = (Component: React.FC<ComponentProps>) => {
   const WithSession: React.FC<WithSessionProps> = ({
     isAuth,
     checkSession

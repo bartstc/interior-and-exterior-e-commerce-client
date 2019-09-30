@@ -4,6 +4,7 @@ exports[`<GlobalSpinner /> renders correctly 1`] = `
 <DocumentFragment>
   <div
     class="sc-bdVaJa ijHJlI"
+    data-testid="Spinner"
   >
     <div
       class="sc-bwzfXH cdCsLX"

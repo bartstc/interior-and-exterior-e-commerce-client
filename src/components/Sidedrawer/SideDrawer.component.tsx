@@ -20,7 +20,7 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
   <Wrapper data-testid="Wrapper" toggled={toggled} zIndex={zIndex}>
     <Header>
       <Logo>{title}</Logo>
-      <CloseBtn data-testid="CloseBtn" onClick={handleClose}>
+      <CloseBtn title="close menu" aria-label="close" onClick={handleClose}>
         <i className="far fa-times-circle"></i>
       </CloseBtn>
     </Header>

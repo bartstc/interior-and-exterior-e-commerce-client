@@ -27,7 +27,6 @@ export const RangeInput: React.FC<RangeInputProps> = ({
     <InputWrapper>
       <Label htmlFor={id}>{label}</Label>
       <Input
-        data-testid="Input"
         type="range"
         name={name}
         value={value}
@@ -36,7 +35,7 @@ export const RangeInput: React.FC<RangeInputProps> = ({
         max={max}
         id={id}
       />
-      {info && <Info data-testid="Info">{info}</Info>}
+      {info && <Info>{info}</Info>}
     </InputWrapper>
   );
 };

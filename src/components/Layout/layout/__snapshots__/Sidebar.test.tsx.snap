@@ -19,8 +19,9 @@ exports[`<Sidebar /> renders correctly 1`] = `
         Interior & Exterior
       </p>
       <button
+        aria-label="close"
         class="sc-dnqmqq kQUpXo"
-        data-testid="CloseBtn"
+        title="close menu"
       >
         <i
           class="far fa-times-circle"
@@ -99,8 +100,9 @@ exports[`<Sidebar /> renders correctly 1`] = `
         Interior
       </p>
       <button
+        aria-label="close"
         class="sc-dnqmqq kQUpXo"
-        data-testid="CloseBtn"
+        title="close menu"
       >
         <i
           class="far fa-times-circle"
@@ -165,8 +167,9 @@ exports[`<Sidebar /> renders correctly 1`] = `
         Exterior
       </p>
       <button
+        aria-label="close"
         class="sc-dnqmqq kQUpXo"
-        data-testid="CloseBtn"
+        title="close menu"
       >
         <i
           class="far fa-times-circle"

@@ -38,13 +38,17 @@ describe('<HeaderLinks />', () => {
   });
 
   describe('when `isAuth` prop is true', () => {
+    beforeEach(() => {
+      props.isAuth = true;
+    });
+
     it('renders `SignOutBtn` element', () => {
-      const { getByText } = setup({ ...props, isAuth: true });
+      const { getByText } = setup(props);
       expect(getByText('Logout')).toBeInTheDocument();
     });
 
     it('calls `chekcSession` action', () => {
-      const { getByText } = setup({ ...props, isAuth: true });
+      const { getByText } = setup(props);
       fireEvent.click(getByText('Logout'));
       expect(mockCheckSession).toHaveBeenCalled();
     });

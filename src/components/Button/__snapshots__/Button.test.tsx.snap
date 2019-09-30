@@ -4,7 +4,6 @@ exports[`<Button /> renders correctly 1`] = `
 <DocumentFragment>
   <button
     class="sc-bdVaJa cPICdt"
-    data-testid="ButtonWrapper"
     type="button"
   >
     Submit

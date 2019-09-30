@@ -8,7 +8,7 @@ import {
 describe('<SelectListGroup />', () => {
   const mockOnChange = jest.fn();
 
-  let props: SelectListGroupProps = {
+  const props: SelectListGroupProps = {
     name: 'products',
     value: '',
     onChange: mockOnChange,
@@ -20,43 +20,50 @@ describe('<SelectListGroup />', () => {
     label: 'Products'
   };
 
+  const setup = (props: SelectListGroupProps) => {
+    const utils = render(<SelectListGroup {...props} />);
+    return { ...utils };
+  };
+
   it('renders correctly', () => {
-    const { asFragment } = render(<SelectListGroup {...props} />);
+    const { asFragment } = setup(props);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('calls `onChange` func', () => {
-    const { getByTestId } = render(<SelectListGroup {...props} />);
-    const input = getByTestId('Select') as HTMLSelectElement;
+  it('calls `onChange` prop', () => {
+    const { container } = setup(props);
+    const select = container.querySelector('select') as HTMLSelectElement;
 
-    fireEvent.change(input, { target: { value: 'Clocks' } });
+    fireEvent.change(select, { target: { value: 'Clocks' } });
     expect(mockOnChange).toHaveBeenCalledTimes(1);
   });
 
   describe('when `error` prop is not empty', () => {
+    beforeEach(() => {
+      props.error = 'error message';
+    });
+
     it('contains `border-bottom: 1px solid red` style rule in `Select` element', () => {
-      const { getByTestId } = render(
-        <SelectListGroup {...props} error="Error" />
+      const { container } = setup(props);
+      expect(container.querySelector('select')).toHaveStyle(
+        'border-bottom: 1px solid red'
       );
-      expect(getByTestId('Select')).toHaveStyle('border-bottom: 1px solid red');
     });
 
     it('contains `Error` element with correct text inside', () => {
-      const { getByTestId } = render(
-        <SelectListGroup {...props} error="Error" />
-      );
-      const error = getByTestId('Error');
+      const { getByText } = setup(props);
+      const error = getByText(/error/i);
 
       expect(error).toBeInTheDocument();
-      expect(error).toHaveTextContent('Error');
+      expect(error).toHaveTextContent('error message');
     });
   });
 
   it('contains `Info` element with correct text inside when `info` prop is not empty', () => {
-    const { getByTestId } = render(<SelectListGroup {...props} info="Info" />);
-    const info = getByTestId('Info');
+    const { getByText } = setup({ ...props, info: 'info message' });
+    const info = getByText(/info message/i);
 
     expect(info).toBeInTheDocument();
-    expect(info).toHaveTextContent('Info');
+    expect(info).toHaveTextContent('info message');
   });
 });

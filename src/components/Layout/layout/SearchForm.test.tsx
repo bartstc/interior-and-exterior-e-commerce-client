@@ -37,6 +37,7 @@ describe('<SearchForm />', () => {
     expect(input.value).toBe('clocks');
   });
 
+  // onSubmit function is not testable, should i refactor the way it works?
   // describe('when submit', () => {
   //   it('calls `toggleSearchForm` func', () => {
   //     const { form } = setup(props);

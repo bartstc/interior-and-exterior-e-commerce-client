@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ButtonWrapper } from './Button.styles';
 
-interface ButtonProps {
+export interface ButtonProps {
   disabled?: boolean;
   onClick?: () => void;
   btnType?: string;
@@ -18,7 +18,6 @@ export const Button: React.FC<ButtonProps> = ({
   children
 }) => (
   <ButtonWrapper
-    data-testid="ButtonWrapper"
     disabled={disabled}
     onClick={onClick}
     className={[btnType].join(' ')}

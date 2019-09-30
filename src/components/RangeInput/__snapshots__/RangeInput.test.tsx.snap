@@ -13,7 +13,6 @@ exports[`<RangeInput /> renders correctly 1`] = `
     </label>
     <input
       class="sc-bwzfXH gcNwFy"
-      data-testid="Input"
       id="price"
       max="100"
       min="0"

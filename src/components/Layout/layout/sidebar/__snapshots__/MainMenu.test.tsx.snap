@@ -15,8 +15,9 @@ exports[`<CollectionsMenu /> renders correctly 1`] = `
         Interior & Exterior
       </p>
       <button
+        aria-label="close"
         class="sc-htoDjs qBCwI"
-        data-testid="CloseBtn"
+        title="close menu"
       >
         <i
           class="far fa-times-circle"

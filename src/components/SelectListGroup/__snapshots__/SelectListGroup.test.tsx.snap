@@ -13,7 +13,6 @@ exports[`<SelectListGroup /> renders correctly 1`] = `
     </label>
     <select
       class="sc-htpNat icSsqr"
-      data-testid="Select"
       id="products"
       name="products"
     >

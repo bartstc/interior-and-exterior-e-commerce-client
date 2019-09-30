@@ -1,34 +1,45 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import { Button } from './Button.component';
+import { Button, ButtonProps } from './Button.component';
 
 describe('<Button />', () => {
+  const mockOnClick = jest.fn();
+
+  const props: ButtonProps = {
+    onClick: mockOnClick,
+    children: 'Submit',
+    type: 'button'
+  };
+
+  const setup = (props: ButtonProps) => {
+    const utils = render(<Button {...props} />);
+    const button = utils.container.querySelector('button') as HTMLButtonElement;
+    return { ...utils, button };
+  };
+
   it('renders correctly', () => {
-    const { asFragment } = render(<Button>Submit</Button>);
+    const { asFragment } = setup(props);
     expect(asFragment()).toMatchSnapshot();
   });
 
   it('contains disabled attribute', () => {
-    const { getByTestId } = render(<Button disabled={true}>Submit</Button>);
-    expect(getByTestId('ButtonWrapper')).toHaveAttribute('disabled', '');
+    const { button } = setup({ ...props, disabled: true });
+    expect(button).toHaveAttribute('disabled', '');
   });
 
   it('calls `onClick` function', () => {
-    const mockOnClick = jest.fn();
-    const { getByTestId } = render(
-      <Button onClick={mockOnClick}>Submit</Button>
-    );
-    fireEvent.click(getByTestId('ButtonWrapper'));
+    const { button } = setup(props);
+    fireEvent.click(button);
     expect(mockOnClick).toBeCalledTimes(1);
   });
 
   it('contains `dark` class', () => {
-    const { getByTestId } = render(<Button btnType="dark">Submit</Button>);
-    expect(getByTestId('ButtonWrapper')).toHaveClass('dark');
+    const { button } = setup({ ...props, btnType: 'dark' });
+    expect(button).toHaveClass('dark');
   });
 
   it('contains `submit` type', () => {
-    const { getByTestId } = render(<Button type="submit">Submit</Button>);
-    expect(getByTestId('ButtonWrapper')).toHaveAttribute('type', 'submit');
+    const { button } = setup({ ...props, type: 'submit' });
+    expect(button).toHaveAttribute('type', 'submit');
   });
 });

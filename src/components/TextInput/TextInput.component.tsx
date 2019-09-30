@@ -49,7 +49,6 @@ export const TextInput: React.FC<TextInputProps> = ({
   return (
     <Wrapper>
       <Input
-        data-testid="Input"
         type={type}
         id={id}
         placeholder={placeholder}
@@ -69,17 +68,10 @@ export const TextInput: React.FC<TextInputProps> = ({
           <i className="fas fa-check-circle"></i>
         )}
       </ValidationIcon>
-      <Label
-        data-testid="Label"
-        shrink={value.length ? true : false}
-        htmlFor={id}
-      >
+      <Label shrink={value.length ? true : false} htmlFor={id}>
         {label}
       </Label>
-      <Error
-        data-testid="Error"
-        showError={showError && invalid && errorMsg !== ''}
-      >
+      <Error showError={showError && invalid && errorMsg !== ''}>
         {errorMsg}
       </Error>
     </Wrapper>

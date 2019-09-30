@@ -1,29 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Sidebar /> renders correctly 1`] = `
+exports[`<App /> renders <UnauthApp /> component 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdVaJa EXKLM"
+    class="sc-htpNat fjcJqy"
   >
     <div
-      class="sc-chPdSV dmMliT"
+      class="sc-kGXeez kGgkhh"
       data-testid="Overlay"
     />
     <nav
-      class="sc-jKJlTe iyDksZ"
+      class="sc-hMqMXs eiWHUL"
       data-testid="Wrapper"
     >
       <header
-        class="sc-eNQAEJ HwinD"
+        class="sc-kEYyzF csDjny"
       >
         <p
-          class="sc-hMqMXs lbCkvZ"
+          class="sc-kkGfuU BCNoT"
         >
           Interior & Exterior
         </p>
         <button
           aria-label="close"
-          class="sc-kEYyzF kQBxvK"
+          class="sc-iAyFgw fsZTAk"
           title="close menu"
         >
           <i
@@ -32,23 +32,23 @@ exports[`<Sidebar /> renders correctly 1`] = `
         </button>
       </header>
       <ul
-        class="sc-kkGfuU kEahKy"
+        class="sc-hSdWYo fMsZYH"
       >
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-kpOJdX cDLtjk"
+            class="sc-ckVGcZ dgJLfB"
             href="/"
           >
             Home
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <button
-            class="sc-kGXeez gNIVWe"
+            class="sc-dxgOiQ cMyJyP"
           >
             Interior
             <i
@@ -57,10 +57,10 @@ exports[`<Sidebar /> renders correctly 1`] = `
           </button>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <button
-            class="sc-kGXeez gNIVWe"
+            class="sc-dxgOiQ cMyJyP"
           >
             Exterior
             <i
@@ -69,20 +69,20 @@ exports[`<Sidebar /> renders correctly 1`] = `
           </button>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-kpOJdX cDLtjk"
+            class="sc-ckVGcZ dgJLfB"
             href="/account"
           >
             Account
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-kpOJdX cDLtjk"
+            class="sc-ckVGcZ dgJLfB"
             href="/cart"
           >
             Cart (0)
@@ -91,20 +91,20 @@ exports[`<Sidebar /> renders correctly 1`] = `
       </ul>
     </nav>
     <nav
-      class="sc-jKJlTe hcWqjD"
+      class="sc-hMqMXs kHxeFj"
       data-testid="Wrapper"
     >
       <header
-        class="sc-eNQAEJ HwinD"
+        class="sc-kEYyzF csDjny"
       >
         <p
-          class="sc-hMqMXs lbCkvZ"
+          class="sc-kkGfuU BCNoT"
         >
           Interior
         </p>
         <button
           aria-label="close"
-          class="sc-kEYyzF kQBxvK"
+          class="sc-iAyFgw fsZTAk"
           title="close menu"
         >
           <i
@@ -113,43 +113,43 @@ exports[`<Sidebar /> renders correctly 1`] = `
         </button>
       </header>
       <ul
-        class="sc-kkGfuU kEahKy"
+        class="sc-hSdWYo fMsZYH"
       >
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Chairs
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Lamps
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Clocks
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Vases
@@ -158,20 +158,20 @@ exports[`<Sidebar /> renders correctly 1`] = `
       </ul>
     </nav>
     <nav
-      class="sc-jKJlTe hcWqjD"
+      class="sc-hMqMXs kHxeFj"
       data-testid="Wrapper"
     >
       <header
-        class="sc-eNQAEJ HwinD"
+        class="sc-kEYyzF csDjny"
       >
         <p
-          class="sc-hMqMXs lbCkvZ"
+          class="sc-kkGfuU BCNoT"
         >
           Exterior
         </p>
         <button
           aria-label="close"
-          class="sc-kEYyzF kQBxvK"
+          class="sc-iAyFgw fsZTAk"
           title="close menu"
         >
           <i
@@ -180,33 +180,33 @@ exports[`<Sidebar /> renders correctly 1`] = `
         </button>
       </header>
       <ul
-        class="sc-kkGfuU kEahKy"
+        class="sc-hSdWYo fMsZYH"
       >
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Benches
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Flowerpots
           </a>
         </li>
         <li
-          class="sc-kgoBCf eGQXyo"
+          class="sc-kpOJdX eKfpAE"
         >
           <a
-            class="sc-ckVGcZ fVtwdb"
+            class="sc-eNQAEJ dqipbD"
             href="/shop"
           >
             Plants
@@ -215,27 +215,27 @@ exports[`<Sidebar /> renders correctly 1`] = `
       </ul>
     </nav>
     <header
-      class="sc-iwsKbI dYjCnF"
+      class="sc-gqjmRU eeYKtP"
     >
       <div
-        class="sc-gZMcBi fFtCwl"
+        class="sc-VigVT dgUaaW"
       >
         <a
-          class="sc-gqjmRU bmRGVH"
+          class="sc-jTzLTM eFukZp"
           href="/"
         >
           <h1
-            class="sc-VigVT laIPOj"
+            class="sc-fjdhpX gVNPhm"
           >
             Interior & Exterior
           </h1>
         </a>
         <nav
-          class="sc-jTzLTM keBASo"
+          class="sc-jzJRlG cbWyOs"
         >
           <button
             aria-label="open menu"
-            class="sc-fjdhpX kBCHAW"
+            class="sc-cSHVUG buEebX"
             title="Menu"
           >
             <i
@@ -243,13 +243,13 @@ exports[`<Sidebar /> renders correctly 1`] = `
             />
           </button>
           <ul
-            class="sc-htpNat ezDfsx"
+            class="sc-ifAKCX dqpNVd"
           >
             <li
-              class="sc-EHOje gEpkr"
+              class="sc-gzVnrw dRxXhy"
             >
               <a
-                class="sc-ifAKCX ewhkVI"
+                class="sc-bZQynM hKSVIJ"
                 href="/shop"
               >
                 Products
@@ -258,76 +258,76 @@ exports[`<Sidebar /> renders correctly 1`] = `
                 />
               </a>
               <div
-                class="sc-bxivhb jmrBoK"
+                class="sc-EHOje hJLuSz"
               >
                 <ul
-                  class="sc-bZQynM EvJhB"
+                  class="sc-htoDjs kKCJWi"
                 >
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Chairs
                     </a>
                   </li>
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Lamps
                     </a>
                   </li>
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Clocks
                     </a>
                   </li>
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Vases
                     </a>
                   </li>
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Benches
                     </a>
                   </li>
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Flowerpots
                     </a>
                   </li>
                   <li
-                    class="sc-gzVnrw zSxKB"
+                    class="sc-dnqmqq gjUOyw"
                   >
                     <a
-                      class="sc-htoDjs bOuEYB"
+                      class="sc-iwsKbI iQdAId"
                       href="/shop"
                     >
                       Plants
@@ -337,20 +337,20 @@ exports[`<Sidebar /> renders correctly 1`] = `
               </div>
             </li>
             <li
-              class="sc-EHOje gEpkr"
+              class="sc-gzVnrw dRxXhy"
             >
               <a
-                class="sc-ifAKCX ewhkVI"
+                class="sc-bZQynM hKSVIJ"
                 href="/account"
               >
                 Account
               </a>
             </li>
             <li
-              class="sc-EHOje gEpkr"
+              class="sc-gzVnrw dRxXhy"
             >
               <a
-                class="sc-ifAKCX ewhkVI"
+                class="sc-bZQynM hKSVIJ"
                 href="/cart"
               >
                 Cart (0)
@@ -359,7 +359,7 @@ exports[`<Sidebar /> renders correctly 1`] = `
           </ul>
           <button
             aria-label="submit searching"
-            class="sc-jzJRlG jLIVEF"
+            class="sc-kAzzGY bmJMdz"
             title="Search"
           >
             <i
@@ -370,16 +370,16 @@ exports[`<Sidebar /> renders correctly 1`] = `
       </div>
     </header>
     <form
-      class="sc-iAyFgw iospd"
+      class="sc-eHgmQL duFWef"
     >
       <input
-        class="sc-hSdWYo TzbWC"
+        class="sc-cvbbAY dBOhuc"
         placeholder="Search for products ..."
         type="test"
         value=""
       />
       <button
-        class="sc-eHgmQL eEUXub"
+        class="sc-jWBwVP eCsuXW"
         title="submit"
         type="submit"
       >
@@ -389,17 +389,151 @@ exports[`<Sidebar /> renders correctly 1`] = `
       </button>
     </form>
     <main
-      class="sc-bwzfXH fRIfPz"
+      class="sc-bxivhb hKOuQv"
     >
-      <span>
-        Layout
-      </span>
+      <section
+        class="sc-brqgnP kiahNM"
+      >
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Lamps
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="lamp.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Vases
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="vase.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Chairs
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="chair.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Clocks
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="clock.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Benches
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="bench.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Flowerpots
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="flowerpot.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-jDwBTQ lnSPoE"
+          href="/shop"
+        >
+          <h2
+            class="sc-cMljjf jsdkcN"
+          >
+            Plants
+          </h2>
+          <div
+            class="sc-jAaTju cEjMrU"
+          >
+            <img
+              alt=""
+              class="sc-gPEVay jRHnne"
+              src="plant.png"
+            />
+          </div>
+        </a>
+      </section>
     </main>
     <footer
-      class="sc-cSHVUG imUMEn"
+      class="sc-chPdSV fDjWgM"
     >
       <p
-        class="sc-kAzzGY bLXsfs"
+        class="sc-kgoBCf gATMll"
       >
         - Interior & Exterior -
       </p>
