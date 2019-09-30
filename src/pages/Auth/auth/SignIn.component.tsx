@@ -23,7 +23,7 @@ interface SignInSelection {
   isFetching: boolean;
 }
 
-interface SignInProps extends SignInSelection {
+export interface SignInProps extends SignInSelection {
   signInStart: typeof signInStart;
   clearErrors: typeof clearErrors;
 }
@@ -82,9 +82,7 @@ export const _SignIn: React.FC<SignInProps> = ({
       password: password.value
     };
 
-    formValid
-      ? signInStart(payload)
-      : setErrorMsg('Invalid credentials provided');
+    signInStart(payload);
   };
 
   const inputsArray: Control[] = [];
@@ -95,7 +93,9 @@ export const _SignIn: React.FC<SignInProps> = ({
   return (
     <AuthForm onSubmit={onSubmit}>
       <Title>Sign In</Title>
-      <Error showError={errorMsg !== ''}>{errorMsg}</Error>
+      <Error data-testid="Error" showError={errorMsg !== ''}>
+        {errorMsg}
+      </Error>
       {inputsArray.map(({ id, valid, validationRules, ...otherProps }) => (
         <TextInput
           key={id}

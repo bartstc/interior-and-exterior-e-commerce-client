@@ -5,7 +5,7 @@ export const signInControls: Controls = {
     label: 'Enter email',
     placeholder: '',
     type: 'email',
-    id: 'signup-email',
+    id: 'signin-email',
     name: 'email',
     value: '',
     validationRules: {
@@ -20,7 +20,7 @@ export const signInControls: Controls = {
     label: 'Enter password',
     placeholder: '',
     type: 'password',
-    id: 'signup-password',
+    id: 'signin-password',
     name: 'password',
     value: '',
     validationRules: {

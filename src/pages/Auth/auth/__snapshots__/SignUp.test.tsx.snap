@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignUp renders correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-bwzfXH fdSsPq"
+  >
+    <p
+      class="sc-htpNat bclJaO"
+    >
+      Sign Up for free
+    </p>
+    <span
+      class="sc-EHOje cXVKmC"
+      data-testid="Error"
+    />
+    <p
+      class="sc-gzVnrw gATUFx"
+    >
+      <input
+        class="sc-dnqmqq cDnSMn"
+        id="signup-username"
+        name="username"
+        placeholder=""
+        type="text"
+        value=""
+      />
+      <span
+        class="sc-iwsKbI ghpXNP"
+        data-testid="ValidationIcon"
+      >
+        <i
+          class="fas fa-check-circle"
+        />
+      </span>
+      <label
+        class="sc-htoDjs iaKsBG"
+        for="signup-username"
+      >
+        Enter username
+      </label>
+      <span
+        class="sc-gZMcBi gSNACN"
+      />
+    </p>
+    <p
+      class="sc-gzVnrw gATUFx"
+    >
+      <input
+        class="sc-dnqmqq cDnSMn"
+        id="signup-email"
+        name="email"
+        placeholder=""
+        type="email"
+        value=""
+      />
+      <span
+        class="sc-iwsKbI ghpXNP"
+        data-testid="ValidationIcon"
+      >
+        <i
+          class="fas fa-check-circle"
+        />
+      </span>
+      <label
+        class="sc-htoDjs iaKsBG"
+        for="signup-email"
+      >
+        Enter email
+      </label>
+      <span
+        class="sc-gZMcBi gSNACN"
+      />
+    </p>
+    <p
+      class="sc-gzVnrw gATUFx"
+    >
+      <input
+        class="sc-dnqmqq cDnSMn"
+        id="signup-password"
+        name="password"
+        placeholder=""
+        type="password"
+        value=""
+      />
+      <span
+        class="sc-iwsKbI ghpXNP"
+        data-testid="ValidationIcon"
+      >
+        <i
+          class="fas fa-check-circle"
+        />
+      </span>
+      <label
+        class="sc-htoDjs iaKsBG"
+        for="signup-password"
+      >
+        Enter password
+      </label>
+      <span
+        class="sc-gZMcBi gSNACN"
+      />
+    </p>
+    <button
+      class="sc-bZQynM eYyTpk"
+      disabled=""
+      type="submit"
+    >
+      Sign Up
+    </button>
+    <p
+      class="sc-bxivhb fgDZbI"
+    >
+      Do you already have an account?
+    </p>
+    <a
+      class="sc-ifAKCX jbVAZT"
+      href="/account"
+    >
+      Sign In
+    </a>
+  </form>
+</DocumentFragment>
+`;

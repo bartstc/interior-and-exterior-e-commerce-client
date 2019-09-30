@@ -1,0 +1,543 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<UnauthApp /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa EXKLM"
+  >
+    <div
+      class="sc-chPdSV dmMliT"
+      data-testid="Overlay"
+    />
+    <nav
+      class="sc-jKJlTe iyDksZ"
+      data-testid="Wrapper"
+    >
+      <header
+        class="sc-eNQAEJ HwinD"
+      >
+        <p
+          class="sc-hMqMXs lbCkvZ"
+        >
+          Interior & Exterior
+        </p>
+        <button
+          aria-label="close"
+          class="sc-kEYyzF kQBxvK"
+          title="close menu"
+        >
+          <i
+            class="far fa-times-circle"
+          />
+        </button>
+      </header>
+      <ul
+        class="sc-kkGfuU kEahKy"
+      >
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-kpOJdX cDLtjk"
+            href="/"
+          >
+            Home
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <button
+            class="sc-kGXeez gNIVWe"
+          >
+            Interior
+            <i
+              class="fas fa-angle-right"
+            />
+          </button>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <button
+            class="sc-kGXeez gNIVWe"
+          >
+            Exterior
+            <i
+              class="fas fa-angle-right"
+            />
+          </button>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-kpOJdX cDLtjk"
+            href="/account"
+          >
+            Account
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-kpOJdX cDLtjk"
+            href="/cart"
+          >
+            Cart (0)
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav
+      class="sc-jKJlTe hcWqjD"
+      data-testid="Wrapper"
+    >
+      <header
+        class="sc-eNQAEJ HwinD"
+      >
+        <p
+          class="sc-hMqMXs lbCkvZ"
+        >
+          Interior
+        </p>
+        <button
+          aria-label="close"
+          class="sc-kEYyzF kQBxvK"
+          title="close menu"
+        >
+          <i
+            class="far fa-times-circle"
+          />
+        </button>
+      </header>
+      <ul
+        class="sc-kkGfuU kEahKy"
+      >
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Chairs
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Lamps
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Clocks
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Vases
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <nav
+      class="sc-jKJlTe hcWqjD"
+      data-testid="Wrapper"
+    >
+      <header
+        class="sc-eNQAEJ HwinD"
+      >
+        <p
+          class="sc-hMqMXs lbCkvZ"
+        >
+          Exterior
+        </p>
+        <button
+          aria-label="close"
+          class="sc-kEYyzF kQBxvK"
+          title="close menu"
+        >
+          <i
+            class="far fa-times-circle"
+          />
+        </button>
+      </header>
+      <ul
+        class="sc-kkGfuU kEahKy"
+      >
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Benches
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Flowerpots
+          </a>
+        </li>
+        <li
+          class="sc-kgoBCf eGQXyo"
+        >
+          <a
+            class="sc-ckVGcZ fVtwdb"
+            href="/shop"
+          >
+            Plants
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <header
+      class="sc-iwsKbI dYjCnF"
+    >
+      <div
+        class="sc-gZMcBi fFtCwl"
+      >
+        <a
+          class="sc-gqjmRU bmRGVH"
+          href="/"
+        >
+          <h1
+            class="sc-VigVT laIPOj"
+          >
+            Interior & Exterior
+          </h1>
+        </a>
+        <nav
+          class="sc-jTzLTM keBASo"
+        >
+          <button
+            aria-label="open menu"
+            class="sc-fjdhpX kBCHAW"
+            title="Menu"
+          >
+            <i
+              class="fas fa-bars"
+            />
+          </button>
+          <ul
+            class="sc-htpNat ezDfsx"
+          >
+            <li
+              class="sc-EHOje gEpkr"
+            >
+              <a
+                class="sc-ifAKCX ewhkVI"
+                href="/shop"
+              >
+                Products
+                <i
+                  class="fas fa-caret-down"
+                />
+              </a>
+              <div
+                class="sc-bxivhb jmrBoK"
+              >
+                <ul
+                  class="sc-bZQynM EvJhB"
+                >
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Chairs
+                    </a>
+                  </li>
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Lamps
+                    </a>
+                  </li>
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Clocks
+                    </a>
+                  </li>
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Vases
+                    </a>
+                  </li>
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Benches
+                    </a>
+                  </li>
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Flowerpots
+                    </a>
+                  </li>
+                  <li
+                    class="sc-gzVnrw zSxKB"
+                  >
+                    <a
+                      class="sc-htoDjs bOuEYB"
+                      href="/shop"
+                    >
+                      Plants
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li
+              class="sc-EHOje gEpkr"
+            >
+              <a
+                class="sc-ifAKCX ewhkVI"
+                href="/account"
+              >
+                Account
+              </a>
+            </li>
+            <li
+              class="sc-EHOje gEpkr"
+            >
+              <a
+                class="sc-ifAKCX ewhkVI"
+                href="/cart"
+              >
+                Cart (0)
+              </a>
+            </li>
+          </ul>
+          <button
+            aria-label="submit searching"
+            class="sc-jzJRlG jLIVEF"
+            title="Search"
+          >
+            <i
+              class="fas fa-search"
+            />
+          </button>
+        </nav>
+      </div>
+    </header>
+    <form
+      class="sc-iAyFgw iospd"
+    >
+      <input
+        class="sc-hSdWYo TzbWC"
+        placeholder="Search for products ..."
+        type="test"
+        value=""
+      />
+      <button
+        class="sc-eHgmQL eEUXub"
+        title="submit"
+        type="submit"
+      >
+        <i
+          class="far fa-arrow-alt-circle-right"
+        />
+      </button>
+    </form>
+    <main
+      class="sc-bwzfXH fRIfPz"
+    >
+      <section
+        class="sc-cvbbAY kcqui"
+      >
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Lamps
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="lamp.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Vases
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="vase.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Chairs
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="chair.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Clocks
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="clock.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Benches
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="bench.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Flowerpots
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="flowerpot.png"
+            />
+          </div>
+        </a>
+        <a
+          class="sc-cMljjf cLAgEn"
+          href="/shop"
+        >
+          <h2
+            class="sc-jWBwVP jfKoaf"
+          >
+            Plants
+          </h2>
+          <div
+            class="sc-brqgnP jaXLdd"
+          >
+            <img
+              alt=""
+              class="sc-jAaTju kLJKcd"
+              src="plant.png"
+            />
+          </div>
+        </a>
+      </section>
+    </main>
+    <footer
+      class="sc-cSHVUG imUMEn"
+    >
+      <p
+        class="sc-kAzzGY bLXsfs"
+      >
+        - Interior & Exterior -
+      </p>
+    </footer>
+  </div>
+</DocumentFragment>
+`;

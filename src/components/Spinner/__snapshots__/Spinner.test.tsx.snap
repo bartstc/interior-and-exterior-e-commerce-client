@@ -4,6 +4,7 @@ exports[`<Spinner /> renders correctly 1`] = `
 <DocumentFragment>
   <span
     class="sc-bdVaJa dpPFGb"
+    data-testid="Spinner"
   />
 </DocumentFragment>
 `;

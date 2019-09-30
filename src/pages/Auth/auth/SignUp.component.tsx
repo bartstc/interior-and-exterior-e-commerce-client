@@ -23,7 +23,7 @@ interface SignUpSelection {
   isFetching: boolean;
 }
 
-interface SignUpProps extends SignUpSelection {
+export interface SignUpProps extends SignUpSelection {
   signUpStart: typeof signUpStart;
   clearErrors: typeof clearErrors;
 }
@@ -83,9 +83,7 @@ export const _SignUp: React.FC<SignUpProps> = ({
       password: password.value
     };
 
-    formValid
-      ? signUpStart(payload)
-      : setErrorMsg('Invalid credentials provided');
+    signUpStart(payload);
   };
 
   const inputsArray: Control[] = [];
@@ -97,7 +95,9 @@ export const _SignUp: React.FC<SignUpProps> = ({
     <>
       <AuthForm onSubmit={onSubmit}>
         <Title>Sign Up for free</Title>
-        <Error showError={errorMsg !== ''}>{errorMsg}</Error>
+        <Error data-testid="Error" showError={errorMsg !== ''}>
+          {errorMsg}
+        </Error>
         {inputsArray.map(({ id, valid, validationRules, ...otherProps }) => (
           <TextInput
             key={id}

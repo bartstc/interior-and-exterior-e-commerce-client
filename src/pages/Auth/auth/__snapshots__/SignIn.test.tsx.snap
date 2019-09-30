@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SignIn renders correctly 1`] = `
+<DocumentFragment>
+  <form
+    class="sc-bwzfXH fdSsPq"
+  >
+    <p
+      class="sc-htpNat bclJaO"
+    >
+      Sign In
+    </p>
+    <span
+      class="sc-EHOje cXVKmC"
+      data-testid="Error"
+    />
+    <p
+      class="sc-gzVnrw gATUFx"
+    >
+      <input
+        class="sc-dnqmqq cDnSMn"
+        id="signin-email"
+        name="email"
+        placeholder=""
+        type="email"
+        value=""
+      />
+      <span
+        class="sc-iwsKbI ghpXNP"
+        data-testid="ValidationIcon"
+      >
+        <i
+          class="fas fa-check-circle"
+        />
+      </span>
+      <label
+        class="sc-htoDjs iaKsBG"
+        for="signin-email"
+      >
+        Enter email
+      </label>
+      <span
+        class="sc-gZMcBi gSNACN"
+      />
+    </p>
+    <p
+      class="sc-gzVnrw gATUFx"
+    >
+      <input
+        class="sc-dnqmqq cDnSMn"
+        id="signin-password"
+        name="password"
+        placeholder=""
+        type="password"
+        value=""
+      />
+      <span
+        class="sc-iwsKbI ghpXNP"
+        data-testid="ValidationIcon"
+      >
+        <i
+          class="fas fa-check-circle"
+        />
+      </span>
+      <label
+        class="sc-htoDjs iaKsBG"
+        for="signin-password"
+      >
+        Enter password
+      </label>
+      <span
+        class="sc-gZMcBi gSNACN"
+      />
+    </p>
+    <button
+      class="sc-bZQynM eYyTpk"
+      disabled=""
+      type="submit"
+    >
+      Sign In
+    </button>
+    <p
+      class="sc-bxivhb fgDZbI"
+    >
+      Don't have an account?
+    </p>
+    <a
+      class="sc-ifAKCX jbVAZT"
+      href="/account/register"
+    >
+      Register
+    </a>
+  </form>
+</DocumentFragment>
+`;

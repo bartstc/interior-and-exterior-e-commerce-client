@@ -21,7 +21,7 @@ import { NotFound } from './pages/NotFound/NotFound.component';
 import { Store } from './modules/rootReducer';
 import { selectIsAuth } from './modules/user/user.selectors';
 
-interface UnauthAppProps {
+export interface UnauthAppProps {
   isAuth: boolean;
 }
 

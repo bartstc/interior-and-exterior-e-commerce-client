@@ -1,4 +1,4 @@
-import { render, within, wait, waitForElement } from '@testing-library/react';
+import { render, wait, waitForElement } from '@testing-library/react';
 import { _App, AppProps } from './App';
 import { withProvider } from './utils/testUtils';
 
@@ -22,20 +22,17 @@ describe('<App />', () => {
   });
 
   it('renders <Spinner /> when `isAuth` prop is null', async () => {
-    const { container } = setup({ ...props, isAuth: null });
-    const spinner = await waitForElement(() =>
-      within(container).getByTestId('Spinner')
-    );
+    const { getByTestId } = setup({ ...props, isAuth: null });
+    const spinner = await waitForElement(() => getByTestId('Spinner'));
 
     expect(spinner).toBeInTheDocument();
   });
 
-  // it('renders <AuthApp /> when `isAuth` prop is true', async () => {
-  //   const { container, debug } = setup({ ...props, isAuth: true });
-  //   await wait();
-  //   debug();
+  it('renders <AuthApp /> when `isAuth` prop is true', async () => {
+    const { getByText } = setup({ ...props, isAuth: true });
+    await wait();
+    const homeLink = getByText(/home/i).closest('a');
 
-  //   const authApp = within(container).getByText(/logout/i);
-  //   expect(authApp).toBeInTheDocument();
-  // });
+    expect(homeLink).toHaveAttribute('href', '/');
+  });
 });

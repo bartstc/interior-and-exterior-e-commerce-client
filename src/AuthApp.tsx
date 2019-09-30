@@ -15,7 +15,7 @@ import { Cart } from './pages/Cart/Cart.component';
 import { Details } from './pages/Details/Details.component';
 import { NotFound } from './pages/NotFound/NotFound.component';
 
-const AuthApp: React.FC = () => (
+export const AuthApp: React.FC = () => (
   <Router>
     <Layout>
       <Switch>
