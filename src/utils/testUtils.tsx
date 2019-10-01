@@ -6,19 +6,25 @@ import { createMemoryHistory } from 'history';
 
 const history = createMemoryHistory();
 
-export const withRouter = (Component: any) => (props: any) => (
+export const withRouter = <P extends object>(
+  Component: React.ComponentType<P>
+) => (props: P) => (
   <BrowserRouter>
     <Component {...props} />
   </BrowserRouter>
 );
 
-export const withHistory = (Component: any) => (props: any) => (
+export const withHistory = <P extends object>(
+  Component: React.ComponentType<P>
+) => (props: P) => (
   <Router history={history}>
     <Component {...props} />
   </Router>
 );
 
-export const withProvider = (Component: any) => (props: any) => (
+export const withProvider = <P extends object>(
+  Component: React.ComponentType<P>
+) => (props: P) => (
   <Provider store={store}>
     <BrowserRouter>
       <Component {...props} />
