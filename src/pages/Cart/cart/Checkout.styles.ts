@@ -7,6 +7,7 @@ export const CheckoutWrapper = styled.div`
 
   button {
     margin-bottom: 2em;
+  }
 `;
 
 export const Total = styled.p`

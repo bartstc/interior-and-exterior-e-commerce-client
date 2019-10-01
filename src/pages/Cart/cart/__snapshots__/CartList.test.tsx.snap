@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartList /> renders correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="sc-bdVaJa UoSJW"
+  >
+    <li
+      class="sc-htpNat jxfDOc"
+    >
+      <figure
+        class="sc-bxivhb jItGcD"
+      >
+        <img
+          alt="Clock"
+          class="sc-ifAKCX fDAxYi"
+          src="aa"
+        />
+      </figure>
+      <div
+        class="sc-EHOje OptIa"
+      >
+        <p
+          class="sc-bZQynM fkXBRJ"
+        >
+          <strong>
+            Clock
+          </strong>
+        </p>
+        <p
+          class="sc-bZQynM fkXBRJ"
+        >
+          <strong>
+            $ 200
+          </strong>
+        </p>
+        <p
+          class="sc-bZQynM fkXBRJ"
+        >
+          Color: black
+        </p>
+        <div
+          class="sc-gzVnrw cjfsfd"
+        >
+          <button
+            class="sc-htoDjs kamfNv"
+            data-testid="remove-btn"
+          >
+            -
+          </button>
+          <button
+            class="sc-htoDjs kamfNv"
+            data-testid="add-btn"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <button
+        class="sc-dnqmqq eegCJY"
+        data-testid="clear-btn"
+      >
+        x
+      </button>
+    </li>
+    <li
+      class="sc-htpNat jxfDOc"
+    >
+      <figure
+        class="sc-bxivhb jItGcD"
+      >
+        <img
+          alt="Clock"
+          class="sc-ifAKCX fDAxYi"
+          src="aa"
+        />
+      </figure>
+      <div
+        class="sc-EHOje OptIa"
+      >
+        <p
+          class="sc-bZQynM fkXBRJ"
+        >
+          <strong>
+            Clock
+          </strong>
+        </p>
+        <p
+          class="sc-bZQynM fkXBRJ"
+        >
+          <strong>
+            $ 200
+          </strong>
+        </p>
+        <p
+          class="sc-bZQynM fkXBRJ"
+        >
+          Color: black
+        </p>
+        <div
+          class="sc-gzVnrw cjfsfd"
+        >
+          <button
+            class="sc-htoDjs kamfNv"
+            data-testid="remove-btn"
+          >
+            -
+          </button>
+          <button
+            class="sc-htoDjs kamfNv"
+            data-testid="add-btn"
+          >
+            +
+          </button>
+        </div>
+      </div>
+      <button
+        class="sc-dnqmqq eegCJY"
+        data-testid="clear-btn"
+      >
+        x
+      </button>
+    </li>
+  </ul>
+</DocumentFragment>
+`;

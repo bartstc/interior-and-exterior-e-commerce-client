@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CartProduct /> renders correctly 1`] = `
+<DocumentFragment>
+  <li
+    class="sc-bdVaJa UQcAb"
+  >
+    <figure
+      class="sc-bwzfXH djsJkE"
+    >
+      <img
+        alt="Clock"
+        class="sc-htpNat ElcCo"
+        src="aa"
+      />
+    </figure>
+    <div
+      class="sc-bxivhb ellZpO"
+    >
+      <p
+        class="sc-ifAKCX iTFAKT"
+      >
+        <strong>
+          Clock
+        </strong>
+      </p>
+      <p
+        class="sc-ifAKCX iTFAKT"
+      >
+        <strong>
+          $ 200
+        </strong>
+      </p>
+      <p
+        class="sc-ifAKCX iTFAKT"
+      >
+        Color: black
+      </p>
+      <div
+        class="sc-EHOje iMsWhQ"
+      >
+        <button
+          class="sc-bZQynM hdzTmk"
+          data-testid="remove-btn"
+        >
+          -
+        </button>
+        <button
+          class="sc-bZQynM hdzTmk"
+          data-testid="add-btn"
+        >
+          +
+        </button>
+      </div>
+    </div>
+    <button
+      class="sc-gzVnrw dLYbAw"
+      data-testid="clear-btn"
+    >
+      x
+    </button>
+  </li>
+</DocumentFragment>
+`;

@@ -51,7 +51,7 @@ const categories = [
   }
 ];
 
-interface HomeProps {
+export interface HomeProps {
   fetchProductsByType: typeof fetchProductsByType;
 }
 

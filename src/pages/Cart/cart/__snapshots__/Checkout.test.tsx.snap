@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkout /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa iWsfBx"
+  >
+    <p
+      class="sc-bwzfXH brOaWw"
+    >
+      Total: $ 300
+    </p>
+    <button
+      class="sc-htpNat hiXDRd"
+      type="button"
+    >
+      Checkout
+    </button>
+    <button
+      class="sc-htpNat hiXDRd"
+      type="button"
+    >
+      Clear Cart
+    </button>
+  </div>
+</DocumentFragment>
+`;

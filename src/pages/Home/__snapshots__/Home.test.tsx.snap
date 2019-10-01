@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Home /> renders correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="sc-bdVaJa heQTnx"
+  >
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Lamps
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="lamp.png"
+        />
+      </div>
+    </a>
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Vases
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="vase.png"
+        />
+      </div>
+    </a>
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Chairs
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="chair.png"
+        />
+      </div>
+    </a>
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Clocks
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="clock.png"
+        />
+      </div>
+    </a>
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Benches
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="bench.png"
+        />
+      </div>
+    </a>
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Flowerpots
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="flowerpot.png"
+        />
+      </div>
+    </a>
+    <a
+      class="sc-bxivhb bMgZix"
+      href="/shop"
+    >
+      <h2
+        class="sc-bwzfXH cVaPpq"
+      >
+        Plants
+      </h2>
+      <div
+        class="sc-htpNat fCRfDq"
+      >
+        <img
+          alt=""
+          class="sc-ifAKCX VXSCg"
+          src="plant.png"
+        />
+      </div>
+    </a>
+  </section>
+</DocumentFragment>
+`;

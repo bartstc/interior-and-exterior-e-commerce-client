@@ -9,11 +9,11 @@ import { createStructuredSelector } from 'reselect';
 import { Store } from '../../../modules/rootReducer';
 import { selectCartItems } from '../../../modules/cart/cart.selectors';
 
-interface CartItemSelection {
+interface CartListSelection {
   cartItems: Product[];
 }
 
-interface CartListProps extends CartItemSelection {}
+export interface CartListProps extends CartListSelection {}
 
 export const _CartList: React.FC<CartListProps> = ({ cartItems }) => {
   return !cartItems.length ? (
@@ -27,7 +27,7 @@ export const _CartList: React.FC<CartListProps> = ({ cartItems }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector<Store, CartItemSelection>({
+const mapStateToProps = createStructuredSelector<Store, CartListSelection>({
   cartItems: selectCartItems
 });
 

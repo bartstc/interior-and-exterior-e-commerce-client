@@ -19,7 +19,7 @@ import {
   clearItemFromCart
 } from '../../../../modules/cart/cart.actions';
 
-interface CartProductProps {
+export interface CartProductProps {
   cartItemData: Product;
   removeItem: typeof removeItem;
   addItem: typeof addItem;
@@ -54,12 +54,18 @@ export const _CartProduct: React.FC<CartProductProps> = ({
         </Info>
         <Info>Color: {color}</Info>
         <Quantity>
-          <QuantityBtn onClick={removeCartItem}>-</QuantityBtn>
+          <QuantityBtn data-testid="remove-btn" onClick={removeCartItem}>
+            -
+          </QuantityBtn>
           {quantity}
-          <QuantityBtn onClick={addCartItem}>+</QuantityBtn>
+          <QuantityBtn data-testid="add-btn" onClick={addCartItem}>
+            +
+          </QuantityBtn>
         </Quantity>
       </ProductDesc>
-      <DeleteBtn onClick={clearCartItem}>x</DeleteBtn>
+      <DeleteBtn data-testid="clear-btn" onClick={clearCartItem}>
+        x
+      </DeleteBtn>
     </CartProductWrapper>
   );
 };

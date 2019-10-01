@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> renders <UnauthApp /> component 1`] = `
+exports[`<App /> renders <App /> component 1`] = `
 <DocumentFragment>
   <div
     class="sc-htpNat fjcJqy"

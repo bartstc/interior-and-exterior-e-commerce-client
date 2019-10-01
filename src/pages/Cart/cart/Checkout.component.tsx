@@ -14,7 +14,7 @@ interface CheckoutSelection {
   total: number;
 }
 
-interface CheckoutProps extends CheckoutSelection {
+export interface CheckoutProps extends CheckoutSelection {
   clearCart: typeof clearCart;
 }
 

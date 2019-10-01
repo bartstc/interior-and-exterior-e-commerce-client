@@ -14,7 +14,7 @@ describe('<App />', () => {
     return { ...utils };
   };
 
-  it('renders <UnauthApp /> component', async () => {
+  it('renders <App /> component', async () => {
     const { asFragment } = setup(props);
     await wait(); // wait for import to be resolved
 

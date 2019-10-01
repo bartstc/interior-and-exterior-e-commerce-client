@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Cart /> renders correctly 1`] = `
+<DocumentFragment>
+  <h2
+    class="sc-bwzfXH esHIME"
+  >
+    Cart
+  </h2>
+  <section
+    class="sc-bdVaJa DuiYN"
+  >
+    <p
+      class="sc-bxivhb cVnBhr"
+    >
+      Cart is empty.
+    </p>
+    <div
+      class="sc-gqjmRU lkVGqo"
+    >
+      <p
+        class="sc-VigVT giWpjk"
+      >
+        Total: $ 0
+      </p>
+      <button
+        class="sc-jTzLTM hlRsKz"
+        disabled=""
+        type="button"
+      >
+        Checkout
+      </button>
+      <button
+        class="sc-jTzLTM hlRsKz"
+        disabled=""
+        type="button"
+      >
+        Clear Cart
+      </button>
+    </div>
+  </section>
+</DocumentFragment>
+`;
