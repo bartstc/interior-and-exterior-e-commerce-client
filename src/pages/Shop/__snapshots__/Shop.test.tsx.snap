@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Shop /> renders correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="sc-bdVaJa bmsbIv"
+  >
+    <div
+      class="sc-bwzfXH fsMUGo"
+    >
+      <div
+        class="sc-EHOje hSbnRA"
+      >
+        <label
+          class="sc-bZQynM zXWjd"
+          for="color"
+        >
+          Color
+        </label>
+        <select
+          class="sc-gzVnrw jMwgLB"
+          id="color"
+          name="color"
+        >
+          <option
+            class="sc-htoDjs dzhsTf"
+            value="all"
+          >
+            all  (0)
+          </option>
+        </select>
+      </div>
+      <div
+        class="sc-EHOje hSbnRA"
+      >
+        <label
+          class="sc-bZQynM zXWjd"
+          for="character"
+        >
+          Character
+        </label>
+        <select
+          class="sc-gzVnrw jMwgLB"
+          id="character"
+          name="character"
+        >
+          <option
+            class="sc-htoDjs dzhsTf"
+            value="all"
+          >
+            all  (0)
+          </option>
+        </select>
+      </div>
+      <div
+        class="sc-gZMcBi gocsoC"
+      >
+        <label
+          class="sc-VigVT bFAbFJ"
+          for="price"
+        >
+          Price
+        </label>
+        <input
+          class="sc-gqjmRU Rvdhp"
+          id="price"
+          max="500"
+          min="0"
+          name="price"
+          type="range"
+          value="500"
+        />
+      </div>
+      <div
+        class="sc-htpNat eORBik"
+      >
+        <button
+          class="sc-bxivhb kqNkey"
+        >
+          <i
+            class="fas fa-th-large"
+          />
+        </button>
+        <button
+          class="sc-bxivhb cJMddQ"
+        >
+          <i
+            class="fas fa-th"
+          />
+        </button>
+      </div>
+    </div>
+    <p
+      class="sc-jzJRlG eFBSZV"
+    >
+      No results.
+    </p>
+  </section>
+</DocumentFragment>
+`;

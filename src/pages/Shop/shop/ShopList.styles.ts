@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { device, color } from '../../../utils/styles';
 
-export const ProductList = styled.ul`
+export const ProductsList = styled.ul`
   width: 100%;
   max-width: 500px;
   margin-top: 0.5em;

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Product /> renders correctly 1`] = `
+<DocumentFragment>
+  <a
+    href="/product/1"
+  >
+    <li
+      class="sc-htpNat iwTwqZ"
+    >
+      <figure
+        class="sc-bdVaJa cvdaNd"
+      >
+        <img
+          alt="Clock"
+          class="sc-bwzfXH ighdIJ"
+          src="aa"
+        />
+      </figure>
+      <div
+        class="sc-bxivhb kVWjJV"
+      >
+        <p
+          class="sc-ifAKCX gEXoJE"
+        >
+          Clock
+        </p>
+        <p
+          class="sc-EHOje dLETtc"
+        >
+          $ 200
+        </p>
+      </div>
+    </li>
+  </a>
+</DocumentFragment>
+`;

@@ -42,7 +42,7 @@ interface FilterPanelSelection {
   query: string;
 }
 
-interface FilterPanelProps extends FilterPanelSelection {
+export interface FilterPanelProps extends FilterPanelSelection {
   gridColumns: number;
   setGridColumns: React.Dispatch<React.SetStateAction<number>>;
   filterProducts: typeof filterProducts;

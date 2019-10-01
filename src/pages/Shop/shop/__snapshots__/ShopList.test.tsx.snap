@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ShopList /> renders correctly 1`] = `
+<DocumentFragment>
+  <ul
+    class="sc-bdVaJa eOVwsA"
+  >
+    <a
+      href="/product/1"
+    >
+      <li
+        class="sc-ifAKCX gAuHj"
+      >
+        <figure
+          class="sc-htpNat iSLqsH"
+        >
+          <img
+            alt="Clock"
+            class="sc-bxivhb lelnaL"
+            src="aa"
+          />
+        </figure>
+        <div
+          class="sc-EHOje gmmqIO"
+        >
+          <p
+            class="sc-bZQynM fGwzMD"
+          >
+            Clock
+          </p>
+          <p
+            class="sc-gzVnrw hUlLlY"
+          >
+            $ 200
+          </p>
+        </div>
+      </li>
+    </a>
+    <a
+      href="/product/2"
+    >
+      <li
+        class="sc-ifAKCX gAuHj"
+      >
+        <figure
+          class="sc-htpNat iSLqsH"
+        >
+          <img
+            alt="Clock"
+            class="sc-bxivhb lelnaL"
+            src="aa"
+          />
+        </figure>
+        <div
+          class="sc-EHOje gmmqIO"
+        >
+          <p
+            class="sc-bZQynM fGwzMD"
+          >
+            Clock
+          </p>
+          <p
+            class="sc-gzVnrw hUlLlY"
+          >
+            $ 200
+          </p>
+        </div>
+      </li>
+    </a>
+  </ul>
+  <button
+    class="sc-htoDjs dBUMDP"
+    type="button"
+  >
+    More results (1)
+  </button>
+</DocumentFragment>
+`;

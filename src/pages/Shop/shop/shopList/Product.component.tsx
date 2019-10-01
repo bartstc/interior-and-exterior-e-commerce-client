@@ -12,7 +12,7 @@ import {
 
 import { Product as IProduct } from '../../../../modules/shop/shop.interfaces';
 
-interface ProductProps {
+export interface ProductProps {
   productData: IProduct;
 }
 

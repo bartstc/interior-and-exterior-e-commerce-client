@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FilterPanel /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa dpDXXu"
+  >
+    <div
+      class="sc-ifAKCX bUenFB"
+    >
+      <label
+        class="sc-EHOje gYSLvW"
+        for="color"
+      >
+        Color
+      </label>
+      <select
+        class="sc-bZQynM lkeYjL"
+        id="color"
+        name="color"
+      >
+        <option
+          class="sc-gzVnrw enuUcp"
+          value="all"
+        >
+          all  (5)
+        </option>
+        <option
+          class="sc-gzVnrw enuUcp"
+          value="black"
+        >
+          black  (2)
+        </option>
+        <option
+          class="sc-gzVnrw enuUcp"
+          value="white"
+        >
+          white  (3)
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-ifAKCX bUenFB"
+    >
+      <label
+        class="sc-EHOje gYSLvW"
+        for="character"
+      >
+        Character
+      </label>
+      <select
+        class="sc-bZQynM lkeYjL"
+        id="character"
+        name="character"
+      >
+        <option
+          class="sc-gzVnrw enuUcp"
+          value="all"
+        >
+          all  (5)
+        </option>
+        <option
+          class="sc-gzVnrw enuUcp"
+          value="modern"
+        >
+          modern  (2)
+        </option>
+        <option
+          class="sc-gzVnrw enuUcp"
+          value="classic"
+        >
+          classic  (3)
+        </option>
+      </select>
+    </div>
+    <div
+      class="sc-iwsKbI feoirL"
+    >
+      <label
+        class="sc-gqjmRU kjqYvz"
+        for="price"
+      >
+        Price
+      </label>
+      <input
+        class="sc-gZMcBi cLibKP"
+        id="price"
+        max="300"
+        min="100"
+        name="price"
+        type="range"
+        value="500"
+      />
+    </div>
+    <div
+      class="sc-bwzfXH emFNpz"
+    >
+      <button
+        class="sc-htpNat dGEpqy"
+      >
+        <i
+          class="fas fa-th-large"
+        />
+      </button>
+      <button
+        class="sc-htpNat fXGbSP"
+      >
+        <i
+          class="fas fa-th"
+        />
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

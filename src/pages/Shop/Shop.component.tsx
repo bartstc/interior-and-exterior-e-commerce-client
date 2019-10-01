@@ -15,10 +15,10 @@ interface ShopSelection {
   isFetching: boolean;
 }
 
-interface ShopProps extends ShopSelection {}
+export interface ShopProps extends ShopSelection {}
 
 export const _Shop: React.FC<ShopProps> = ({ isFetching }) => {
-  const [gridColumns, setGridColumns] = useState(2);
+  const [gridColumns, setGridColumns] = useState<number>(2);
 
   if (isFetching) return <GlobalSpinner />;
 

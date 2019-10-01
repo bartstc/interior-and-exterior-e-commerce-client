@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { ProductList, Warning } from './ShopList.styles';
+import { ProductsList, Warning } from './ShopList.styles';
 
 import { Product } from './shopList/Product.component';
 import { Button } from '../../../components/Button/Button.component';
@@ -29,7 +29,7 @@ interface ShopListSelection {
   query: string;
 }
 
-interface ShopListProps extends ShopListSelection {
+export interface ShopListProps extends ShopListSelection {
   gridColumns: number;
   fetchProductsByType: typeof fetchProductsByType;
   increaseLimit: typeof increaseLimit;
@@ -50,16 +50,16 @@ export const _ShopList: React.FC<ShopListProps> = ({
   }, [productsFetched, query, fetchProductsByType]);
 
   return !filteredProducts.length ? (
-    <Warning>No resutls.</Warning>
+    <Warning>No results.</Warning>
   ) : (
     <>
-      <ProductList columns={gridColumns}>
+      <ProductsList columns={gridColumns}>
         {filteredProducts
           .filter((_, i) => i < limit)
           .map(product => (
             <Product key={product.id} productData={product} />
           ))}
-      </ProductList>
+      </ProductsList>
       {filteredProductsAmount > limit && (
         <Button onClick={increaseLimit}>
           More results ({filteredProductsAmount - limit})
