@@ -38,11 +38,15 @@ export const createFiltersList = (
   return Object.values(filtersMap);
 };
 
-export const calcMinPrice = (products: Product[]): number =>
-  Math.min(...products.map(prod => parseFloat(prod.price)));
+export const calcMinPrice = (products: Product[]): number => {
+  if (!products.length) return 0;
+  return Math.min(...products.map(prod => parseFloat(prod.price)));
+};
 
-export const calcMaxPrice = (products: Product[]): number =>
-  Math.max(...products.map(prod => parseFloat(prod.price)));
+export const calcMaxPrice = (products: Product[]): number => {
+  if (!products.length) return 0;
+  return Math.max(...products.map(prod => parseFloat(prod.price)));
+};
 
 export const filterFetchedProducts = (
   products: Product[],

@@ -23,7 +23,7 @@ export const validate = (
   if (rules.maxLength) {
     isValid = value.length <= rules.maxLength && isValid;
     if (!isValid && !errorMsg.length)
-      errorMsg = `${controlName} must be no longer than ${rules.minLength} characters`;
+      errorMsg = `${controlName} must be no longer than ${rules.maxLength} characters`;
   }
 
   if (rules.isEmail) {
