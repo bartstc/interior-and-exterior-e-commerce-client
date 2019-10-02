@@ -7,7 +7,7 @@ import {
   Preview
 } from './Gallery.styles';
 
-interface GalleryProps {
+export interface GalleryProps {
   imageUrls: string[];
 }
 
@@ -55,6 +55,7 @@ export const Gallery: React.FC<GalleryProps> = ({ imageUrls }) => {
         <ImageItem onClick={showImage} src={imageUrls[2]} alt="" />
       </ImageList>
       <Preview
+        data-testid="Preview"
         onMouseEnter={zoomIn}
         onMouseLeave={zoomOut}
         onMouseMove={zoomMove}

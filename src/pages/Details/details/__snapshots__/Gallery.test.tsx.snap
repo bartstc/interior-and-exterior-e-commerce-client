@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gallery /> renders correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdVaJa bxSHRL"
+  >
+    <div
+      class="sc-bwzfXH CVjlI"
+    >
+      <img
+        alt=""
+        class="sc-htpNat driQCr"
+        src="a"
+      />
+      <img
+        alt=""
+        class="sc-htpNat driQCr"
+        src="b"
+      />
+      <img
+        alt=""
+        class="sc-htpNat driQCr"
+        src="c"
+      />
+    </div>
+    <div
+      class="sc-bxivhb MTqTJ"
+      data-testid="Preview"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -14,7 +14,7 @@ import { addItem } from '../../modules/cart/cart.actions';
 
 type Params = { id: string };
 
-interface DetailsProps extends RouteComponentProps<Params> {
+export interface DetailsProps extends RouteComponentProps<Params> {
   addItemToCart: typeof addItem;
 }
 
@@ -32,6 +32,7 @@ export const _Details: React.FC<DetailsProps> = ({
         const { data } = await axios.get(`/products/${id}`);
         setProductData(data);
       } catch (err) {
+        // should shows popup msg or something
         console.log(err);
       }
     };
@@ -39,9 +40,9 @@ export const _Details: React.FC<DetailsProps> = ({
     fetchSingleProduct();
   }, [id]);
 
-  return !productData ? (
-    <GlobalSpinner />
-  ) : (
+  if (!productData) return <GlobalSpinner />;
+
+  return (
     <DetailsWrapper>
       <Gallery imageUrls={productData.images} />
       <Description>
