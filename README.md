@@ -16,6 +16,8 @@ Full stack project based on React, Node.js and TypeScript. It's a simple concept
 * [TypeORM](https://typeorm.io/#/)
 * [PostgreSQL](https://www.postgresql.org/)
 * [Docker](https://www.docker.com/)
+* [Jest](https://jestjs.io/docs/en/getting-started) unit testing
+* [React testing library](https://testing-library.com/docs/react-testing-library/intro) unit testing
 
 ## Project Learning Goals
 
