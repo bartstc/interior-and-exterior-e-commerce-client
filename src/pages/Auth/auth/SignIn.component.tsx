@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, FormEvent, useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
@@ -8,8 +8,7 @@ import { Button } from '../../../components/Button/Button.component';
 import { TextInput } from '../../../components/TextInput/TextInput.component';
 import { Spinner } from '../../../components/Spinner/Spinner.component';
 
-import { Controls, Control } from '../types';
-import { validate } from '../../../utils/validity';
+import { Control } from '../types';
 import { signInControls } from '../../../utils/controls';
 import {
   selectAuthError,
@@ -17,6 +16,7 @@ import {
 } from '../../../modules/user/user.selectors';
 import { signInStart, clearErrors } from '../../../modules/user/user.actions';
 import { Store } from '../../../modules/rootReducer';
+import { useForm } from '../../../hooks/useForm';
 
 interface SignInSelection {
   authError: string | null;
@@ -34,56 +34,22 @@ export const _SignIn: React.FC<SignInProps> = ({
   authError,
   isFetching
 }) => {
-  const [controls, setControls] = useState<Controls>(signInControls);
-  const [errorMsg, setErrorMsg] = useState<string>('');
+  const { controls, errorMsg, onChange, onSubmit } = useForm(
+    signInControls,
+    authError,
+    clearErrors,
+    () => {
+      const payload = {
+        email: email.value,
+        password: password.value
+      };
+
+      signInStart(payload);
+    }
+  );
 
   const { email, password } = controls;
   const formValid = email.valid && password.valid;
-
-  useEffect(() => {
-    if (authError) {
-      setErrorMsg(authError);
-      setControls(signInControls);
-    }
-
-    return () => {
-      clearErrors();
-    };
-  }, [authError, clearErrors]);
-
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const updatedControls: Controls = {
-      ...controls,
-      [e.target.name]: {
-        ...controls[e.target.name],
-        value: e.target.value,
-        valid: validate(
-          e.target.value,
-          e.target.name,
-          controls[e.target.name].validationRules
-        ).isValid,
-        errorMsg: validate(
-          e.target.value,
-          e.target.name,
-          controls[e.target.name].validationRules
-        ).errorMsg,
-        touched: true
-      }
-    };
-
-    setControls(updatedControls);
-  };
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-
-    const payload = {
-      email: email.value,
-      password: password.value
-    };
-
-    signInStart(payload);
-  };
 
   const inputsArray: Control[] = [];
   for (let key in controls) {
