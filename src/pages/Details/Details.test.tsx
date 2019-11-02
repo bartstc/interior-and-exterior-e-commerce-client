@@ -4,6 +4,8 @@ import axios from 'axios';
 import { DetailsProps, _Details } from './Details.component';
 import { Product } from '../../modules/shop/shop.interfaces';
 
+jest.mock('axios');
+
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 const productData: Product = {
@@ -19,6 +21,10 @@ const productData: Product = {
 };
 
 describe('<Details />', () => {
+  beforeEach(() => {
+    jest.resetAllMocks();
+  });
+
   const mockAddItemToCart = jest.fn();
   const productId = '1';
 
@@ -33,7 +39,11 @@ describe('<Details />', () => {
   };
 
   it('fetches and displays product data', async () => {
-    mockedAxios.get.mockResolvedValueOnce({ data: productData });
+    // mockedAxios.get.mockResolvedValueOnce({ data: productData });
+    mockedAxios.get.mockImplementation(() =>
+      Promise.resolve({ data: productData })
+    );
+
     const { getByTestId, getByText } = setup(props);
 
     expect(getByTestId('Spinner')).toBeInTheDocument();

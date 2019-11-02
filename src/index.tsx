@@ -12,3 +12,5 @@ ReactDOM.render(
   </StoreProvider>,
   document.getElementById('root')
 );
+
+// npm run test -- --coverage --watchAll=false

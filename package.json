@@ -46,6 +46,33 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/modules/**/*.interfaces.ts",
+      "!src/modules/**/*.selectors.ts",
+      "!src/modules/**/*.reducer.ts",
+      "!src/modules/**/*.actions.ts",
+      "!src/modules/**/*.sagas.ts",
+      "!src/modules/**/*.types.ts",
+      "!src/modules/*.ts",
+      "!src/index.ts",
+      "!src/hooks/*.ts",
+      "!src/hoc/*.ts"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
+    "coverageReporters": [
+      "html",
+      "text"
+    ]
+  },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.1.0",
     "@testing-library/react": "^9.2.0",
